@@ -6,12 +6,13 @@ My career spans large Dutch organizations like ASML, Philips, and ABN AMRO, as w
 CART-Tech and Nemo Healthcare.
 I’ve worked in healthcare, finance, and high-tech industries, building impactful solutions that deliver value:
 
-- Use Deep Learning to assist pacemaker lead placement
+- Use Deep Learning for cardiac tissue segmentation to assist in pacemaker lead placement
 - Using Artificial Intelligence Anomaly Detection to detect possible fraud in financial transactions
-- 3D computer visualisation to assist in ablation interventions
+- 3D computer visualization to assist in ablation interventions
 - Topic and sentiment analysis in Natural Language Processing
 - EUV source positioning in the first ASML EUV Demo machines
 - JIRA Process Automation in Medical Device Development
+- Implement Decision Rules for Medicine Prescriptions
 - Integrating maternal blood pressure/saturation measurements with maternal/fetal heart rate data into the hospital systems.
 
 ## What You'll Find Here
