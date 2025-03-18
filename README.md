@@ -12,13 +12,14 @@ I’ve worked in healthcare, finance, and high-tech industries, building impactf
 - Topic and sentiment analysis in Natural Language Processing
 - EUV source positioning in the first ASML EUV Demo machines
 - JIRA Process Automation in Medical Device Development
-- Implement Decision Rules for Medicine Prescriptions
+- Implement Decision Rules for Medication Prescriptions
 - Integrating maternal blood pressure/saturation measurements with maternal/fetal heart rate data into the hospital systems.
 
 ## What You'll Find Here
 
-This GitHub repository offers a glimpse into my work, showcasing small, non-disclosed portfolio pieces from broader projects.
-While these examples represent only a fraction of my expertise, they demonstrate my approach to creating innovative and impactful solutions.
+My GitHub repositories offer a glimpse into my ideas, showcasing small, non-disclosed portfolio notebook pieces from broader projects.
+While these examples represent only a fraction of my expertise, they demonstrate my approach to creating innovative and impactful solutions,
+from an abstract idea to a working proof of concept, though usually not yet the production-quality code.
 
 ## Interests
 
