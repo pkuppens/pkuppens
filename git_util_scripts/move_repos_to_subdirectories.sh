@@ -32,6 +32,13 @@ for dir in */; do
             owner="${BASH_REMATCH[1]}"
             echo "  Owner is '$owner'"
             
+            # Check if the directory is already in the correct structure
+            if [[ $(dirname "$dir") == "$owner" ]]; then
+                echo "  '$dir' is already in the correct '<owner>/<repo_name>' structure, skipping"
+                echo "--------------------------------------"
+                continue
+            fi
+            
             # Check if owner directory exists
             if [ ! -d "$owner" ]; then
                 echo "  Directory '$owner' does not exist, creating directory"
