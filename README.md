@@ -21,6 +21,10 @@ My GitHub repositories offer a glimpse into my ideas, showcasing small, non-disc
 While these examples represent only a fraction of my expertise, they demonstrate my approach to creating innovative and impactful solutions,
 from an abstract idea to a working proof of concept, though usually not yet the production-quality code.
 
+### `git_util_scripts`
+
+I also added two utility scripts that help me organize and update my git repos.
+
 ## Interests
 
 - Building AI and data-driven solutions, with Deep Learning, Large Language Models, Machine Learning, Agentic AI, etc.
