@@ -5,14 +5,9 @@
 echo "Starting to update all git repositories in $(pwd)"
 echo "------------------------------------------------"
 
-# Loop through all directories in the current location
-for dir in */; do
-    # Remove trailing slash
-    dir=${dir%/}
-    
-    echo "Checking $dir..."
-    
-    # Check if directory is a git repository
+# Function to check if a directory is a git repository and run git pull
+git_pull_dir() {
+    local dir=$1
     if [ -d "$dir/.git" ]; then
         echo "Updating repository: $dir"
         (cd "$dir" && git pull)
@@ -21,6 +16,23 @@ for dir in */; do
         echo "Skipping $dir - not a git repository"
         echo "------------------------------------------------"
     fi
+}
+
+# Call git_pull_dir for the current directory
+git_pull_dir "$(pwd)"
+
+# Loop through all immediate child directories and call git_pull_dir for each
+for dir in */; do
+    # Remove trailing slash
+    dir=${dir%/}
+    git_pull_dir "$dir"
+    
+    # Loop through all grandchildren directories and call git_pull_dir for each
+    for subdir in "$dir"/*/; do
+        # Remove trailing slash
+        subdir=${subdir%/}
+        git_pull_dir "$subdir"
+    done
 done
 
 echo "All repositories have been processed!"
