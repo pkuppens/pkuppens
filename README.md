@@ -15,6 +15,13 @@ I’ve worked in healthcare, finance, and high-tech industries, building impactf
 - Implement Decision Rules for Medication Prescriptions
 - Integrating maternal blood pressure/saturation measurements with maternal/fetal heart rate data into the hospital systems.
 
+## My Current Project
+
+Building an on-premise, confidential and secure RAG system for semantic search on your documents.
+
+![image](https://github.com/user-attachments/assets/fff0eb9f-c4e8-4b17-add6-148d761da16d)
+
+
 ## What You'll Find Here
 
 My GitHub repositories offer a glimpse into my ideas, showcasing small, non-disclosed portfolio notebook pieces from broader projects.
