@@ -37,6 +37,8 @@ A modern alternative to traditional language learning apps that prioritizes natu
 
 **Repository**: [github.com/pkuppens/babblr](https://github.com/pkuppens/babblr) · **License**: AGPL-3.0 · **Status**: 🟢 Active Development
 
+![Babblr Conversation Screen](docs/screenshots/conversation-screen.svg)
+
 ## What You'll Find Here
 
 My GitHub repositories offer a glimpse into my ideas, showcasing small, non-disclosed portfolio notebook pieces from broader projects.
