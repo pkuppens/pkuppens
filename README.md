@@ -4,7 +4,7 @@ I'm an experienced software, data, and AI professional passionate about solving 
 
 My career spans large Dutch organizations like ASML, Philips, and ABN AMRO, as well as innovative startups like
 CART-Tech and Nemo Healthcare.
-I’ve worked in healthcare, finance, and high-tech industries, building impactful solutions that deliver value:
+I've worked in healthcare, finance, and high-tech industries, building impactful solutions that deliver value:
 
 - Use Deep Learning for cardiac tissue segmentation to assist in pacemaker lead placement
 - Using Artificial Intelligence Anomaly Detection to detect possible fraud in financial transactions
@@ -15,12 +15,27 @@ I’ve worked in healthcare, finance, and high-tech industries, building impactf
 - Implement Decision Rules for Medication Prescriptions
 - Integrating maternal blood pressure/saturation measurements with maternal/fetal heart rate data into the hospital systems.
 
-## My Current Project
+## My Current Projects
 
-Building an on-premise, confidential and secure RAG system for semantic search on your documents.
+### 🔒 On-Premise RAG System
+
+Building an on-premise, confidential, and secure RAG (Retrieval-Augmented Generation) system for semantic search on your documents. Designed for organizations that require data privacy and control, this system combines vector embeddings, semantic search, and LLM capabilities while keeping all data on-premises—perfect for healthcare, finance, and legal sectors where data sovereignty is non-negotiable.
+
+![Python](https://img.shields.io/badge/Python-3776AB?style=flat&logo=python&logoColor=white) ![FastAPI](https://img.shields.io/badge/FastAPI-009688?style=flat&logo=fastapi&logoColor=white) ![LangChain](https://img.shields.io/badge/🦜_LangChain-121212?style=flat) ![PostgreSQL](https://img.shields.io/badge/PostgreSQL-4169E1?style=flat&logo=postgresql&logoColor=white)
+
+**Status**: 🟢 Active Development
 
 ![image](https://github.com/user-attachments/assets/fff0eb9f-c4e8-4b17-add6-148d761da16d)
 
+---
+
+### 🗣️ [Babblr: AI Language Learning](https://github.com/pkuppens/babblr)
+
+A modern alternative to traditional language learning apps that prioritizes natural conversation over gamification. Practice speaking with an adaptive AI tutor that provides real-time grammar corrections and vocabulary support. Built with Electron (desktop app), FastAPI backend, and powered by OpenAI Whisper for speech recognition and Anthropic Claude for intelligent tutoring. Supports Spanish, Italian, German, French, and Dutch across CEFR proficiency levels A1-C2.
+
+![Python](https://img.shields.io/badge/Python-3776AB?style=flat&logo=python&logoColor=white) ![TypeScript](https://img.shields.io/badge/TypeScript-3178C6?style=flat&logo=typescript&logoColor=white) ![FastAPI](https://img.shields.io/badge/FastAPI-009688?style=flat&logo=fastapi&logoColor=white) ![React](https://img.shields.io/badge/React-61DAFB?style=flat&logo=react&logoColor=black) ![Electron](https://img.shields.io/badge/Electron-47848F?style=flat&logo=electron&logoColor=white)
+
+**Repository**: [github.com/pkuppens/babblr](https://github.com/pkuppens/babblr) · **License**: AGPL-3.0 · **Status**: 🟢 Active Development
 
 ## What You'll Find Here
 
