@@ -10,6 +10,7 @@ This directory contains unified AI coding skills for Cursor, Claude, and Codex. 
 
 - Each skill lives in its own directory with `SKILL.md`
 - Skill tree overview: [SKILL_TREE.md](SKILL_TREE.md)
+- Cooperation patterns: [COOPERATION.md](COOPERATION.md)
 - Meta-skills (e.g. skill-creation) in `_meta/`
 
 ## Creating or editing skills

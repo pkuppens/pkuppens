@@ -6,7 +6,7 @@ Shared skills for Cursor, Claude, and Codex. Committed to this repo; referenced 
 
 Skills are markdown files (`SKILL.md`) in skill-specific directories. Each skill has a `name` and `description` in YAML frontmatter; IDEs discover skills automatically when the directory is linked.
 
-Full skill tree: [SKILL_TREE.md](SKILL_TREE.md)
+Full skill tree: [SKILL_TREE.md](SKILL_TREE.md). How skills compose: [COOPERATION.md](COOPERATION.md).
 
 ## IDE Setup
 
