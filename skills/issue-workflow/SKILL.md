@@ -16,7 +16,7 @@ Orchestrates the GitHub issue lifecycle per [GitHub Issue Lifecycle](https://doc
 ## Flow
 
 1. **Check duplicates** — Invoke [issue-check-duplicates](issue-check-duplicates/SKILL.md). Search open and recently closed issues for overlap. If duplicate found, link and stop or merge scope.
-2. **Acceptance criteria** — Invoke [issue-acceptance-criteria](issue-acceptance-criteria/SKILL.md). Ensure checkboxes define "done".
+2. **Acceptance criteria** — Invoke [issue-acceptance-criteria](issue-acceptance-criteria/SKILL.md). Each checkbox must include copy-pastable validation steps (commands, URLs, Try-it flows).
 3. **Out-of-scope** — Invoke [issue-out-of-scope](issue-out-of-scope/SKILL.md). Define what is explicitly excluded to prevent creep.
 4. **Draft issue** — Combine into a markdown issue body with Goal, Tasks, Acceptance Criteria, Out of Scope.
 
@@ -24,7 +24,7 @@ Orchestrates the GitHub issue lifecycle per [GitHub Issue Lifecycle](https://doc
 
 1. Gather context: repo, idea summary, existing issues if any.
 2. Run check-duplicates; report findings and decide proceed/merge/close.
-3. Run acceptance-criteria; produce a checklist.
+3. Run acceptance-criteria; produce a checklist with copy-pastable steps per criterion.
 4. Run out-of-scope; list exclusions.
 5. Assemble final issue draft for `gh issue create` or paste into GitHub UI.
 
@@ -38,7 +38,7 @@ Orchestrates the GitHub issue lifecycle per [GitHub Issue Lifecycle](https://doc
 - [ ] ...
 
 ## Acceptance Criteria
-- [ ] ...
+- [ ] ... (copy-pastable steps: command/URL → expected result)
 
 ## Out of Scope
 - ...

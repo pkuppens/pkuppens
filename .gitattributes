@@ -1,0 +1,6 @@
+# Line endings: normalize to LF so git status does not show spurious CRLF changes
+# when switching between Windows and WSL, or different editors.
+* text=auto eol=lf
+
+*.sh text eol=lf
+*.svg text eol=lf

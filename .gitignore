@@ -20,5 +20,21 @@ Gemfile.lock
 # Scratch files (planning, drafts) — never commit
 tmp/
 
-# Local Claude/IDE settings (per-machine, not for version control)
+# IDE config dirs (.claude, .cursor) — do not commit
+# Why ignored: These dirs typically contain symlinks to skills/ (see skills/README.md).
+# Symlink targets can be machine-specific (absolute paths) or break on Windows without
+# Developer Mode. Git may store symlinks as text files when core.symlinks=false,
+# causing broken clones. Documented setup lets each developer run symlink commands
+# after clone.
+.claude/
+.cursor/
+
+# To include them instead: use relative symlinks within the repo, e.g. from repo root:
+#   mkdir -p .cursor .claude
+#   ln -s skills .cursor/skills   # or: New-Item -ItemType SymbolicLink ...
+#   ln -s skills .claude/skills
+# Windows: run CMD as Admin or enable Developer Mode; mklink /D .cursor\skills skills
+# Then remove .claude/ and .cursor/ from this file before committing.
+
+# Local Claude settings (per-machine) — redundant if .claude/ ignored above
 .claude/settings.local.json
