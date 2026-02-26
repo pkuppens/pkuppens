@@ -4,7 +4,7 @@ Personal skills for AI-assisted coding, aligned with arc42 and the full software
 
 **Principles:** Single responsibility per skill; clear name + one-liner (+ optional 1–2 comment lines); recursive sub-skills up to 4–5 levels.
 
-**Creating skills:** Use [skill-creation](_meta/skill-creation/SKILL.md) when adding or extending skills from this tree.
+**Creating skills:** Use the [skill-creation](_meta/skill-creation/SKILL.md) meta-skill when adding or extending skills from this tree.
 
 ---
 
@@ -15,6 +15,14 @@ Personal skills for AI-assisted coding, aligned with arc42 and the full software
 | **Waterfall** | Fixed scope, formal phases, sign-off gates | Sequential: requirements → architecture → design → implementation → validation. Fewer parallel branches. |
 | **Agile** | Iterative, incremental, changing scope | Short cycles; issue-workflow per sprint; backlog grooming; retrospectives. |
 | **TDD** | Test-first, red-green-refactor | validation-draft and test-write before implementation-construction; validation-detail after. |
+
+---
+
+## Meta-skills
+
+### skill-creation
+Guides creation and maintenance of skills in this tree. Use when authoring a new `SKILL.md`, extending an existing skill, or reviewing skill structure and conventions.
+// Lives in `_meta/skill-creation/`; operates on the skill system itself, not on the software lifecycle.
 
 ---
 
@@ -337,6 +345,7 @@ Maintains audit trail: decisions, changes, evidence.
 
 | # | Skill | arc42 / Lifecycle | Sub-skills |
 |---|-------|-------------------|------------|
+| — | skill-creation *(meta)* | Skill authoring | — |
 | 0 | software-engineering-process | Orchestrator | — |
 | 1 | ideation | Ideation | 1.1–1.3 |
 | 2 | requirements | Requirements (arc42 §1–3) | 2.1–2.6 |
@@ -354,4 +363,4 @@ Maintains audit trail: decisions, changes, evidence.
 | 14 | maintenance | Bug report, cleanup, debt | 14.1–14.3 |
 | 15 | governance | Progress, post-mortem, audit trail | 15.1–15.3 |
 
-**Total:** 16 top-level skills, 60+ sub-skills. Nesting: up to 4–5 levels where needed (e.g. 5.4.1, 5.4.2).
+**Total:** 1 meta-skill + 16 lifecycle skills, 60+ sub-skills. Nesting: up to 4–5 levels where needed (e.g. 5.4.1, 5.4.2).
