@@ -5,7 +5,7 @@ description: Guides creation of new AI coding skills for Cursor, Claude, and Cod
 
 # Creating Skills
 
-Guides creation of new skills per REFACTORED_SKILLS.md principles and [Claude skill structure](https://docs.claude.com/en/docs/agents-and-tools/agent-skills/best-practices#skill-structure).
+Guides creation of new skills per [Claude skill](https://docs.claude.com/en/docs/agents-and-tools/agent-skills/best-practices).
 
 ## Required structure
 
@@ -42,7 +42,7 @@ Skill description + one-line summary per sub-skill. Optional 1–2 comment lines
 - Metadata (name, description) — always loaded
 - SKILL.md body — loaded when triggered
 - reference.md, examples.md — loaded as needed
-- Keep SKILL.md under 500 lines
+- Keep SKILL.md under 300 lines — create additional small skills when it would exceed.
 
 ### Degrees of freedom
 
@@ -90,6 +90,6 @@ description: Does X. Use when [trigger].
 
 For architecture-related skills, align with arc42 sections (1–12): goals, constraints, context, solution strategy, building blocks, runtime, deployment, crosscutting, decisions, quality, risks, glossary.
 
-## Self-improvement (optional)
+## Self-improvement
 
-After creating a skill, consider: Did execution or user feedback suggest changes to this meta-skill or the new skill? Capture refinements for iteration.
+After using a skill that returns an error, or gets significant user feedback, consider: Did execution or user feedback suggest changes to the meta-skill or the new skill? Capture refinements for iteration.

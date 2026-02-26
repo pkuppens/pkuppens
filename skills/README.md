@@ -6,7 +6,7 @@ Shared skills for Cursor, Claude, and Codex. Committed to this repo; referenced 
 
 Skills are markdown files (`SKILL.md`) in skill-specific directories. Each skill has a `name` and `description` in YAML frontmatter; IDEs discover skills automatically when the directory is linked.
 
-Full skill tree: [REFACTORED_SKILLS.md](REFACTORED_SKILLS.md)
+Full skill tree: [SKILL_TREE.md](SKILL_TREE.md)
 
 ## IDE Setup
 
@@ -52,7 +52,7 @@ Cursor also loads from `.claude/skills/` and `~/.claude/skills/`.
 skills/
 ├── README.md           # This file
 ├── CLAUDE.md           # Agent instructions
-├── REFACTORED_SKILLS.md
+├── SKILL_TREE.md
 ├── _meta/              # Meta-skills
 │   └── skill-creation/
 │       └── SKILL.md

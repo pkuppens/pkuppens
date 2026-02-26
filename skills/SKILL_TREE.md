@@ -1,8 +1,10 @@
-# Refactored Skills — Complete Software Engineering Process
+# Skill Tree — Complete Software Engineering Process
 
 Personal skills for AI-assisted coding, aligned with arc42 and the full software lifecycle.
 
 **Principles:** Single responsibility per skill; clear name + one-liner (+ optional 1–2 comment lines); recursive sub-skills up to 4–5 levels.
+
+**Creating skills:** Use [skill-creation](_meta/skill-creation/SKILL.md) when adding or extending skills from this tree.
 
 ---
 
@@ -71,6 +73,8 @@ Validates requirements for clarity, testability, consistency.
 
 ## Level 1: Architecture (arc42-aligned)
 
+**arc42 conventions** (from [Beyond Autocomplete](https://www.beyondautocomplete.nl/how-i-use-claude-code-to-keep-my-architecture-decisions-on-track/)): One markdown file per section in `docs/architecture/` (01–12); `adr/` subdir for ADRs. Fill Section 1 (Introduction and Goals) first — it gives AI project context. Record ADRs as you go; use them to populate §4 (Solution Strategy) and other sections.
+
 ### 3. architecture
 Documents and maintains system and software architecture per arc42; consults existing design.
 
@@ -80,7 +84,7 @@ Consults current architecture docs, ADRs, and codebase to identify components/mo
 
 #### 3.2 architecture-solution-strategy
 Documents core ideas, fundamental decisions, and solution approaches (arc42 §4).
-// Strategy before structure.
+// Strategy before structure. Can summarize from existing ADRs.
 
 #### 3.3 architecture-building-blocks
 Documents static decomposition: hierarchy, black-box/white-box of building blocks (arc42 §5).
@@ -100,7 +104,7 @@ Documents crosscutting concepts: recurring patterns, domain model, shared rules 
 
 #### 3.7 architecture-decisions
 Authors or updates Architecture Decision Records (arc42 §9).
-// ADR format: context, decision, consequences.
+// Store in docs/architecture/adr/ as 001-title.md; update TOC in 09-decisions.md. Format: context, options considered, decision, consequences.
 
 #### 3.8 architecture-quality
 Documents quality tree and quality scenarios; maps to requirements (arc42 §10).
