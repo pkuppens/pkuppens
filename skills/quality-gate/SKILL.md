@@ -25,7 +25,7 @@ uv run ruff check .
 uv run ruff format --check .
 
 # 3. Type check (if configured)
-uv run pyright   # or: uv run mypy
+uv run ty        # Astral type checker; or: uv run pyright
 
 # 4. Tests
 uv run pytest
@@ -42,8 +42,8 @@ When these sub-skills are created, invoke them for per-check focus. Until then, 
 |-----------|------|------|
 | quality-gate-lint | ruff check | Every commit |
 | quality-gate-format | ruff format | Every commit |
-| quality-gate-type | pyright / mypy | Before PR |
-| quality-gate-security | bandit / npm audit | Before PR / CI |
+| quality-gate-type | ty / pyright | Before PR |
+| quality-gate-security | ruff check (S rules) / bandit / npm audit | Before PR / CI |
 
 ## Fix before commit — not after
 
@@ -55,7 +55,7 @@ When these sub-skills are created, invoke them for per-check focus. Until then, 
 
 Check the repo's `pyproject.toml` for:
 - `[tool.ruff]` — line length, selected rules
-- `[tool.pyright]` or `[tool.mypy]` — type checking configuration
+- `[tool.ty]` or `[tool.pyright]` — type checking configuration
 - `.pre-commit-config.yaml` — active hooks
 
 ## Output
@@ -67,7 +67,7 @@ Report pass/fail per check:
 
 - [x] ruff check — clean
 - [x] ruff format --check — clean
-- [ ] pyright — 2 errors (see below)
+- [ ] ty — 2 errors (see below)
 - [x] pytest — 42 passed, 0 failed
 ```
 
