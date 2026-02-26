@@ -16,15 +16,18 @@ Reference this `skills/` folder from your IDE. Do not duplicate skills.
 
 **From a project that uses pkuppens as parent:**
 ```bash
-# Project-level (e.g. on_prem_rag, babblr)
+# Project-level (e.g. on_prem_rag, babblr) — create parent dir if missing
+mkdir -p .cursor
 ln -s ../../pkuppens/skills .cursor/skills
 # or
+mkdir -p .claude
 ln -s ../../pkuppens/skills .claude/skills
 ```
 
 **User-level (all projects):**
 ```bash
-# Clone pkuppens somewhere, then:
+# Clone pkuppens somewhere; create parent dirs if missing
+mkdir -p ~/.cursor ~/.claude ~/.codex
 ln -s /path/to/pkuppens/skills ~/.cursor/skills
 ln -s /path/to/pkuppens/skills ~/.claude/skills
 ln -s /path/to/pkuppens/skills ~/.codex/skills
