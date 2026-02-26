@@ -10,7 +10,7 @@ Full skill tree: [SKILL_TREE.md](SKILL_TREE.md)
 
 ## IDE Setup
 
-Reference this `skills/` folder from your IDE. Do not duplicate skills.
+Reference this `skills/` folder from your IDE. Do not duplicate skills. Symlinks below work for **Cursor**, **Claude**, and **Codex**.
 
 ### Option A: Symlinks (recommended)
 
