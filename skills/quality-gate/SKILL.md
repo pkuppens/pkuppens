@@ -36,12 +36,14 @@ pre-commit run --all-files
 
 ## Per-check sub-skills
 
+When these sub-skills are created, invoke them for per-check focus. Until then, run the commands in Standard checks above.
+
 | Sub-skill | Tool | When |
 |-----------|------|------|
-| [quality-gate-lint](quality-gate-lint/SKILL.md) | ruff check | Every commit |
-| [quality-gate-format](quality-gate-format/SKILL.md) | ruff format | Every commit |
-| [quality-gate-type](quality-gate-type/SKILL.md) | pyright / mypy | Before PR |
-| [quality-gate-security](quality-gate-security/SKILL.md) | bandit / npm audit | Before PR / CI |
+| quality-gate-lint | ruff check | Every commit |
+| quality-gate-format | ruff format | Every commit |
+| quality-gate-type | pyright / mypy | Before PR |
+| quality-gate-security | bandit / npm audit | Before PR / CI |
 
 ## Fix before commit — not after
 
