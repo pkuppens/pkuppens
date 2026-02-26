@@ -19,3 +19,6 @@ Gemfile.lock
 
 # Scratch files (planning, drafts) — never commit
 tmp/
+
+# Local Claude/IDE settings (per-machine, not for version control)
+.claude/settings.local.json
