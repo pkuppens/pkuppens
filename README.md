@@ -1,25 +1,16 @@
 ## Hi there, I'm Pieter Kuppens
 
-I'm an experienced software, data, and AI professional passionate about solving innovative and complex challenges.
+Experienced software, data, and AI professional. From ASML metrology and Philips Healthcare to CART-Tech and Nemo Healthcare—20+ years across high-tech, healthcare, and finance.
 
-My career spans large Dutch organizations like ASML, Philips, and ABN AMRO, as well as innovative startups like
-CART-Tech and Nemo Healthcare.
-I've worked in healthcare, finance, and high-tech industries, building impactful solutions that deliver value:
+## AI Coding Skills Library
 
-- Use Deep Learning for cardiac tissue segmentation to assist in pacemaker lead placement
-- Using Artificial Intelligence Anomaly Detection to detect possible fraud in financial transactions
-- 3D computer visualization to assist in ablation interventions
-- Topic and sentiment analysis in Natural Language Processing
-- EUV source positioning in the first ASML EUV Demo machines
-- JIRA Process Automation in Medical Device Development
-- Implement Decision Rules for Medication Prescriptions
-- Integrating maternal blood pressure/saturation measurements with maternal/fetal heart rate data into the hospital systems.
+This repo hosts a unified skills library for Cursor, Claude, and Codex: arc42-aligned workflows from ideation to deployment. See [skills/SKILL_TREE.md](skills/SKILL_TREE.md) for the full index.
 
-## My Current Projects
+## Current Projects
 
 ### 🔒 On-Premise RAG System
 
-Building an on-premise, confidential, and secure RAG (Retrieval-Augmented Generation) system for semantic search on your documents. Designed for organizations that require data privacy and control, this system combines vector embeddings, semantic search, and LLM capabilities while keeping all data on-premises—perfect for healthcare, finance, and legal sectors where data sovereignty is non-negotiable.
+On-premise RAG for semantic search on your documents. Vector embeddings, semantic search, and LLM capabilities—all data stays on-premises. Built for healthcare, finance, and legal where data sovereignty matters.
 
 ![Python](https://img.shields.io/badge/Python-3776AB?style=flat&logo=python&logoColor=white) ![FastAPI](https://img.shields.io/badge/FastAPI-009688?style=flat&logo=fastapi&logoColor=white) ![LangChain](https://img.shields.io/badge/🦜_LangChain-121212?style=flat) ![PostgreSQL](https://img.shields.io/badge/PostgreSQL-4169E1?style=flat&logo=postgresql&logoColor=white)
 
@@ -31,7 +22,7 @@ Building an on-premise, confidential, and secure RAG (Retrieval-Augmented Genera
 
 ### 🗣️ [Babblr: AI Language Learning](https://github.com/pkuppens/babblr)
 
-A modern alternative to traditional language learning apps that prioritizes natural conversation over gamification. Practice speaking with an adaptive AI tutor that provides real-time grammar corrections and vocabulary support. Built with Electron (desktop app), FastAPI backend, and powered by OpenAI Whisper for speech recognition and Anthropic Claude for intelligent tutoring. Supports Spanish, Italian, German, French, and Dutch across CEFR proficiency levels A1-C2.
+Natural conversation over gamification. Adaptive AI tutor with real-time grammar and vocabulary support. Electron, FastAPI, Whisper, Claude. Spanish, Italian, German, French, Dutch—CEFR A1–C2.
 
 ![Python](https://img.shields.io/badge/Python-3776AB?style=flat&logo=python&logoColor=white) ![TypeScript](https://img.shields.io/badge/TypeScript-3178C6?style=flat&logo=typescript&logoColor=white) ![FastAPI](https://img.shields.io/badge/FastAPI-009688?style=flat&logo=fastapi&logoColor=white) ![React](https://img.shields.io/badge/React-61DAFB?style=flat&logo=react&logoColor=black) ![Electron](https://img.shields.io/badge/Electron-47848F?style=flat&logo=electron&logoColor=white)
 
@@ -39,22 +30,24 @@ A modern alternative to traditional language learning apps that prioritizes natu
 
 ![Babblr Conversation Screen](docs/screenshots/conversation-screen.svg)
 
-## What You'll Find Here
+## Earlier Career
 
-My GitHub repositories offer a glimpse into my ideas, showcasing small, non-disclosed portfolio notebook pieces from broader projects.
-While these examples represent only a fraction of my expertise, they demonstrate my approach to creating innovative and impactful solutions,
-from an abstract idea to a working proof of concept, though usually not yet the production-quality code.
+Software development at ASML (EUV metrology, source positioning), Philips Healthcare (3D ablation visualization), ABN AMRO (mortgage, security), and Mapscape (GIS/navigation). Recent AI work: Deep Learning for cardiac tissue segmentation at CART-Tech (pacemaker lead placement); migration to AWS for model scalability. JIRA/Confluence workflows for medical device (Nemo Healthcare). AI anomaly detection for financial transactions. Medication decision rules and hospital data integration (Isatis, Nemo).
 
-### `git_util_scripts`
+## Certifications & Training
 
-I also added two utility scripts that help me organize and update my git repos.
+- **AWS Cloud Practitioner**
+- **Microsoft Professional Program in Data Science** (2017–2018)
+- Several AI/ML trainings
+- Ongoing learning via PluralSight
 
 ## Interests
 
-- Building AI and data-driven solutions, with Deep Learning, Large Language Models, Machine Learning, Agentic AI, etc.
-- Exploring innovative ways to solve technical challenges in socially relevant contexts
-- Collaborating on meaningful, high-impact projects, in Healthcare, Finance, Renewable Energy
-- Freelance opportunities near Den Bosch (the Netherlands) or (largely) remote.
+- AI and data: Deep Learning, LLMs, ML, agentic systems
+- Healthcare, finance, high-tech
+- Technical collaboration and continuous improvement
+- Open to freelance assignments near Den Bosch or remote
 
 ---
-Feel free to explore my repositories and connect with me on [LinkedIn](https://www.linkedin.com/in/pieterkuppens/) to discuss how we can work together!
+
+Explore my repositories and connect on [LinkedIn](https://www.linkedin.com/in/pieterkuppens/).
