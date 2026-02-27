@@ -23,7 +23,6 @@ pkuppens/
 │   │   └── SKILL.md
 │   └── <skill-name>/            # One directory per skill (mostly not yet created)
 │       └── SKILL.md
-├── git_util_scripts/            # Batch git helper scripts
 ├── docs/screenshots/            # Assets referenced from README.md
 └── tmp/                         # Gitignored scratch (drafts, planning)
 ```
