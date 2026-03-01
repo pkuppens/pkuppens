@@ -1,10 +1,16 @@
 ## Hi there, I'm Pieter Kuppens
 
-Experienced software, data, and AI professional. From ASML metrology and Philips Healthcare to CART-Tech and Nemo Healthcare—20+ years across high-tech, healthcare, and finance.
+Experienced software, data, and AI professional. One professional, end-to-end capability—architecture, development, testing, deployment, process, and AI automation.
+
+From ASML metrology and Philips Healthcare to CART-Tech and Nemo Healthcare—20+ years across high-tech, healthcare, and finance. [Read the full value proposition.](docs/profile/value_proposition_demo_plan.md)
+
+## Availability
+
+**Open to freelance and employed opportunities**—near Den Bosch, remote, or hybrid. Preference for Healthcare, Finance, Energy, High-Tech.
 
 ## AI Coding Skills Library
 
-This repo hosts a unified skills library for Cursor, Claude, and Codex: arc42-aligned workflows from ideation to deployment. See [skills/SKILL_TREE.md](skills/SKILL_TREE.md) for the full index.
+This repo hosts a unified skills library for Cursor, Claude, and Codex: arc42-aligned workflows from ideation to deployment. Includes agent rules, skills, and workflow definitions. See [skills/SKILL_TREE.md](skills/SKILL_TREE.md) for the full index.
 
 ## Current Projects
 
@@ -34,6 +40,10 @@ Natural conversation over gamification. Adaptive AI tutor with real-time grammar
 
 Software development at ASML (EUV metrology, source positioning), Philips Healthcare (3D ablation visualization), ABN AMRO (mortgage, security), and Mapscape (GIS/navigation). Recent AI work: Deep Learning for cardiac tissue segmentation at CART-Tech (pacemaker lead placement); migration to AWS for model scalability. JIRA/Confluence workflows for medical device (Nemo Healthcare). AI anomaly detection for financial transactions. Medication decision rules and hospital data integration (Isatis, Nemo).
 
+## Education
+
+- **Eindhoven University of Technology** — MSc in Mathematics; PDEng in ICT (Information & Communication)
+
 ## Certifications & Training
 
 - **AWS Cloud Practitioner**
@@ -47,8 +57,12 @@ Software development at ASML (EUV metrology, source positioning), Philips Health
 - (Backend) software engineering in Python on related tasks (AI is 80% software/data engineering anyway)
 - Healthcare, finance, energy, high-tech
 - Technical collaboration and continuous improvement
-- Open to freelance assignments near Den Bosch or remote. Preference for, but not restricted to: Healthcare, Finance, Energy, High-Tech.
+
+## Links
+
+- [Connect on LinkedIn](https://www.linkedin.com/in/pieterkuppens/)
+- [Visit my site](https://www.pieterkuppens.net/)
 
 ---
 
-Explore my repositories and connect on [LinkedIn](https://www.linkedin.com/in/pieterkuppens/).
+*Explore my repositories—and connect on LinkedIn or pieterkuppens.net to discuss opportunities.*
