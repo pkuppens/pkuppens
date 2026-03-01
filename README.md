@@ -39,14 +39,15 @@ Software development at ASML (EUV metrology, source positioning), Philips Health
 - **AWS Cloud Practitioner**
 - **Microsoft Professional Program in Data Science** (2017–2018)
 - Several AI/ML trainings
-- Ongoing learning via PluralSight
+- Ongoing learning via PluralSight, DataCamp, etc.
 
 ## Interests
 
 - AI and data: Deep Learning, LLMs, ML, agentic systems
-- Healthcare, finance, high-tech
+- (Backend) software engineering in Python on related tasks (AI is 80% software/data engineering anyway)
+- Healthcare, finance, energy, high-tech
 - Technical collaboration and continuous improvement
-- Open to freelance assignments near Den Bosch or remote
+- Open to freelance assignments near Den Bosch or remote. Preference for, but not restricted to: Healthcare, Finance, Energy, High-Tech.
 
 ---
 
