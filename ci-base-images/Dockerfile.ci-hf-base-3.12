@@ -1,0 +1,21 @@
+# ci-hf-base-3.12: ci-base-3.12 + HuggingFace env + embedding models.
+# For RAG, embedding tests (e.g. on_prem_rag).
+# Sibling to ci-whisper-3.12; tokenization for text differs from STT.
+FROM ghcr.io/pkuppens/pkuppens/ci-base-3.12:latest
+
+WORKDIR /workspace
+
+ENV HF_HOME=/opt/hf_cache
+ENV TRANSFORMERS_CACHE=/opt/hf_cache/hub
+ENV SENTENCE_TRANSFORMERS_HOME=/opt/hf_cache/sentence_transformers
+ENV HF_HUB_DISABLE_PROGRESS_BARS=1
+
+# Install HuggingFace deps (sentence-transformers pulls torch, transformers)
+RUN uv pip install --system \
+    sentence-transformers>=2.2.0 \
+    transformers>=4.37.0 \
+    torch>=2.2.0
+
+# Pre-download CI models (matching setup_embedding_models.py --ci)
+COPY ci-base-images/download_hf_ci_models.py /tmp/download_hf_ci_models.py
+RUN python /tmp/download_hf_ci_models.py && rm /tmp/download_hf_ci_models.py
