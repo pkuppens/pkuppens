@@ -26,21 +26,50 @@ Authors or updates Architecture Decision Records (ADRs). Aligns with arc42 §9: 
 Create `docs/architecture/adr/NNN-title.md`:
 
 ```markdown
-# ADR-NNN: [Title]
+# ADR-NNN: [Decision Title]
 
-## Context
-[What situation or problem motivates this decision?]
+**Status**: Proposed | Accepted | Deprecated | Superseded
+**Date**: YYYY-MM-DD
+**Deciders**: [Who made this decision]
+**Related**: [Links to components, abstractions, other ADRs]
 
-## Decision
-[The decision in one sentence.]
+## Context and Problem Statement
 
-## Options considered
-- **Option A**: [pros/cons]
-- **Option B**: [pros/cons]
+What is the issue we're addressing? What factors do we need to consider?
 
-## Consequences
-- [Positive consequence]
-- [Negative consequence or trade-off]
+## Decision Drivers
+
+- Driver 1 (business/technical requirement)
+- Driver 2 (constraint or quality attribute)
+
+## Considered Options
+
+1. Option A — [Brief description]
+2. Option B — [Brief description]
+
+## Decision Outcome
+
+**Chosen option**: "Option A"
+
+**Rationale**: Why we chose this over alternatives.
+
+### Positive Consequences
+
+- Pro 1
+
+### Negative Consequences
+
+- Con 1 (and mitigation)
+
+## Pros and Cons of the Options
+
+### Option A
+- ✅ Pro 1
+- ❌ Con 1
+
+### Option B
+- ✅ Pro 1
+- ❌ Con 1
 ```
 
 Update `docs/architecture/09-decisions.md`:
@@ -48,6 +77,11 @@ Update `docs/architecture/09-decisions.md`:
 ```markdown
 - [ADR-NNN: Title](adr/NNN-title.md)
 ```
+
+**Rules:**
+- ADRs are immutable once accepted — supersede with a new ADR, don't edit
+- Numbering: sequential `001-title.md`; check existing ADRs for next number
+- After creating: update affected component/abstraction docs to reference this ADR; add to `00-system-architecture.md` ADR index
 
 ## Integration
 
