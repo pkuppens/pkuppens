@@ -55,6 +55,34 @@ The [architecture](architecture/SKILL.md) orchestrator routes by mode:
 - Sub-skills within a mode run sequentially (e.g. solution-strategy before building-blocks).
 - architecture-consult can run in parallel with design-consult when both placement and design are needed.
 
+## Deployment flow
+
+```
+quality-gate → integration-commit → integration-pr → integration-merge
+  → deployment-build → deployment-release → operations-monitoring
+```
+
+- `deployment-build` produces the artefact (image, wheel, bundle) with digest/tag.
+- `deployment-release` deploys to staging, runs smoke tests, promotes to production or rolls back.
+- `operations-monitoring` runs after release to verify stability; escalates to `operations-incident` on anomaly.
+
+### Rollback path
+
+If `deployment-release` fails or `operations-monitoring` detects regression:
+```
+operations-incident → (rollback via deployment-release) → operations-monitoring (verify)
+  → maintenance-bug-report → issue-workflow (create fix issue)
+```
+
+## Skill V&V flow
+
+```
+skill-benchmark: define task → run baseline → run with skill → score → report
+```
+
+Use `skill-benchmark` after creating or modifying any skill to generate evidence of improvement.
+Store results in `tmp/skills/benchmark/<skill-name>/`.
+
 ## Trigger conditions
 
 | When | Trigger |
@@ -65,8 +93,14 @@ The [architecture](architecture/SKILL.md) orchestrator routes by mode:
 | Before adding code | architecture-consult, design-consult |
 | After design | implementation-construction |
 | Before commit | quality-gate |
+| Before commit (OpenClaw) | quality-gate + openclaw-security (security audit) |
 | After quality-gate | integration-commit |
 | After merge | maintenance-cleanup (optional) |
+| After merge (release) | deployment-build → deployment-release |
+| Post-deploy | operations-monitoring |
+| Monitoring anomaly | operations-incident |
+| Quarterly / pre-audit | operations-audit |
+| New or revised skill | skill-benchmark |
 
 ## Skill references
 
