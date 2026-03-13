@@ -6,8 +6,13 @@ name: Build CI Base Images
 
 on:
   schedule:
-    # First day of each month at 00:00 UTC
-    - cron: "0 0 1 * *"
+    # First Saturday night of each month at 00:00 UTC
+    - cron: "0 0 1-7 * 6"
+  push:
+    branches: [main]
+    paths:
+      - "ci-base-images/**"
+      - ".github/workflows/build-ci-base-images.yml"
   workflow_dispatch: {}
 
 concurrency:
