@@ -3,6 +3,9 @@
 # See docs/ci-base-images.md for usage and version matrix.
 FROM python:3.12-slim
 
+LABEL org.opencontainers.image.documentation="https://github.com/pkuppens/pkuppens/blob/main/ci-base-images/README.md"
+LABEL org.opencontainers.image.source="https://github.com/pkuppens/pkuppens"
+
 WORKDIR /workspace
 
 # Install uv

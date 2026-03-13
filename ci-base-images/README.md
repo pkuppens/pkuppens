@@ -2,6 +2,8 @@
 
 Shared Docker base images for faster CI across pkuppens projects. Pushed to `ghcr.io/pkuppens/pkuppens/`.
 
+> **GHCR package README:** The package page on ghcr.io inherits the README from its connected repository. To show a purpose-focused README instead of the profile README: (1) create repo `pkuppens/ci-base-images`, (2) use `README.ghcr.md` as its root `README.md`, (3) connect each container package to that repo (Package settings → Connect repository).
+
 ## Images
 
 | Image | Base | Contents | Typical Use |

@@ -3,6 +3,9 @@
 # Sibling to ci-whisper-3.12; tokenization for text differs from STT.
 FROM ghcr.io/pkuppens/pkuppens/ci-base-3.12:latest
 
+LABEL org.opencontainers.image.documentation="https://github.com/pkuppens/pkuppens/blob/main/ci-base-images/README.md"
+LABEL org.opencontainers.image.source="https://github.com/pkuppens/pkuppens"
+
 WORKDIR /workspace
 
 ENV HF_HOME=/opt/hf_cache
