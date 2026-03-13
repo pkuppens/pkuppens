@@ -1,0 +1,21 @@
+# ci-base-3.12: minimal CI base with Python 3.12, uv, and lint/security tooling.
+# Used as base for ci-hf-base-3.12 and ci-whisper-3.12 (sibling branches).
+# See docs/ci-base-images.md for usage and version matrix.
+FROM python:3.12-slim
+
+WORKDIR /workspace
+
+# Install uv
+RUN pip install --no-cache-dir uv
+
+# Install minimal CI tooling: pytest, ruff, bandit, safety, pytest-cov
+RUN uv pip install --system \
+    pytest>=7.4.0 \
+    pytest-cov>=4.0.0 \
+    ruff>=0.11.0 \
+    bandit>=1.7.0 \
+    safety>=2.0.0
+
+# Default working directory for jobs that use this image
+ENV PYTHONUNBUFFERED=1
+ENV PYTHONDONTWRITEBYTECODE=1
