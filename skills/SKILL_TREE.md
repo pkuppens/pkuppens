@@ -225,6 +225,10 @@ Refines validation with implementation-specific details when code shape is known
 #### 8.3 validation-run
 Executes validation checklist; records evidence.
 
+#### 8.4 skill-benchmark
+Evaluates skill effectiveness by comparing agent output on a task with and without the skill; produces a scored comparison table.
+// Use to validate new or revised skills; create benchmark evidence for PRs.
+
 ---
 
 ### 9. test
@@ -258,6 +262,9 @@ Runs type checker (e.g. pyright, tsc).
 
 #### 10.4 quality-gate-security
 Runs security scan (e.g. bandit, npm audit).
+
+#### 10.5 openclaw-security
+Enforces OpenClaw security constraints; mandates `openclaw security audit --deep` and `--fix` before every code-change PR. Use for OpenClaw projects only.
 
 ---
 
@@ -356,7 +363,7 @@ Maintains audit trail: decisions, changes, evidence.
 | 7 | implementation | Construction | 7.1–7.3 |
 | 8 | validation | Validation | 8.1–8.3 |
 | 9 | test | Testing | 9.1–9.3 |
-| 10 | quality-gate | Quality | 10.1–10.4 |
+| 10 | quality-gate | Quality | 10.1–10.5 |
 | 11 | integration | Integration | 11.1–11.3 |
 | 12 | deployment | Deployment | 12.1, 12.2 |
 | 13 | operations | Production, monitoring, audit | 13.1–13.3 |
@@ -364,3 +371,21 @@ Maintains audit trail: decisions, changes, evidence.
 | 15 | governance | Progress, post-mortem, audit trail | 15.1–15.3 |
 
 **Total:** 1 meta-skill + 16 lifecycle skills, 60+ sub-skills. Nesting: up to 4–5 levels where needed (e.g. 5.4.1, 5.4.2).
+
+## Implementation Status
+
+| Skill | Status |
+|-------|--------|
+| skill-creation | ✅ implemented |
+| issue-workflow (5.x) | ✅ implemented |
+| architecture (3.x) | ✅ implemented (partial; sir-read-a-lot merge pending) |
+| design (4.1) | ✅ implemented |
+| implementation (7.1) | ✅ implemented |
+| validation (8.1) | ✅ implemented |
+| quality-gate (10.x) | ✅ implemented |
+| openclaw-security (10.5) | ✅ implemented |
+| integration (11.x) | ✅ implemented |
+| deployment (12.1, 12.2) | ✅ implemented |
+| operations (13.1–13.3) | ✅ implemented |
+| skill-benchmark (8.4) | ✅ implemented |
+| ideation, requirements, design (4.2–4.4), plan, test, validation (8.2–8.3), maintenance, governance | 🔲 stubs / not yet implemented |

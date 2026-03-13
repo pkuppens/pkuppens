@@ -12,6 +12,10 @@ Creates a pull request with proper linkage to the issue and a structured descrip
 - After integration-commit and push
 - When work is ready for review
 
+## Prerequisites
+
+For OpenClaw projects: [openclaw-security](../../openclaw-security/SKILL.md) must have passed (quality-gate includes it). Do not open PR until `openclaw security audit --deep` and `openclaw security audit --fix` succeed.
+
 ## Instructions
 
 1. Push branch: `git push -u origin <branch>`.

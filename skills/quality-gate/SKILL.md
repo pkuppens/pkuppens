@@ -51,6 +51,17 @@ When these sub-skills are created, invoke them for per-check focus. Until then, 
 - If a pre-commit hook blocks a commit, investigate the root cause — do not bypass.
 - If a check is not configured for this repo, skip it and note the gap.
 
+## OpenClaw projects
+
+When the repo is an OpenClaw project (openclaw config, gateway, or agent code), run [openclaw-security](../openclaw-security/SKILL.md) as a mandatory check:
+
+```bash
+openclaw security audit --deep
+openclaw security audit --fix
+```
+
+Both must pass before integration-commit. Report in Quality Gate Results.
+
 ## Repo-specific toolchain
 
 Check the repo's `pyproject.toml` for:
