@@ -46,6 +46,10 @@ Maps where new code fits within existing components, interfaces, and data flows.
 - [Convention from existing code]
 ```
 
+## User flow documentation
+
+When documenting *user journeys* (UX perspective: clicks, screens, interactions), create `docs/architecture/04-user-flows.md`. Document: user goal; step-by-step journey; screens/routes; frontend components; validation; error states; link to [architecture-runtime](../../architecture/architecture-runtime/SKILL.md) for technical flows. User flow = what user sees/does; runtime flow = technical execution path.
+
 ## Integration
 
 - Follows [architecture-consult](../../architecture/architecture-consult/SKILL.md).

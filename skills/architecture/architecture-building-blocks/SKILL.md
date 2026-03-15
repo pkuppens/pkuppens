@@ -41,8 +41,17 @@ Write or append to `docs/architecture/05-building-blocks.md`:
 [Inner structure: sub-blocks or modules]
 ```
 
+## Component documentation (retrofitting)
+
+When documenting *existing* components (from architecture-document-existing scan), create `docs/architecture/components/<name>.md` with: Purpose & responsibilities; Public interfaces (API, events, signatures); Dependencies; Data (schemas, tables); Runtime interactions; Errors/retries; Tests; Observability; Links to abstractions and ADRs. Component = concrete implementation (e.g. `WhisperService`); abstraction = conceptual boundary (e.g. "Transcription Provider").
+
+## Abstraction documentation (retrofitting)
+
+When documenting *existing* abstractions, create `docs/architecture/abstractions/<name>.md` with: Intent and scope; Contract (interfaces, invariants); Allowed implementations; Maturity state (Concrete/Abstract/Mixed/Missing/Proposed); Anti-corruption rules; Links to components. Prefer "protocol + vendor adapter" pattern.
+
 ## Integration
 
 - Run after [architecture-solution-strategy](../architecture-solution-strategy/SKILL.md) in Initial mode.
+- Component/abstraction docs: used when [architecture-document-existing](../architecture-document-existing/SKILL.md) delegates.
 - Informs [architecture-consult](../architecture-consult/SKILL.md) for placement.
 - Parent: [architecture](../SKILL.md) orchestrator.

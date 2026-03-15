@@ -65,16 +65,22 @@ Create or update:
 | `src/frontend/` | [inferred from structure] | High/Medium/Low |
 ```
 
-Open issues format:
+Open issues format (use in `99-open-issues.md`):
 ```markdown
 ## [Issue Title]
 **Context**: What we know
 **Question**: What we need to decide
-**Options**: 1. A (pros/cons)  2. B (pros/cons)
+**Options**:
+1. Option A (pros/cons)
+2. Option B (pros/cons)
+3. Option C (pros/cons)
+**Recommendation**: [if any]
 **Decision**: [when resolved, link to ADR]
 ```
 
-**Initial baseline guidance:** Produce a "good enough" baseline — 1–2 paragraphs per component initially. Focus on getting structure right; details can evolve. An incomplete baseline today is more useful than a perfect baseline never written.
+**Response structure:** Return results as: (1) Inferred project purpose (Facts/Assumptions/Unknowns), (2) Component inventory with delegation list, (3) Abstraction inventory, (4) Current baseline summary, (5) Drift/risks and Open Issue links, (6) Generated/updated docs, (7) Migration programme summary if needed, (8) Open issues summary.
+
+**Initial baseline guidance:** Produce a "good enough" baseline — 1–2 paragraphs per component initially. Focus on getting structure right; details can evolve. Delegate to [architecture-building-blocks](../architecture-building-blocks/SKILL.md) for component/abstraction details, [architecture-runtime](../architecture-runtime/SKILL.md) for flows, [architecture-decisions](../architecture-decisions/SKILL.md) for ADRs.
 
 ## Integration
 

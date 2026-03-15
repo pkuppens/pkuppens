@@ -66,18 +66,12 @@ Output follows the sub-skill(s) invoked. Orchestrator output summarizes mode and
 - **Plan / Ask:** Invoked when planning a new system, asking about ADRs, or scoping architectural changes.
 - **COOPERATION.md:** See architecture flows for when to trigger and how sub-skills compose.
 
-## Related skills (pending merge — tracked in #28)
+## Additional sub-skills
 
-The following richer skills exist in `sir-read-a-lot/.claude/skills/` and are pending integration:
+| Sub-skill | When |
+|-----------|------|
+| [architecture-runtime](architecture-runtime/SKILL.md) | Document technical execution paths, sequences |
+| [architecture-crosscutting](architecture-crosscutting/SKILL.md) | Define dependency rules, layer boundaries, architecture tests |
+| [architecture-glossary](architecture-glossary/SKILL.md) | Maintain ubiquitous language, resolve terminology |
 
-| sir-read-a-lot skill | Adds to |
-|---------------------|---------|
-| `arch-abstraction` | Documents abstraction layers, contracts, maturity state, allowed implementations |
-| `arch-rules` | Defines enforceable dependency rules and proposes architecture tests |
-| `arch-refactor` | Plans AMI (Architecture Migration Increment) with seams-first strategy and rollback |
-| `arch-migrate` | Manages AMI program: `98-migration-plan.md` + `97-migration-log.md` |
-| `arch-definition` | Manages ubiquitous language (DDD glossary), synonym groups, validation |
-| `arch-runtime-flow` | Documents technical execution paths with sequence diagrams |
-| `arch-user-flow` | Documents user journeys through UI |
-
-Until merged, use these skills directly from `sir-read-a-lot/.claude/skills/` for the listed capabilities.
+These can be invoked from architecture-document-existing during retrofitting, or directly when needed.
