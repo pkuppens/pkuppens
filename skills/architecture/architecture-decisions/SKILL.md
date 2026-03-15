@@ -81,7 +81,12 @@ Update `docs/architecture/09-decisions.md`:
 **Rules:**
 - ADRs are immutable once accepted — supersede with a new ADR, don't edit
 - Numbering: sequential `001-title.md`; check existing ADRs for next number
-- After creating: update affected component/abstraction docs to reference this ADR; add to `00-system-architecture.md` ADR index
+- After creating: update affected component/abstraction docs; add to `00-system-architecture.md` ADR index
+- Status values: Proposed | Accepted | Deprecated | Superseded
+
+## Migration programme (AMIs)
+
+For incremental refactors, maintain `docs/architecture/98-migration-plan.md` (planned/in-progress) and `97-migration-log.md` (completed). Each AMI: intent, scope, seams first, compatibility strategy (feature flag/adapter/parallel run), tests, verification, rollback plan. Prioritise by risk, dependency order, business value. See [architecture-risks-debt](../architecture-risks-debt/SKILL.md) for tech debt.
 
 ## Integration
 

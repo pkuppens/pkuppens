@@ -89,16 +89,16 @@ Audit of 82+ skill files across workspace locations. Canonical set: `pkuppens/sk
 
 | Skill dir | Canonical equivalent | Action |
 |-----------|----------------------|--------|
-| arch-scan | architecture-document-existing | Merge (#28) |
-| arch-adr | architecture-decisions | Merge (#28) |
-| arch-component | architecture-building-blocks | Merge (#28) |
-| arch-abstraction | architecture-building-blocks | Merge (#28) |
-| arch-runtime-flow | architecture (3.4 runtime) | Merge (#28) |
-| arch-user-flow | design-consult | Merge (#28) |
-| arch-refactor | implementation-refactor | Cross-ref (#28) |
-| arch-rules | architecture-crosscutting | Merge (#28) |
-| arch-migrate | architecture-decisions | Merge (#28) |
-| arch-definition | architecture-glossary | Merge (#28) |
+| arch-scan | architecture-document-existing | ✅ Merged (#28) |
+| arch-adr | architecture-decisions | ✅ Merged (#28) |
+| arch-component | architecture-building-blocks | ✅ Merged (#28) |
+| arch-abstraction | architecture-building-blocks | ✅ Merged (#28) |
+| arch-runtime-flow | architecture-runtime (new) | ✅ Merged (#28) |
+| arch-user-flow | design-consult | ✅ Merged (#28) |
+| arch-refactor | architecture-decisions (AMI) | ✅ Cross-ref (#28) |
+| arch-rules | architecture-crosscutting (new) | ✅ Merged (#28) |
+| arch-migrate | architecture-decisions | ✅ Merged (#28) |
+| arch-definition | architecture-glossary (new) | ✅ Merged (#28) |
 
 ### 1.5 babblr
 

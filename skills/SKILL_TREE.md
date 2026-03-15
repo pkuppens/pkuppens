@@ -398,7 +398,7 @@ Creates new Mojo or MAX projects; initializes Pixi or UV for Mojo/MAX.
 | Skill | Status |
 | skill-creation | ✅ implemented |
 | issue-workflow (5.x) | ✅ implemented |
-| architecture (3.x) | ✅ implemented (partial; sir-read-a-lot merge pending) |
+| architecture (3.x) | ✅ implemented (#28: sir-read-a-lot arch skills merged) |
 | design (4.1) | ✅ implemented |
 | implementation (7.1) | ✅ implemented |
 | validation (8.1) | ✅ implemented |
