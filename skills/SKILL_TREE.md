@@ -393,8 +393,9 @@ Creates new Mojo or MAX projects; initializes Pixi or UV for Mojo/MAX.
 
 ## Implementation Status
 
+*Post-audit #27: 37 SKILL.md files in pkuppens/skills. See [audit-results.md](../docs/skills/audit-results.md) for full inventory and mapping.*
+
 | Skill | Status |
-|-------|--------|
 | skill-creation | ✅ implemented |
 | issue-workflow (5.x) | ✅ implemented |
 | architecture (3.x) | ✅ implemented (partial; sir-read-a-lot merge pending) |
