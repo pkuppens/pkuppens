@@ -348,6 +348,25 @@ Maintains audit trail: decisions, changes, evidence.
 
 ---
 
+## Language & Framework Skills
+
+### find-skills
+Helps users discover and install agent skills when they ask "how do I do X", "find a skill for X", or express interest in extending capabilities.
+
+### mojo-syntax
+Mojo syntax and conventions. Use when writing Mojo code, translating to Mojo, or generating Mojo. Combines with mojo-gpu-fundamentals and mojo-python-interop as needed.
+
+### mojo-gpu-fundamentals
+GPU programming basics in Mojo. Use with mojo-syntax when targeting NVIDIA, AMD, or Apple silicon GPUs.
+
+### mojo-python-interop
+Mojo–Python interoperability: calling Python from Mojo, exposing Mojo to Python, type conversion. Use with mojo-syntax when integrating with Python libraries.
+
+### new-modular-project
+Creates new Mojo or MAX projects; initializes Pixi or UV for Mojo/MAX.
+
+---
+
 ## Summary: Skill Tree Overview
 
 | # | Skill | arc42 / Lifecycle | Sub-skills |
@@ -388,4 +407,5 @@ Maintains audit trail: decisions, changes, evidence.
 | deployment (12.1, 12.2) | ✅ implemented |
 | operations (13.1–13.3) | ✅ implemented |
 | skill-benchmark (8.4) | ✅ implemented |
+| find-skills, mojo-syntax, mojo-gpu-fundamentals, mojo-python-interop, new-modular-project | ✅ implemented |
 | ideation, requirements, design (4.2–4.4), plan, test, validation (8.2–8.3), maintenance, governance | 🔲 stubs / not yet implemented |
