@@ -1,6 +1,6 @@
 ---
 name: deployment
-description: Orchestrates deployment to target environment; runs build and release checks. Use when deploying artefacts to staging or production. Sub-skills (12.1, 12.2) tracked for implementation.
+description: Orchestrates deployment to target environment; runs build and release checks. Use when deploying artefacts to staging or production.
 ---
 
 # Deployment
@@ -12,16 +12,20 @@ Builds artefacts and releases to target environments per SKILL_TREE §12.
 - After merge; when releasing to staging or production
 - When running deployment pipeline or build checks
 
-## Sub-skills (to be implemented)
+## Sub-skills
 
-- **deployment-build** (12.1) — Build artefacts (images, bundles); run build pipeline
-- **deployment-release** (12.2) — Release to staging/production; rollback if needed
+| Sub-skill | Use when |
+|-----------|----------|
+| [deployment-build](deployment-build/SKILL.md) (12.1) | Preparing a release; running docker build, uv build, or CI build |
+| [deployment-release](deployment-release/SKILL.md) (12.2) | Deploying validated artefacts; running smoke tests; rollback on failure |
 
-## Placeholder
+## Flow
 
-Until sub-skills exist, run repo-specific build commands (e.g. `uv build`, `docker build`, CI workflow trigger).
+1. Run [deployment-build](deployment-build/SKILL.md) — build artefact, validate, tag
+2. Run [deployment-release](deployment-release/SKILL.md) — deploy to staging → smoke test → promote to production; rollback if needed
+3. Post-deploy: [operations-monitoring](../operations/operations-monitoring/SKILL.md)
 
 ## Integration
 
 - Follows [integration-merge](../integration/integration-merge/SKILL.md).
-- See [COOPERATION.md](../COOPERATION.md).
+- See [COOPERATION.md](../COOPERATION.md) for deployment flow.
