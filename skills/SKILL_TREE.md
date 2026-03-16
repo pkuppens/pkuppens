@@ -409,4 +409,5 @@ Creates new Mojo or MAX projects; initializes Pixi or UV for Mojo/MAX.
 | operations (13.1–13.3) | ✅ implemented |
 | skill-benchmark (8.4) | ✅ implemented |
 | find-skills, mojo-syntax, mojo-gpu-fundamentals, mojo-python-interop, new-modular-project | ✅ implemented |
-| ideation, requirements, design (4.2–4.4), plan, test, validation (8.2–8.3), maintenance, governance | 🔲 stubs / not yet implemented |
+| plan (orchestrator: branch strategy, implementation-workflow through PR/CI) | ✅ implemented |
+| ideation, requirements, design (4.2–4.4), plan 6.1–6.3, test, validation (8.2–8.3), maintenance, governance | 🔲 stubs / not yet implemented |

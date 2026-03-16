@@ -89,6 +89,7 @@ Store results in `tmp/skills/benchmark/<skill-name>/`.
 
 | When | Trigger |
 |------|---------|
+| Creating implementation plan / plan mode | plan (branch strategy, PR/CI workflow) |
 | New feature idea | issue-workflow |
 | New feature idea (architectural) | architecture orchestrator (Initial/Retrofitting/Evolving) |
 | Issue creation or revision | issue-workflow; may invoke architecture before/during purpose-alignment, work-down, acceptance-criteria |
