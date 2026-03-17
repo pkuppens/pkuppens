@@ -189,7 +189,8 @@ Decomposes issue into ordered tasks or subtasks.
 Identifies task dependencies and critical path.
 
 #### 6.3 plan-branch-strategy
-Selects branch naming and base (feature/task/bug/hotfix).
+Selects branch naming and base (feature/task/bug/hotfix); creates the branch before edits.
+// Use at planning time or when the feature-branch hook fires (HOOK:FEATURE_BRANCH_REQUIRED).
 
 ---
 
@@ -409,4 +410,6 @@ Creates new Mojo or MAX projects; initializes Pixi or UV for Mojo/MAX.
 | operations (13.1–13.3) | ✅ implemented |
 | skill-benchmark (8.4) | ✅ implemented |
 | find-skills, mojo-syntax, mojo-gpu-fundamentals, mojo-python-interop, new-modular-project | ✅ implemented |
-| ideation, requirements, design (4.2–4.4), plan, test, validation (8.2–8.3), maintenance, governance | 🔲 stubs / not yet implemented |
+| plan (orchestrator: branch strategy, implementation-workflow through PR/CI) | ✅ implemented |
+| plan-branch-strategy (6.3) | ✅ implemented |
+| ideation, requirements, design (4.2–4.4), plan 6.1–6.2, test, validation (8.2–8.3), maintenance, governance | 🔲 stubs / not yet implemented |

@@ -82,6 +82,20 @@ See `skills/README.md` for symlink commands. Do not duplicate skill files — al
 
 ## Git Workflow
 
-Branch naming: `feature/NNN-short-description` (issue number prefix).
+Branch naming: `feature/NNN-short-description` (issue number prefix). Alternatives: `hotfix/NNN-…`, `chore/…`, `epic/NNN-…` per repo convention.
 Commit messages: `#NNN: type: description` (types: `feat`, `fix`, `docs`, `refactor`, `chore`).
 All changes via PRs — never commit directly to `main`.
+
+## Plan Mode Checklist
+
+Before writing a plan, work through these steps. Skill links are optional reading for detail.
+
+| # | Step | Skill |
+|---|------|-------|
+| 1 | Check for duplicate or already-completed work (issues, PRs, git log) | [issue-check-duplicates](skills/issue-workflow/issue-check-duplicates/SKILL.md) |
+| 2 | Verify purpose alignment with project goals | [issue-purpose-alignment](skills/issue-workflow/issue-purpose-alignment/SKILL.md) |
+| 3 | Identify work already done in code/tests | [issue-work-down](skills/issue-workflow/issue-work-down/SKILL.md) |
+| 4 | Define acceptance criteria before scoping | [issue-acceptance-criteria](skills/issue-workflow/issue-acceptance-criteria/SKILL.md) |
+| 5 | Select and create feature branch (before any edits) | [plan-branch-strategy](skills/plan-branch-strategy/SKILL.md) |
+
+**Extending:** Add a row. Link to an existing skill or create one under `skills/` first.
