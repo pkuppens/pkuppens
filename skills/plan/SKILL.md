@@ -5,7 +5,7 @@ description: Breaks work into tasks, estimates, dependencies, branch strategy. E
 
 # Plan
 
-Decomposes work into tasks, dependencies, and branch strategy per SKILL_TREE §6. **Plans must include the full implementation workflow through PR and CI validation.**
+Decomposes work into tasks, dependencies, and branch strategy per SKILL_TREE §6. **Plans must include validation before implementation, then the full workflow through PR and CI.**
 
 ## When to use
 
@@ -13,26 +13,37 @@ Decomposes work into tasks, dependencies, and branch strategy per SKILL_TREE §6
 - Plan mode (agent produces a plan before implementation)
 - Decomposing work into ordered subtasks
 
-## Implementation workflow (mandatory in plans)
+## Phase 1 — Validate (before any implementation)
+
+Before creating branches or editing code:
+
+1. **Check duplicates** — Was this already implemented (fully or partially)? See [issue-check-duplicates](../issue-workflow/issue-check-duplicates/SKILL.md); search codebase, `git log`, merged PRs.
+2. **Purpose alignment** — Does the issue align with project goals? See [issue-purpose-alignment](../issue-workflow/issue-purpose-alignment/SKILL.md).
+3. **Work-down** — What code, tests, or related issues exist? Which components, modules, or ADRs apply? See [issue-work-down](../issue-workflow/issue-work-down/SKILL.md).
+4. **Acceptance criteria** — Are they clear and testable? See [issue-acceptance-criteria](../issue-workflow/issue-acceptance-criteria/SKILL.md).
+5. **Architecture** — Which components/sub-components exist? Must anything be added or inspected? Consult architecture docs and [architecture-consult](../architecture/architecture-consult/SKILL.md) if placement is unclear.
+
+Stop if the issue is obsolete, duplicate, or not ready. Do not proceed to implementation until validation is complete.
+
+## Phase 2 — Implementation workflow (mandatory in plans)
 
 Every implementation plan **must** include these steps:
 
-1. **Create feature branch** — Branch from `main`; use `feature/NNN-short-description` (issue number prefix).
-2. **Implement** — Execute plan tasks on the feature branch. Never implement directly on `main`.
-3. **Quality gate** — Run repo quality checks before commit: lint, format, tests. See [quality-gate](../quality-gate/SKILL.md).
-4. **Commit and push** — Conventional commit with issue reference. See [integration-commit](../integration/integration-commit/SKILL.md).
-5. **Open PR** — Create PR linking to issue. See [integration-pr](../integration/integration-pr/SKILL.md).
-6. **CI validation** — Plan must include waiting for or verifying GitHub Actions (or equivalent CI) pass before considering the work complete. If the repo has `.github/workflows/`, CI runs on the PR branch.
+1. **Create feature branch and implement** — Branch from `main` before any edits. Use a branch prefix per repo convention: `feature/NNN-…`, `hotfix/NNN-…`, `chore/…`, `epic/…`. See [plan-branch-strategy](../plan-branch-strategy/SKILL.md). Execute all plan tasks on this branch; never implement on `main`.
+2. **Quality gate** — Run repo quality checks before commit: lint, format, tests. See [quality-gate](../quality-gate/SKILL.md).
+3. **Commit and push** — Conventional commit with issue reference. See [integration-commit](../integration/integration-commit/SKILL.md).
+4. **Open PR** — Create PR linking to issue. See [integration-pr](../integration/integration-pr/SKILL.md).
+5. **CI validation** — Plan must include waiting for or verifying CI before considering work complete. Strategies vary by project: e.g. unit tests on PR, integration suite at merge to `main`; or single pipeline on PR. Check `.github/workflows/` or equivalent for the repo’s setup. Confirm N/A for markdown-only repos.
 
-**Summary:** Work from a feature branch; complete build through PR; do not stop until PR is open and CI has validated (or confirmed N/A for markdown-only repos).
+**Summary:** Validate first; work from a feature branch; complete through PR; do not stop until PR is open and CI has validated (or N/A).
 
-## Sub-skills (future)
+## Sub-skills
 
 | Sub-skill | Use when |
 |-----------|----------|
 | plan-tasks (6.1) | Decomposing into ordered subtasks |
 | plan-dependencies (6.2) | Identifying task dependencies and critical path |
-| plan-branch-strategy (6.3) | Selecting branch naming (feature/task/bug/hotfix) |
+| [plan-branch-strategy](../plan-branch-strategy/SKILL.md) (6.3) | Selecting branch prefix and creating feature branch |
 
 ## Integration
 
