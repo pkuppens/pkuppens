@@ -24,6 +24,7 @@ tmp/
 .serena/
 
 # IDE config dirs (.claude, .cursor) — do not commit
+.claude/worktrees/  # Claude Code worktrees (parallel sessions)
 # Why ignored: These dirs typically contain symlinks to skills/ (see skills/README.md).
 # Symlink targets can be machine-specific (absolute paths) or break on Windows without
 # Developer Mode. Git may store symlinks as text files when core.symlinks=false,

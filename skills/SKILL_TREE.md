@@ -366,6 +366,9 @@ Mojo–Python interoperability: calling Python from Mojo, exposing Mojo to Pytho
 ### new-modular-project
 Creates new Mojo or MAX projects; initializes Pixi or UV for Mojo/MAX.
 
+### git-worktrees
+Explains git worktrees and Claude Code usage; guides removal and cleanup when a branch cannot be deleted because of an active worktree. Use when "cannot delete branch used by worktree", cleaning up .claude/worktrees/, or when asked about worktrees.
+
 ---
 
 ## Summary: Skill Tree Overview
@@ -409,7 +412,8 @@ Creates new Mojo or MAX projects; initializes Pixi or UV for Mojo/MAX.
 | deployment (12.1, 12.2) | ✅ implemented |
 | operations (13.1–13.3) | ✅ implemented |
 | skill-benchmark (8.4) | ✅ implemented |
-| find-skills, mojo-syntax, mojo-gpu-fundamentals, mojo-python-interop, new-modular-project | ✅ implemented |
+| find-skills, mojo-syntax, mojo-gpu-fundamentals, mojo-python-interop, new-modular-project, git-worktrees | ✅ implemented |
+| maintenance-cleanup (14.2) | ✅ implemented |
 | plan (orchestrator: branch strategy, implementation-workflow through PR/CI) | ✅ implemented |
 | plan-branch-strategy (6.3) | ✅ implemented |
-| ideation, requirements, design (4.2–4.4), plan 6.1–6.2, test, validation (8.2–8.3), maintenance, governance | 🔲 stubs / not yet implemented |
+| ideation, requirements, design (4.2–4.4), plan 6.1–6.2, test, validation (8.2–8.3), maintenance (14.1, 14.3), governance | 🔲 stubs / not yet implemented |
