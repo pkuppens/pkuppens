@@ -64,3 +64,7 @@ Labels: size:M, type:task — Milestone: (none) — Parent: #N
 ## Integration
 
 Uses `gh` CLI: `gh issue list`, `gh issue view`, `gh issue create`. Ensure `gh auth login` if needed.
+
+### Optional: V-model traceability
+
+For issues in regulated, high-assurance, or “must prove verification” contexts, after acceptance criteria are drafted consider [v-model](../v-model/SKILL.md) so each AC can be tied to validation/tests. For **brownfield** work, see [v-model-retrofit](../v-model/v-model-retrofit/SKILL.md). Execution ownership: [_meta/human-ai-execution.md](../_meta/human-ai-execution.md).

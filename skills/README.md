@@ -6,7 +6,7 @@ Shared skills for Cursor, Claude, and Codex. Committed to this repo; referenced 
 
 Skills are markdown files (`SKILL.md`) in skill-specific directories. Each skill has a `name` and `description` in YAML frontmatter; IDEs discover skills automatically when the directory is linked.
 
-Full skill tree: [SKILL_TREE.md](SKILL_TREE.md). How skills compose: [COOPERATION.md](COOPERATION.md).
+Full skill tree: [SKILL_TREE.md](SKILL_TREE.md). How skills compose: [COOPERATION.md](COOPERATION.md). Optional **V-model** traceability overlay: [v-model/SKILL.md](v-model/SKILL.md).
 
 ## IDE Setup
 
@@ -57,8 +57,9 @@ skills/
 ├── CLAUDE.md           # Agent instructions
 ├── SKILL_TREE.md
 ├── _meta/              # Meta-skills
-│   └── skill-creation/
-│       └── SKILL.md
+│   ├── skill-creation/
+│   │   └── SKILL.md
+│   └── human-ai-execution.md
 ├── ideation/
 ├── requirements/
 ├── architecture/
@@ -73,5 +74,6 @@ skills/
 ├── deployment/
 ├── operations/
 ├── maintenance/
-└── governance/
+├── governance/
+└── v-model/            # V-model overlay (orchestrator + 6 sub-skills)
 ```

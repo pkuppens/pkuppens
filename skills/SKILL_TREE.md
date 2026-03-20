@@ -15,6 +15,7 @@ Personal skills for AI-assisted coding, aligned with arc42 and the full software
 | **Waterfall** | Fixed scope, formal phases, sign-off gates | Sequential: requirements → architecture → design → implementation → validation. Fewer parallel branches. |
 | **Agile** | Iterative, incremental, changing scope | Short cycles; issue-workflow per sprint; backlog grooming; retrospectives. |
 | **TDD** | Test-first, red-green-refactor | validation-draft and test-write before implementation-construction; validation-detail after. |
+| **V-model** | Traceability between artefacts and verification; regulated or high-assurance contexts; teaching pairing | Pair left-side work (requirements → implementation, skills **2–7**) with right-side verification (**8–10**). Use [v-model](v-model/SKILL.md). **Brownfield:** [v-model-retrofit](v-model/v-model-retrofit/SKILL.md). Composes with **Agile** (mini-V per issue) and **TDD**. |
 
 ---
 
@@ -349,6 +350,33 @@ Maintains audit trail: decisions, changes, evidence.
 
 ---
 
+## Process overlay: V-model
+
+Skills in this section are **optional overlays**: they describe how to pair lifecycle artefacts with verification. They do **not** replace or renumber skills **0–15**.
+
+### v-model
+Maps classic V-model stages to this tree; supports **incremental / Agile V** (vertical slices, mini-V per issue) and **brownfield** adoption. Entry point for pairing sub-skills.
+
+#### v-model-mapping
+Maps classic V-model arms to [requirements](requirements/SKILL.md) / [architecture](architecture/SKILL.md) / [design](design/SKILL.md) / [implementation](implementation/SKILL.md) and to [validation](validation/SKILL.md) / [test](test/SKILL.md) / [quality-gate](quality-gate/SKILL.md). Explains many-to-many alignment with arc42.
+
+#### v-model-requirements-acceptance
+Pairs requirements (2.x) and [issue-acceptance-criteria](issue-workflow/issue-acceptance-criteria/SKILL.md) with acceptance-level validation (8.x).
+
+#### v-model-architecture-integration
+Pairs architecture (3.x) with integration- and structure-level verification (8.x, 9.x).
+
+#### v-model-design-verification
+Pairs detailed design (4.x) and [design-consult](design/design-consult/SKILL.md) with component or contract-level checks (8.2, 9.x).
+
+#### v-model-implementation-unit
+Pairs [implementation-construction](implementation/implementation-construction/SKILL.md) (7.x) with unit-level tests (9.1).
+
+#### v-model-retrofit
+**Brownfield:** explicit backfill issues vs **touch-driven** updates during normal changes. Links “what exists” (e.g. architecture Retrofitting mode) to “how we verify it.”
+
+---
+
 ## Language & Framework Skills
 
 ### find-skills
@@ -392,8 +420,9 @@ Explains git worktrees and Claude Code usage; guides removal and cleanup when a 
 | 13 | operations | Production, monitoring, audit | 13.1–13.3 |
 | 14 | maintenance | Bug report, cleanup, debt | 14.1–14.3 |
 | 15 | governance | Progress, post-mortem, audit trail | 15.1–15.3 |
+| — | v-model *(overlay)* | Traceability pairing (optional) | mapping, requirements-acceptance, architecture-integration, design-verification, implementation-unit, retrofit |
 
-**Total:** 1 meta-skill + 16 lifecycle skills, 60+ sub-skills. Nesting: up to 4–5 levels where needed (e.g. 5.4.1, 5.4.2).
+**Total:** 1 meta-skill + 16 lifecycle skills + **V-model overlay** (6 sub-skills), 60+ sub-skills elsewhere. Nesting: up to 4–5 levels where needed (e.g. 5.4.1, 5.4.2).
 
 ## Implementation Status
 
@@ -416,4 +445,6 @@ Explains git worktrees and Claude Code usage; guides removal and cleanup when a 
 | maintenance-cleanup (14.2) | ✅ implemented |
 | plan (orchestrator: branch strategy, implementation-workflow through PR/CI) | ✅ implemented |
 | plan-branch-strategy (6.3) | ✅ implemented |
-| ideation, requirements, design (4.2–4.4), plan 6.1–6.2, test, validation (8.2–8.3), maintenance (14.1, 14.3), governance | 🔲 stubs / not yet implemented |
+| ideation, requirements **sub-skills** (2.1–2.6), design (4.2–4.4), plan 6.1–6.2, test **sub-skills** (9.1–9.3 files), validation (8.2–8.3), maintenance (14.1, 14.3), governance | 🔲 stubs / not yet implemented |
+| requirements / design / implementation / validation / test **orchestrator** SKILL.md (#42) | ✅ minimal stubs (nav + V-model links) |
+| v-model overlay (#42) | ✅ implemented |
