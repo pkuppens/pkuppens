@@ -10,7 +10,7 @@ Optional overlay on skills **2–15**: pair **what we specify and build** with *
 ## When to use
 
 - Need traceability from acceptance criteria or requirements down to tests (or the reverse).
-- Regulated, audited, or high-assurance context where “对应关系” between artefacts and verification matters.
+- Regulated, audited, or high-assurance context where **traceability** between artefacts and verification matters.
 - Teaching or refining workflow in **Agile**: each backlog item can run a **mini-V** (vertical slice).
 - **Brownfield:** code exists without a closed V; see [v-model-retrofit](v-model-retrofit/SKILL.md).
 
