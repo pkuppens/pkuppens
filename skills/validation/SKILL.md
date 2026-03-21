@@ -7,4 +7,4 @@ description: Drafts and executes validation steps; ensures acceptance criteria a
 
 Canonical index: [SKILL_TREE.md](../SKILL_TREE.md) §8.
 
-Implemented: [validation-draft](validation-draft/SKILL.md), [skill-benchmark](skill-benchmark/SKILL.md). V-model links: [v-model-mapping](../v-model/v-model-mapping/SKILL.md).
+Implemented: [validation-draft](validation-draft/SKILL.md), [create-validation](create-validation/SKILL.md), [run-validation](run-validation/SKILL.md), [skill-benchmark](skill-benchmark/SKILL.md). V-model links: [v-model-mapping](../v-model/v-model-mapping/SKILL.md).

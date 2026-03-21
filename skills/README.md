@@ -60,6 +60,11 @@ skills/
 │   ├── skill-creation/
 │   │   └── SKILL.md
 │   └── human-ai-execution.md
+├── api-design/
+├── branch-cleanup-after-pr/
+├── code-quality-design/
+├── code-quality-docs/
+├── code-quality-testing/
 ├── ideation/
 ├── requirements/
 ├── architecture/
@@ -67,7 +72,7 @@ skills/
 ├── issue-workflow/
 ├── plan/
 ├── implementation/
-├── validation/
+├── validation/         # validation-draft, create-validation, run-validation, skill-benchmark
 ├── test/
 ├── quality-gate/
 ├── integration/

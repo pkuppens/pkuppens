@@ -221,11 +221,14 @@ Drafts and executes validation steps; ensures acceptance criteria are met.
 Drafts validation steps, scenarios, or test cases from acceptance criteria (BDD/TDD).
 // Can run before implementation in TDD.
 
+#### 8.1b create-validation
+Creates full implementation validation documents: markdown checklists with exact commands, URLs, and expected outcomes; issue-scratch or committed paths. Complements validation-draft.
+
 #### 8.2 validation-detail
 Refines validation with implementation-specific details when code shape is known.
 
 #### 8.3 validation-run
-Executes validation checklist; records evidence.
+Executes validation checklist; records evidence. Implemented: [run-validation](validation/run-validation/SKILL.md).
 
 #### 8.4 skill-benchmark
 Evaluates skill effectiveness by comparing agent output on a task with and without the skill; produces a scored comparison table.
@@ -412,7 +415,7 @@ Explains git worktrees and Claude Code usage; guides removal and cleanup when a 
 | 5 | issue-workflow | Issue lifecycle | 5.1–5.7 |
 | 6 | plan | Planning | 6.1–6.3 |
 | 7 | implementation | Construction | 7.1–7.3 |
-| 8 | validation | Validation | 8.1–8.3 |
+| 8 | validation | Validation | 8.1–8.4, 8.1b |
 | 9 | test | Testing | 9.1–9.3 |
 | 10 | quality-gate | Quality | 10.1–10.5 |
 | 11 | integration | Integration | 11.1–11.3 |
@@ -435,6 +438,8 @@ Explains git worktrees and Claude Code usage; guides removal and cleanup when a 
 | design (4.1) | ✅ implemented |
 | implementation (7.1) | ✅ implemented |
 | validation (8.1) | ✅ implemented |
+| create-validation (8.1b), run-validation (8.3) | ✅ implemented |
+| api-design, branch-cleanup-after-pr, code-quality-design/docs/testing | ✅ implemented |
 | quality-gate (10.x) | ✅ implemented |
 | openclaw-security (10.5) | ✅ implemented |
 | integration (11.x) | ✅ implemented |
