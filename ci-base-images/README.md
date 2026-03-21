@@ -8,9 +8,9 @@ Shared Docker base images for faster CI across pkuppens projects. Pushed to `ghc
 
 | Image | Base | Contents | Typical Use |
 |-------|------|----------|-------------|
-| **ci-base-3.12** | python:3.12-slim | uv, pytest, ruff, bandit, safety, pytest-cov | Lint, security, minimal tests |
-| **ci-hf-base-3.12** | ci-base-3.12 | + HuggingFace env + all-MiniLM-L6-v2, bge-small-en-v1.5 | RAG, embedding tests |
-| **ci-whisper-3.12** | ci-base-3.12 | + faster-whisper + Whisper base model | STT/voice pipelines |
+| **ci-base-3.12** | python:3.12-slim | `build-essential`, uv, pytest, ruff, bandit, safety, pytest-cov | Lint, security, `uv sync` with native wheels |
+| **ci-hf-base-3.12** | ci-base-3.12 | + HuggingFace env + models; **toolchain purged** after build | RAG, embedding tests |
+| **ci-whisper-3.12** | ci-base-3.12 | + faster-whisper + model; **toolchain purged** after build | STT/voice pipelines |
 
 ci-hf-base and ci-whisper are **siblings** (both FROM ci-base-3.12). Text tokenization differs from speech-to-text; stacking Whisper on HF would mix concerns.
 
@@ -22,6 +22,7 @@ ci-hf-base and ci-whisper are **siblings** (both FROM ci-base-3.12). Text tokeni
 
 ## Considerations
 
+- **Build toolchain policy**: `ci-base-3.12` includes `build-essential` so dependent projects can compile native extensions during `uv sync`. **ci-hf-base-3.12** and **ci-whisper-3.12** run an explicit `apt-get purge` of that toolchain after Python installs and model download, to free space for large caches (HF / Whisper). Rebuild all three images after changing this policy.
 - **Image size**: ci-hf-base ~2GB; ci-whisper ~1.5GB
 - **Rebuild cadence**: Monthly (schedule) or manual (workflow_dispatch)
 - **ghcr.io access**: Requires `packages: write` for the build workflow. Validate with a manual run of Build CI Base Images.

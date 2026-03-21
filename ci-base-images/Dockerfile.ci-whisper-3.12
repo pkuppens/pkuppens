@@ -13,3 +13,8 @@ RUN uv pip install --system faster-whisper>=1.2.0
 # Pre-download Whisper base model (small enough for CI)
 COPY ci-base-images/download_whisper_model.py /tmp/download_whisper_model.py
 RUN python /tmp/download_whisper_model.py && rm /tmp/download_whisper_model.py
+
+# Free disk: same policy as ci-hf-base — drop toolchain after installs so Whisper assets stay under size limits.
+RUN apt-get update \
+    && apt-get purge -y --auto-remove build-essential \
+    && rm -rf /var/lib/apt/lists/*
