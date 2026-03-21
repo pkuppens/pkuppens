@@ -8,6 +8,12 @@ LABEL org.opencontainers.image.source="https://github.com/pkuppens/pkuppens"
 
 WORKDIR /workspace
 
+# C/C++ toolchain: consuming repos often run `uv sync` in CI and build native wheels (e.g. annoy).
+# Derived images (ci-hf-base, ci-whisper) explicitly purge this after installs to save space for models.
+RUN apt-get update \
+    && apt-get install -y --no-install-recommends build-essential \
+    && rm -rf /var/lib/apt/lists/*
+
 # Install uv
 RUN pip install --no-cache-dir uv
 
