@@ -37,6 +37,10 @@ Every implementation plan **must** include these steps:
 
 **Summary:** Validate first; work from a feature branch; complete through PR; do not stop until PR is open and CI has validated (or N/A).
 
+### Optional: V-model and brownfield
+
+When the project or issue calls for **traceability** (pairing specs/design with tests), follow [v-model](../v-model/SKILL.md). On an **existing codebase**, default to **touch-driven** [v-model-retrofit](../v-model/v-model-retrofit/SKILL.md): strengthen tests and minimal docs only for the **surfaces changed** in this issue unless the user or issue explicitly requests a wider retrofit (`retrofit:explicit`).
+
 ## Sub-skills
 
 | Sub-skill | Use when |

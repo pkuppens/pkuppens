@@ -23,6 +23,32 @@ issue-acceptance-criteria → validation-draft → create-validation (optional, 
 
 Validation and tests are drafted before implementation. [create-validation](validation/create-validation/SKILL.md) and [run-validation](validation/run-validation/SKILL.md) add executable markdown checklists for issue-driven workflows.
 
+### V-model flow (optional overlay)
+
+When using [v-model](v-model/SKILL.md), each **left-arm** artefact has a corresponding **right-arm** verification concern. In **Agile**, run a **mini-V** per issue (slice), not only once per release. **Shift-left:** the right arm may start before the left arm is “finished” for that slice (same as TDD). **Brownfield:** use [v-model-retrofit](v-model/v-model-retrofit/SKILL.md) for explicit backfill or touch-driven alignment.
+
+```mermaid
+flowchart TB
+  subgraph leftArm [Left_arm_artefacts]
+    R[requirements_2x]
+    A[architecture_3x]
+    D[design_4x]
+    I[implementation_7x]
+  end
+  subgraph rightArm [Right_arm_verification]
+    VA[acceptance_validation_8x]
+    VS[system_integration_8x_9x]
+    VC[component_contract_8x_9x]
+    VU[unit_tests_9x]
+  end
+  R --> VA
+  A --> VS
+  D --> VC
+  I --> VU
+```
+
+**Retrofitting + V:** [Architecture](architecture/SKILL.md) **Retrofitting** mode establishes *what is*. `v-model-retrofit` links *what is* to *how we verify it* (tests, checks, evidence).
+
 ## Parallel (independent) skills
 
 These can run in any order or in parallel when context is ready:
@@ -104,6 +130,8 @@ Store results in `tmp/skills/benchmark/<skill-name>/`.
 | Monitoring anomaly | operations-incident |
 | Quarterly / pre-audit | operations-audit |
 | New or revised skill | skill-benchmark |
+| Traceability / V-model / compliance-style pairing | [v-model](v-model/SKILL.md); brownfield: [v-model-retrofit](v-model/v-model-retrofit/SKILL.md) |
+| Normal code change on existing codebase (optional) | Consider **touch-driven** `v-model-retrofit`: extend verification only for touched boundaries unless user widens scope |
 
 ## Skill references
 
