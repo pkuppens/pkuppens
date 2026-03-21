@@ -16,6 +16,8 @@ Post-merge hygiene: branch cleanup, worktree removal, GitHub Actions runs, tmp/ 
 
 ## Branch cleanup
 
+For a full PR-merge checklist (merge, squash, rebase, `gone` remotes), see [branch-cleanup-after-pr](../../branch-cleanup-after-pr/SKILL.md).
+
 1. `git checkout main`, `git pull`
 2. `git branch -d <branch>` (or `-D` if squash-merged)
 3. `git fetch --prune` to remove stale remote-tracking refs
