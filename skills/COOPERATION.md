@@ -18,10 +18,10 @@ Each step produces output for the next. No parallelism within this chain.
 ### TDD flow
 
 ```
-issue-acceptance-criteria → validation-draft → test-write → implementation-construction → validation-run
+issue-acceptance-criteria → validation-draft → create-validation (optional, full checklist) → test-write → implementation-construction → run-validation
 ```
 
-Validation and tests are drafted before implementation.
+Validation and tests are drafted before implementation. [create-validation](validation/create-validation/SKILL.md) and [run-validation](validation/run-validation/SKILL.md) add executable markdown checklists for issue-driven workflows.
 
 ## Parallel (independent) skills
 
