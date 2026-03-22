@@ -28,7 +28,15 @@ If `git branch -D <branch>` fails with "cannot delete branch used by worktree", 
 
 ## GitHub Actions runs
 
-Delete old or failed workflow runs to reduce clutter:
+**on_prem_rag** (automated): After Python CI succeeds on `main`, the **Repository Cleanup** workflow runs [scripts/cleanup-github-actions.sh](https://github.com/pkuppens/on_prem_rag/blob/main/scripts/cleanup-github-actions.sh). Retention per workflow and branch:
+
+- Keep the **latest passed** (GitHub `conclusion: success`) run as the canonical reference.
+- Keep **completed runs after** that pass (typically failures after the last green, for debugging).
+- **Delete** older passed runs and older failures/cancellations (superseded).
+
+Do **not** assume all failed runs are kept forever; only failures **after** the latest pass are retained.
+
+**Other repos** (manual): you may still delete very old completed runs by age, for example:
 
 ```bash
 # Delete completed runs older than 30 days for a workflow
