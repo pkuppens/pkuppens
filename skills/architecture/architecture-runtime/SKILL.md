@@ -1,6 +1,6 @@
 ---
 name: architecture-runtime
-description: Documents runtime behaviour: technical execution paths, component interactions, sequences (arc42 §6). Use when documenting flows or tracing execution.
+description: "Documents runtime behaviour: technical execution paths, component interactions, sequences (arc42 §6). Use when documenting flows or tracing execution."
 ---
 
 # Architecture Runtime

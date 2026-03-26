@@ -18,8 +18,10 @@ This directory contains unified AI coding skills for Cursor, Claude, and Codex. 
 
 1. Use [skill-creation](_meta/skill-creation/SKILL.md) for new skills
 2. Follow SKILL_TREE.md principles: single responsibility, one-liner, progressive disclosure
-3. Conform to [Claude skill structure](https://docs.claude.com/en/docs/agents-and-tools/agent-skills/best-practices#skill-structure): YAML frontmatter (name, description), concise body, progressive disclosure
+3. Conform to [Claude skill structure](https://docs.claude.com/en/docs/agents-and-tools/agent-skills/best-practices#skill-structure) and the [Agent Skills specification](https://agentskills.io/specification): YAML frontmatter (`name`, `description`), concise body, progressive disclosure. Quote `description` when it contains colons.
 4. Keep SKILL.md under ~300 lines; use reference.md, examples.md for details; add additional small skills when exceeding 300 lines.
+
+Validation policy: [ADR 001 — Skill validation and tooling](../docs/skills/decisions/001-skill-validation-and-tooling.md).
 
 ## Scratch
 

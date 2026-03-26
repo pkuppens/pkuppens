@@ -1,6 +1,6 @@
 ---
 name: architecture-building-blocks
-description: Documents static decomposition: hierarchy and black-box/white-box view of building blocks. Use when defining structure for a new system; produces arc42 §5 content.
+description: "Documents static decomposition: hierarchy and black-box/white-box view of building blocks. Use when defining structure for a new system; produces arc42 §5 content."
 ---
 
 # Architecture Building Blocks

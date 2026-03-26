@@ -9,7 +9,7 @@ The `pkuppens/pkuppens` GitHub profile repository. It serves two purposes:
 1. **GitHub profile README** (`README.md`) — displayed at `github.com/pkuppens`.
 2. **Unified AI coding skills library** (`skills/`) — shared `SKILL.md` files for Cursor, Claude, and Codex.
 
-There is no build system, test suite, or linting pipeline. All content is Markdown.
+There is no build system or test suite. All content is Markdown. Skills under `skills/` are checked in CI: [`validate-skills.yml`](.github/workflows/validate-skills.yml); see [ADR 001](docs/skills/decisions/001-skill-validation-and-tooling.md).
 
 ## Repository Layout
 
@@ -23,7 +23,10 @@ pkuppens/
 │   │   └── SKILL.md
 │   └── <skill-name>/            # One directory per skill (mostly not yet created)
 │       └── SKILL.md
-├── docs/screenshots/            # Assets referenced from README.md
+├── docs/
+│   ├── screenshots/             # Assets referenced from README.md
+│   └── skills/
+│       └── decisions/           # ADRs for the skills library (e.g. validation tooling)
 └── tmp/                         # Gitignored scratch (drafts, planning)
 ```
 

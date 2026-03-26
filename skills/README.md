@@ -8,6 +8,8 @@ Skills are markdown files (`SKILL.md`) in skill-specific directories. Each skill
 
 Full skill tree: [SKILL_TREE.md](SKILL_TREE.md). How skills compose: [COOPERATION.md](COOPERATION.md). Optional **V-model** traceability overlay: [v-model/SKILL.md](v-model/SKILL.md).
 
+**Format and CI:** Metadata must follow the [Agent Skills specification](https://agentskills.io/specification). Pull requests that touch `skills/` run automated validation (`skills-ref`, pinned in GitHub Actions). Tooling choices and Skilz vs spec are documented in [ADR 001 — Skill validation and tooling](../docs/skills/decisions/001-skill-validation-and-tooling.md).
+
 ## IDE Setup
 
 Reference this `skills/` folder from your IDE. Do not duplicate skills. Symlinks below work for **Cursor**, **Claude**, and **Codex**.

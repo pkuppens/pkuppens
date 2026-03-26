@@ -1,6 +1,6 @@
 ---
 name: implementation-construction
-description: Writes new code following Code Complete 2 construction principles: consistent naming, single responsibility, type hints, docstrings, and minimal surface area. Use when implementing a designed component or function; follows design-consult output.
+description: "Writes new code following Code Complete 2 construction principles: consistent naming, single responsibility, type hints, docstrings, and minimal surface area. Use when implementing a designed component or function; follows design-consult output."
 ---
 
 # Implementation Construction
