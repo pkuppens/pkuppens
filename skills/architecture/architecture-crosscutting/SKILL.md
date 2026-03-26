@@ -1,6 +1,6 @@
 ---
 name: architecture-crosscutting
-description: Documents crosscutting concepts: dependency rules, layering, and architecture tests. Use when enforcing constraints or detecting architecture drift; produces arc42 §8 content.
+description: "Documents crosscutting concepts: dependency rules, layering, and architecture tests. Use when enforcing constraints or detecting architecture drift; produces arc42 §8 content."
 ---
 
 # Architecture Crosscutting
