@@ -8,7 +8,7 @@ How skills compose: sequential vs parallel flows, triggers, and dependencies.
 
 ```
 issue-workflow → plan → architecture (or architecture-consult) → design-consult
-  → implementation-construction → quality-gate → integration-commit → integration-pr → integration-merge
+  → implementation-construction → quality-gate → integration-commit → integration-pr → code-review → integration-merge
 ```
 
 During issue creation or revision, **architecture** (orchestrator or sub-skills) can be triggered before or during purpose-alignment, work-down, or acceptance-criteria so requirements and implementation plans reflect architecture concerns.
@@ -86,7 +86,7 @@ Also: architecture-runtime (flows), architecture-crosscutting (rules), architect
 ## Deployment flow
 
 ```
-quality-gate → integration-commit → integration-pr → integration-merge
+quality-gate → integration-commit → integration-pr → code-review → integration-merge
   → deployment-build → deployment-release → operations-monitoring
 ```
 

@@ -16,14 +16,16 @@ Creates PR, merges to main, and ensures proper Git workflow per repo CLAUDE.md.
 
 1. **Commit** — [integration-commit](integration-commit/SKILL.md). Conventional message, issue reference.
 2. **PR** — [integration-pr](integration-pr/SKILL.md). Open PR, link issue, fill description.
-3. **Merge** — [integration-merge](integration-merge/SKILL.md). Merge, resolve conflicts, squash if needed.
+3. **Review** — [code-review](../code-review/SKILL.md). Structured checklist on the diff (imports, headers, domain-neutral compliance wording, naming, security spot checks).
+4. **Merge** — [integration-merge](integration-merge/SKILL.md). Merge, resolve conflicts, squash if needed.
 
 ## Instructions
 
 1. Ensure quality-gate passes (lint, format, tests).
 2. Run integration-commit; stage and commit with conventional message.
 3. Push branch; run integration-pr to open PR.
-4. After review/approval, run integration-merge.
+4. Run code-review on the PR (or assign a human reviewer using the same checklist).
+5. After review/approval, run integration-merge.
 
 ## Prerequisites
 

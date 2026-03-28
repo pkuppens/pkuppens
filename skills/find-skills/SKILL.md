@@ -52,7 +52,7 @@ npx skills find [query]
 For example:
 
 - User asks "how do I make my React app faster?" → `npx skills find react performance`
-- User asks "can you help me with PR reviews?" → `npx skills find pr review`
+- User asks "can you help me with PR reviews?" → Prefer this repo’s [code-review](../code-review/SKILL.md) checklist first; optionally `npx skills find pr review` for external ecosystem skills.
 - User asks "I need to create a changelog" → `npx skills find changelog`
 
 The command will return results like:

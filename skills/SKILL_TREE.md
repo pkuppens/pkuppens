@@ -284,7 +284,10 @@ Commits with conventional message; references issue.
 #### 11.2 integration-pr
 Opens PR; links to issue; fills description.
 
-#### 11.3 integration-merge
+#### 11.3 code-review
+Structured PR review: module headers, absolute imports, domain-neutral compliance language, naming (`logger` vs internal `_` conventions), security spot checks. Use before merge.
+
+#### 11.4 integration-merge
 Merges PR; resolves conflicts; squashes if needed.
 
 ---
@@ -418,7 +421,7 @@ Explains git worktrees and Claude Code usage; guides removal and cleanup when a 
 | 8 | validation | Validation | 8.1–8.4, 8.1b |
 | 9 | test | Testing | 9.1–9.3 |
 | 10 | quality-gate | Quality | 10.1–10.5 |
-| 11 | integration | Integration | 11.1–11.3 |
+| 11 | integration | Integration | 11.1–11.4 |
 | 12 | deployment | Deployment | 12.1, 12.2 |
 | 13 | operations | Production, monitoring, audit | 13.1–13.3 |
 | 14 | maintenance | Bug report, cleanup, debt | 14.1–14.3 |
@@ -429,7 +432,7 @@ Explains git worktrees and Claude Code usage; guides removal and cleanup when a 
 
 ## Implementation Status
 
-*Post-audit #27: 37 SKILL.md files in pkuppens/skills. See [audit-results.md](../docs/skills/audit-results.md) for full inventory and mapping.*
+*Post-audit #27 (updated): 38 SKILL.md files in pkuppens/skills. See [audit-results.md](../docs/skills/audit-results.md) for full inventory and mapping.*
 
 | Skill | Status |
 | skill-creation | ✅ implemented |
@@ -442,7 +445,7 @@ Explains git worktrees and Claude Code usage; guides removal and cleanup when a 
 | api-design, branch-cleanup-after-pr, code-quality-design/docs/testing | ✅ implemented |
 | quality-gate (10.x) | ✅ implemented |
 | openclaw-security (10.5) | ✅ implemented |
-| integration (11.x) | ✅ implemented |
+| integration (11.x), code-review (11.3) | ✅ implemented |
 | deployment (12.1, 12.2) | ✅ implemented |
 | operations (13.1–13.3) | ✅ implemented |
 | skill-benchmark (8.4) | ✅ implemented |

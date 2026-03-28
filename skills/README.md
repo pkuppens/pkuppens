@@ -65,6 +65,7 @@ skills/
 ├── code-quality-design/
 ├── code-quality-docs/
 ├── code-quality-testing/
+├── code-review/        # PR review checklist (imports, headers, compliance wording)
 ├── ideation/
 ├── requirements/
 ├── architecture/
