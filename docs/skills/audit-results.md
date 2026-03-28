@@ -8,13 +8,13 @@
 
 ## Executive summary
 
-Audit of 82+ skill files across workspace locations. Canonical set: `pkuppens/skills/` (37 SKILL.md files). Overlaps identified; mapping table below. `babblr` has no skills. `~/.claude/skills` not audited (likely symlinked to pkuppens or user-specific).
+Audit of 82+ skill files across workspace locations. Canonical set: `pkuppens/skills/` (38 SKILL.md files). Overlaps identified; mapping table below. `babblr` has no skills. `~/.claude/skills` not audited (likely symlinked to pkuppens or user-specific).
 
 ---
 
 ## 1. Inventory by location
 
-### 1.1 pkuppens/skills/ (canonical) — 37 files
+### 1.1 pkuppens/skills/ (canonical) — 38 files
 
 | Path | Canonical equivalent |
 |------|----------------------|
@@ -31,9 +31,10 @@ Audit of 82+ skill files across workspace locations. Canonical set: `pkuppens/sk
 | design/design-consult/SKILL.md | 4.1 design-consult |
 | find-skills/SKILL.md | find-skills |
 | implementation/implementation-construction/SKILL.md | 7.1 implementation-construction |
+| code-review/SKILL.md | 11.3 code-review |
 | integration/SKILL.md | 11 integration (orchestrator) |
 | integration/integration-commit/SKILL.md | 11.1 integration-commit |
-| integration/integration-merge/SKILL.md | 11.3 integration-merge |
+| integration/integration-merge/SKILL.md | 11.4 integration-merge |
 | integration/integration-pr/SKILL.md | 11.2 integration-pr |
 | issue-workflow/SKILL.md | 5 issue-workflow (orchestrator) |
 | issue-workflow/issue-acceptance-criteria/SKILL.md | 5.4 issue-acceptance-criteria |

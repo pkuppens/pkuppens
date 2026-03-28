@@ -48,4 +48,4 @@ Closes #8"
 ## Integration
 
 - Runs after [integration-commit](../integration-commit/SKILL.md).
-- Feeds into [integration-merge](../integration-merge/SKILL.md).
+- Feeds into [code-review](../../code-review/SKILL.md), then [integration-merge](../integration-merge/SKILL.md).
