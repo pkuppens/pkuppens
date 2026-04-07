@@ -38,6 +38,7 @@ Constructs code from a design specification following Code Complete 2 principles
 
 - [ ] Type hints on all public function signatures
 - [ ] Docstring on every public class and function (one line minimum)
+- [ ] For **scripts, CLIs, and data pipelines**: module-level docstring (not only functions) covering purpose, main data flow, I/O paths, and **privacy boundaries** when inputs may contain PII (what is read from disk/env vs embedded in code)
 - [ ] No `import *`; absolute imports only
 - [ ] No mutable default arguments (`def f(x=[])`)
 - [ ] Constants at module level, not buried in functions
