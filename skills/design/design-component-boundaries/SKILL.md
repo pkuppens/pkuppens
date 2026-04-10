@@ -25,6 +25,18 @@ description: Defines module, package, and file boundaries so each unit has a sin
 
 - Diagram or bullet list: component → depends on → owns data …
 
+## Examples
+
+**Positive (clear boundaries):**
+
+- `Billing` owns `Invoice`, `Payment`; `Billing` depends on `Auth` for `UserId` only; `Auth` does not import `Billing`. Dependencies point **inward** toward domain core; no cycles.
+- Stated rule: “`notifications` may call `users` for email lookup; `users` never calls `notifications`.”
+
+**Negative (avoid):**
+
+- Two packages import each other “just for one helper” — creates a cycle and hides ownership of data.
+- “`utils`” grows to hold domain logic from three features — no single responsibility; boundaries collapsed.
+
 ## Anti-patterns
 
 - Boundaries that mirror org chart only (may be wrong for the domain)
