@@ -69,17 +69,17 @@ Measures the real-world impact of a skill by comparing agent output with and wit
 - Key observation: <one sentence on the most important qualitative difference>
 ```
 
-**Benchmark task library** (`tmp/skills/benchmark/tasks/`):
+**Benchmark task library:** Reusable prompts live under **`docs/skills/benchmark/tasks/`** in this repo (versioned). Local copies may also sit in `tmp/skills/benchmark/tasks/` during runs.
 
-Reusable task prompts for common benchmark scenarios:
 - `issue-creation.md` — create a GitHub issue for a feature
 - `adr-authoring.md` — write an ADR for a technology choice
 - `deployment-checklist.md` — produce a deployment checklist for a release
-- `validation-draft.md` — draft validation steps from acceptance criteria
+
+**Committed reports** (examples / evidence): `docs/skills/benchmark/<skill-name>/report.md`. Session transcripts can remain in `tmp/skills/benchmark/<skill-name>/`.
 
 **Anti-patterns:**
 - Using the same session for both runs (context contamination)
 - Choosing tasks where the skill is explicitly referenced in the prompt
 - Scoring on style rather than actionability
 
-**Integration:** Output feeds `architecture-risks-debt` if skills have known gaps. Results stored in `tmp/skills/benchmark/`. See COOPERATION.md.
+**Integration:** Output feeds `architecture-risks-debt` if skills have known gaps. Store runnable evidence under `docs/skills/benchmark/` (or `tmp/skills/benchmark/` for scratch). See COOPERATION.md.
