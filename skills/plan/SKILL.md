@@ -45,8 +45,8 @@ When the project or issue calls for **traceability** (pairing specs/design with 
 
 | Sub-skill | Use when |
 |-----------|----------|
-| plan-tasks (6.1) | Decomposing into ordered subtasks |
-| plan-dependencies (6.2) | Identifying task dependencies and critical path |
+| [plan-tasks](plan-tasks/SKILL.md) (6.1) | Decomposing into ordered subtasks |
+| [plan-dependencies](plan-dependencies/SKILL.md) (6.2) | Identifying task dependencies and critical path |
 | [plan-branch-strategy](../plan-branch-strategy/SKILL.md) (6.3) | Selecting branch prefix and creating feature branch |
 
 ## Integration
