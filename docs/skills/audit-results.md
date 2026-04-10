@@ -1,62 +1,37 @@
 # Skills Audit — Inventory and Mapping
 
-**Date:** 2025-03-15  
+**Date:** 2026-04-10  
 **Issue:** #27 — Audit and merge skills from all repos into pkuppens/skills/  
+**Last inventory refresh:** #57  
 **Parent:** #26
 
 *Note: Issue specified `tmp/skills/inventory/audit-results.md`; this file lives in `docs/skills/` for version control. Copy to `tmp/skills/inventory/` locally if needed.*
 
 ## Executive summary
 
-Audit of 82+ skill files across workspace locations. Canonical set: `pkuppens/skills/` (38 SKILL.md files). Overlaps identified; mapping table below. `babblr` has no skills. `~/.claude/skills` not audited (likely symlinked to pkuppens or user-specific).
+Audit of 82+ skill files across workspace locations (historical). Canonical set: `pkuppens/skills/` — **65** `SKILL.md` files as of 2026-04-10. Regenerate the list with the commands below; overlaps and mapping for *other repos* remain valid at a high level. `babblr` has no skills. `~/.claude/skills` not audited (likely symlinked to pkuppens or user-specific).
 
 ---
 
 ## 1. Inventory by location
 
-### 1.1 pkuppens/skills/ (canonical) — 38 files
+### 1.1 pkuppens/skills/ (canonical) — **65** `SKILL.md` files
 
-| Path | Canonical equivalent |
-|------|----------------------|
-| architecture/SKILL.md | architecture (orchestrator) |
-| architecture/architecture-building-blocks/SKILL.md | 3.3 architecture-building-blocks |
-| architecture/architecture-consult/SKILL.md | 3.1 architecture-consult |
-| architecture/architecture-decisions/SKILL.md | 3.7 architecture-decisions |
-| architecture/architecture-document-existing/SKILL.md | 3.2 (retrofitting) |
-| architecture/architecture-risks-debt/SKILL.md | 3.9 architecture-risks-debt |
-| architecture/architecture-solution-strategy/SKILL.md | 3.2 architecture-solution-strategy |
-| deployment/SKILL.md | 12 deployment (orchestrator) |
-| deployment/deployment-build/SKILL.md | 12.1 deployment-build |
-| deployment/deployment-release/SKILL.md | 12.2 deployment-release |
-| design/design-consult/SKILL.md | 4.1 design-consult |
-| find-skills/SKILL.md | find-skills |
-| implementation/implementation-construction/SKILL.md | 7.1 implementation-construction |
-| code-review/SKILL.md | 11.3 code-review |
-| integration/SKILL.md | 11 integration (orchestrator) |
-| integration/integration-commit/SKILL.md | 11.1 integration-commit |
-| integration/integration-merge/SKILL.md | 11.4 integration-merge |
-| integration/integration-pr/SKILL.md | 11.2 integration-pr |
-| issue-workflow/SKILL.md | 5 issue-workflow (orchestrator) |
-| issue-workflow/issue-acceptance-criteria/SKILL.md | 5.4 issue-acceptance-criteria |
-| issue-workflow/issue-check-duplicates/SKILL.md | 5.1 issue-check-duplicates |
-| issue-workflow/issue-estimate/SKILL.md | 5.6 issue-estimate |
-| issue-workflow/issue-metadata/SKILL.md | 5.7 issue-metadata |
-| issue-workflow/issue-out-of-scope/SKILL.md | 5.5 issue-out-of-scope |
-| issue-workflow/issue-purpose-alignment/SKILL.md | 5.2 issue-purpose-alignment |
-| issue-workflow/issue-work-down/SKILL.md | 5.3 issue-work-down |
-| mojo-gpu-fundamentals/SKILL.md | mojo-gpu-fundamentals |
-| mojo-python-interop/SKILL.md | mojo-python-interop |
-| mojo-syntax/SKILL.md | mojo-syntax |
-| new-modular-project/SKILL.md | new-modular-project |
-| openclaw-security/SKILL.md | 10.5 openclaw-security |
-| operations/SKILL.md | 13 operations (orchestrator) |
-| operations/operations-audit/SKILL.md | 13.3 operations-audit |
-| operations/operations-incident/SKILL.md | 13.2 operations-incident |
-| operations/operations-monitoring/SKILL.md | 13.1 operations-monitoring |
-| quality-gate/SKILL.md | 10 quality-gate |
-| validation/skill-benchmark/SKILL.md | 8.4 skill-benchmark |
-| validation/validation-draft/SKILL.md | 8.1 validation-draft |
-| _meta/skill-creation/SKILL.md | skill-creation (meta) |
+The static table below is **not** duplicated here (it went stale quickly). Use one of:
+
+```bash
+# Unix / Git Bash (repo root)
+find skills -name 'SKILL.md' | sort | wc -l   # count
+find skills -name 'SKILL.md' | sort            # paths
+```
+
+```powershell
+# PowerShell (repo root)
+(Get-ChildItem -Path skills -Recurse -Filter SKILL.md).Count
+Get-ChildItem -Path skills -Recurse -Filter SKILL.md | Sort-Object FullName | ForEach-Object { $_.FullName.Substring((Get-Location).Path.Length + 1) }
+```
+
+**Expected count:** must match the figure in [SKILL_TREE.md](../../skills/SKILL_TREE.md) (*Inventory* line under Implementation Status). If they differ, refresh this doc (#57) or fix the tree.
 
 ### 1.2 on_prem_rag/.claude/skills/ — 12 files
 
@@ -147,8 +122,7 @@ Not audited (user-level; may be symlinked to pkuppens or contain user-specific s
 
 ## 5. SKILL_TREE inventory update
 
-Post-audit counts:
+Post–#28 / current canonical counts (2026-04-10):
 
-- **pkuppens/skills**: 37 SKILL.md files
-- **Sub-skills implemented**: architecture (6), deployment (2), integration (3), issue-workflow (7), operations (3)
-- **Missing from SKILL_TREE**: architecture-runtime (3.4), architecture-deployment (3.5), architecture-crosscutting (3.6), architecture-quality (3.8), architecture-glossary (3.10) — some exist only as sir-read-a-lot arch-* until #28 merge
+- **pkuppens/skills**: **65** `SKILL.md` files (see §1.1 commands).
+- **Sub-skills:** full tree status is maintained in [SKILL_TREE.md](../../skills/SKILL_TREE.md) → **Implementation Status** (not duplicated here).
