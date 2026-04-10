@@ -7,4 +7,10 @@ description: Code construction, refactor, and deletion per SKILL_TREE §7. Use w
 
 Canonical index: [SKILL_TREE.md](../SKILL_TREE.md) §7.
 
-Implemented: [implementation-construction](implementation-construction/SKILL.md). For V pairing with unit tests, see [v-model-implementation-unit](../v-model/v-model-implementation-unit/SKILL.md).
+| Sub-skill | |
+|-----------|---|
+| [implementation-construction](implementation-construction/SKILL.md) | 7.1 |
+| [implementation-refactor](implementation-refactor/SKILL.md) | 7.2 |
+| [implementation-delete](implementation-delete/SKILL.md) | 7.3 |
+
+For V pairing with unit tests, see [v-model-implementation-unit](../v-model/v-model-implementation-unit/SKILL.md).
