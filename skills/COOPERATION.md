@@ -109,7 +109,7 @@ skill-benchmark: define task → run baseline → run with skill → score → r
 ```
 
 Use `skill-benchmark` after creating or modifying any skill to generate evidence of improvement.
-Store results in `tmp/skills/benchmark/<skill-name>/`.
+Store **committed** reports under `docs/skills/benchmark/<skill-name>/report.md`; use `tmp/skills/benchmark/<skill-name>/` for scratch session outputs.
 
 ## Trigger conditions
 
