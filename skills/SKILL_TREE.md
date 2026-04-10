@@ -432,7 +432,7 @@ Explains git worktrees and Claude Code usage; guides removal and cleanup when a 
 
 ## Implementation Status
 
-*Post-audit #27 (updated): 38 SKILL.md files in pkuppens/skills. See [audit-results.md](../docs/skills/audit-results.md) for full inventory and mapping.*
+*Inventory: **65** `SKILL.md` files under `pkuppens/skills/` (2026-04-10, #57). See [audit-results.md](../docs/skills/audit-results.md) for how to regenerate the list.*
 
 | Skill | Status |
 | skill-creation | ✅ implemented |
