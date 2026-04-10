@@ -9,13 +9,13 @@
 
 ## Executive summary
 
-Audit of 82+ skill files across workspace locations (historical). Canonical set: `pkuppens/skills/` — **65** `SKILL.md` files as of 2026-04-10. Regenerate the list with the commands below; overlaps and mapping for *other repos* remain valid at a high level. `babblr` has no skills. `~/.claude/skills` not audited (likely symlinked to pkuppens or user-specific).
+Audit of 82+ skill files across workspace locations (historical). Canonical set: `pkuppens/skills/` — **94** `SKILL.md` files as of 2026-04-10 (#59–#65). Regenerate the list with the commands below; overlaps and mapping for *other repos* remain valid at a high level. `babblr` has no skills. `~/.claude/skills` not audited (likely symlinked to pkuppens or user-specific).
 
 ---
 
 ## 1. Inventory by location
 
-### 1.1 pkuppens/skills/ (canonical) — **65** `SKILL.md` files
+### 1.1 pkuppens/skills/ (canonical) — **94** `SKILL.md` files
 
 The static table below is **not** duplicated here (it went stale quickly). Use one of:
 
@@ -124,5 +124,5 @@ Not audited (user-level; may be symlinked to pkuppens or contain user-specific s
 
 Post–#28 / current canonical counts (2026-04-10):
 
-- **pkuppens/skills**: **65** `SKILL.md` files (see §1.1 commands).
+- **pkuppens/skills**: **94** `SKILL.md` files (see §1.1 commands).
 - **Sub-skills:** full tree status is maintained in [SKILL_TREE.md](../../skills/SKILL_TREE.md) → **Implementation Status** (not duplicated here).
