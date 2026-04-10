@@ -1,10 +1,16 @@
 ---
 name: test
-description: Writes and runs tests; increases coverage per SKILL_TREE §9. Sub-skills 9.1–9.3 are stubs until fully implemented as separate workflows.
+description: Writes and runs tests; increases coverage per SKILL_TREE §9. Use when automating checks or interpreting test failures.
 ---
 
 # Test (orchestrator)
 
 Canonical index: [SKILL_TREE.md](../SKILL_TREE.md) §9.
 
-Sub-skills **9.1–9.3** (test-write, test-run, test-coverage) are listed in [SKILL_TREE.md](../SKILL_TREE.md); dedicated files may be added later. Follow repo test conventions. V-model: [v-model-implementation-unit](../v-model/v-model-implementation-unit/SKILL.md).
+| Sub-skill | |
+|-----------|---|
+| [test-write](test-write/SKILL.md) | 9.1 |
+| [test-run](test-run/SKILL.md) | 9.2 |
+| [test-coverage](test-coverage/SKILL.md) | 9.3 |
+
+Follow repo test conventions. V-model: [v-model-implementation-unit](../v-model/v-model-implementation-unit/SKILL.md).
