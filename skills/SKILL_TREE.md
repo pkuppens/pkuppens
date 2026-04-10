@@ -432,7 +432,7 @@ Explains git worktrees and Claude Code usage; guides removal and cleanup when a 
 
 ## Implementation Status
 
-*Inventory: **65** `SKILL.md` files under `pkuppens/skills/` (2026-04-10, #57). See [audit-results.md](../docs/skills/audit-results.md) for how to regenerate the list.*
+*Inventory: **94** `SKILL.md` files under `pkuppens/skills/` (2026-04-10, #57, #59–#65). See [audit-results.md](../docs/skills/audit-results.md) for how to regenerate the list.*
 
 | Skill | Status |
 | skill-creation | ✅ implemented |
@@ -453,6 +453,14 @@ Explains git worktrees and Claude Code usage; guides removal and cleanup when a 
 | maintenance-cleanup (14.2) | ✅ implemented |
 | plan (orchestrator: branch strategy, implementation-workflow through PR/CI) | ✅ implemented |
 | plan-branch-strategy (6.3) | ✅ implemented |
-| ideation, requirements **sub-skills** (2.1–2.6), design (4.2–4.4), plan 6.1–6.2, test **sub-skills** (9.1–9.3 files), validation (8.2–8.3), maintenance (14.1, 14.3), governance | 🔲 stubs / not yet implemented |
-| requirements / design / implementation / validation / test **orchestrator** SKILL.md (#42) | ✅ minimal stubs (nav + V-model links) |
+| software-engineering-process (0) | ✅ implemented (#59) |
+| ideation (1.1–1.3) | ✅ implemented (#60) |
+| requirements **sub-skills** (2.1–2.6) | ✅ implemented (#62) |
+| design (4.2–4.4), plan 6.1–6.2 | ✅ implemented (#63) |
+| implementation (7.2–7.3) | ✅ implemented (#65) |
+| validation-detail (8.2) | ✅ implemented (#64) |
+| test **sub-skills** (9.1–9.3) | ✅ implemented (#64) |
+| maintenance (14.1, 14.3) + orchestrator | ✅ implemented (#64) |
+| governance (15.1–15.3) | ✅ implemented (#61) |
+| requirements / design / implementation / validation / test **orchestrator** SKILL.md | ✅ nav + sub-skill links |
 | v-model overlay (#42) | ✅ implemented |
