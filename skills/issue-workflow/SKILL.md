@@ -1,6 +1,6 @@
 ---
 name: issue-workflow
-description: Orchestrates issue lifecycle from idea to closed. Use when creating, refining, or validating a GitHub issue; triggers sub-skills (5.1–5.7) as needed.
+description: Orchestrates issue lifecycle from idea to closed. Use when creating, refining, or validating a GitHub issue; triggers sub-skills (5.1–5.7) as needed. New issues assign the trigger user for explicit ownership and review.
 ---
 
 # Issue Workflow
@@ -22,7 +22,7 @@ Orchestrates the GitHub issue lifecycle per [GitHub Issue Lifecycle](https://doc
 5. **Acceptance criteria** — [issue-acceptance-criteria](issue-acceptance-criteria/SKILL.md). Each checkbox with copy-pastable validation steps. Include architecture-related criteria when relevant (e.g. ADR updated, docs in `docs/architecture/`).
 6. **Out-of-scope** — [issue-out-of-scope](issue-out-of-scope/SKILL.md). Define exclusions.
 7. **Estimate** — [issue-estimate](issue-estimate/SKILL.md). T-shirt size (XS–XL).
-8. **Metadata** — [issue-metadata](issue-metadata/SKILL.md). Tags, milestones, assignees.
+8. **Metadata** — [issue-metadata](issue-metadata/SKILL.md). Tags, milestones, assignees (always assign the person who triggered the issue—directly or indirectly—so ownership and review are explicit).
 9. **Draft issue** — Combine into issue body with Goal, Tasks, Acceptance Criteria, Out of Scope, Estimate, Metadata.
 
 ## Instructions
@@ -33,7 +33,7 @@ Orchestrates the GitHub issue lifecycle per [GitHub Issue Lifecycle](https://doc
 4. Run acceptance-criteria; produce a checklist with copy-pastable steps per criterion. Add architecture-related criteria when relevant.
 5. Run out-of-scope; list exclusions.
 6. Run estimate; add T-shirt size.
-7. Run metadata; add labels, milestone, assignees.
+7. Run metadata; add labels, milestone, and assignees (default: assign the trigger user per issue-metadata).
 8. Assemble final issue draft for `gh issue create` or paste into GitHub UI.
 
 ## Output format
@@ -55,7 +55,7 @@ Orchestrates the GitHub issue lifecycle per [GitHub Issue Lifecycle](https://doc
 Size: S | M | L — [rationale]
 
 ## Metadata
-Labels: size:M, type:task — Milestone: (none) — Parent: #N
+Labels: size:M, type:task — Milestone: (none) — Assignee: @trigger — Parent: #N
 
 ## Related
 - #N (if duplicate/related)
