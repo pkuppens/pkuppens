@@ -19,7 +19,7 @@ For OpenClaw projects: [openclaw-security](../../openclaw-security/SKILL.md) mus
 ## Instructions
 
 1. Push branch: `git push -u origin <branch>`.
-2. Create PR: `gh pr create --base main --title "#NNN: type: description" --body "..."`.
+2. Create PR **with assignee**: `gh pr create --base main --assignee @me --title "#NNN: type: description" --body "..."` (substitute `@me` by the opener’s GitHub login if not the authenticated user). If your `gh pr create` does not support `--assignee`, create then run `gh pr edit <n> --add-assignee @me`.
 3. In body: Summary, Changes, link to issue (Closes #NNN).
 4. Add labels if repo uses them (`gh pr edit --add-label "..."`).
 
@@ -39,7 +39,7 @@ Closes #NNN
 ## Example
 
 ```bash
-gh pr create --base main --title "#8: feat: Phase 3 — remaining issue-workflow sub-skills" --body "## Summary
+gh pr create --base main --assignee @me --title "#8: feat: Phase 3 — remaining issue-workflow sub-skills" --body "## Summary
 Implements Phase 3...
 
 Closes #8"

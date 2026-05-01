@@ -39,6 +39,16 @@ gh issue create --title "..." --body "..." --label "size:M" --label "type:task" 
 
 Use `--assignee <login>` when the trigger is another GitHub user. `gh api user -q .login` shows the authenticated account when you need to confirm `@me`.
 
+## Pull requests (same default)
+
+When opening a PR with `gh pr create`, apply the same ownership rule: pass **`--assignee @me`** (or the responsible human’s login) so the PR appears on their review list. If the flag is unavailable, run **`gh pr edit <n> --add-assignee @me`** immediately after create. Issues and PRs should not ship unassigned when the responsible person is known.
+
+Example:
+
+```bash
+gh pr create --base main --assignee @me --title "#42: fix: ..." --body "Closes #42"
+```
+
 ## Integration
 
 - Runs last in issue-workflow sequence.

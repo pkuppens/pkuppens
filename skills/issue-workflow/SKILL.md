@@ -23,7 +23,8 @@ Orchestrates the GitHub issue lifecycle per [GitHub Issue Lifecycle](https://doc
 6. **Out-of-scope** — [issue-out-of-scope](issue-out-of-scope/SKILL.md). Define exclusions.
 7. **Estimate** — [issue-estimate](issue-estimate/SKILL.md). T-shirt size (XS–XL).
 8. **Metadata** — [issue-metadata](issue-metadata/SKILL.md). Tags, milestones, assignees (always assign the person who triggered the issue—directly or indirectly—so ownership and review are explicit).
-9. **Draft issue** — Combine into issue body with Goal, Tasks, Acceptance Criteria, Out of Scope, Estimate, Metadata.
+9. **Bulk EPIC + children with `gh` (optional)** — [issue-gh-bulk-scratch](issue-gh-bulk-scratch/SKILL.md). When creating many related issues at once: gitignored `tmp/EPIC-#.md` and `tmp/ISSUE-#.md` named **1-1** with GitHub issue numbers, and `--assignee @me` (or batch `gh issue edit`) so each item shows on the assignee’s list.
+10. **Draft issue** — Combine into issue body with Goal, Tasks, Acceptance Criteria, Out of Scope, Estimate, Metadata.
 
 ## Instructions
 
@@ -34,7 +35,8 @@ Orchestrates the GitHub issue lifecycle per [GitHub Issue Lifecycle](https://doc
 5. Run out-of-scope; list exclusions.
 6. Run estimate; add T-shirt size.
 7. Run metadata; add labels, milestone, and assignees (default: assign the trigger user per issue-metadata).
-8. Assemble final issue draft for `gh issue create` or paste into GitHub UI.
+8. If bulk-filing an EPIC and many sub-issues with `gh`, use [issue-gh-bulk-scratch](issue-gh-bulk-scratch/SKILL.md) for local 1-1 `tmp` names and self-assign.
+9. Assemble final issue draft for `gh issue create` or paste into GitHub UI.
 
 ## Output format
 
@@ -63,7 +65,7 @@ Labels: size:M, type:task — Milestone: (none) — Assignee: @trigger — Paren
 
 ## Integration
 
-Uses `gh` CLI: `gh issue list`, `gh issue view`, `gh issue create`. Ensure `gh auth login` if needed.
+Uses `gh` CLI: `gh issue list`, `gh issue view`, `gh issue create`. Ensure `gh auth login` if needed. For EPIC + multiple sub-issues with local scratch files, see [issue-gh-bulk-scratch](issue-gh-bulk-scratch/SKILL.md).
 
 ### Optional: V-model traceability
 
