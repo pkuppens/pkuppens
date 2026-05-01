@@ -15,7 +15,7 @@ Creates PR, merges to main, and ensures proper Git workflow per repo CLAUDE.md.
 ## Flow
 
 1. **Commit** — [integration-commit](integration-commit/SKILL.md). Conventional message, issue reference.
-2. **PR** — [integration-pr](integration-pr/SKILL.md). Open PR, link issue, fill description.
+2. **PR** — [integration-pr](integration-pr/SKILL.md). Open PR, link issue, fill description, **assign the opener** (`gh pr create --assignee @me` or `gh pr edit` after create).
 3. **Review** — [code-review](../code-review/SKILL.md). Structured checklist on the diff (imports, headers, domain-neutral compliance wording, naming, security spot checks).
 4. **Merge** — [integration-merge](integration-merge/SKILL.md). Merge, resolve conflicts, squash if needed.
 
