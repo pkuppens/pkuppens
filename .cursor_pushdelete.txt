@@ -1,0 +1,8 @@
+﻿git : To https://github.com/pkuppens/pkuppens.git
+At line:1 char:1
++ git push origin --delete feature/26-skills-backlog *>&1 | Out-File -E ...
++ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (To https://gith...ns/pkuppens.git:String) [], RemoteException
+    + FullyQualifiedErrorId : NativeCommandError
+ 
+ - [deleted]         feature/26-skills-backlog
