@@ -1,95 +1,124 @@
 ---
 name: skill-creation
-description: Guides creation of new AI coding skills for Cursor, Claude, and Codex. Use when creating, writing, or authoring a new skill, or when asking about skill structure, SKILL.md format, or best practices. Enforces single responsibility, one-liner, progressive disclosure, and Claude skill structure.
+description: >-
+  Authors AI agent skills for Cursor, Claude Code, and similar tools using SKILL.md
+  structure and progressive disclosure. Use when creating, writing, or refactoring a
+  skill; when the user mentions SKILL.md, skill frontmatter, or skill best practices;
+  or when the user invokes slash commands that map here (includes create-skill).
+disable-model-invocation: true
 ---
 
-# Creating Skills
+# Skill creation (canonical)
 
-Guides creation of new skills per [Claude skill](https://docs.claude.com/en/docs/agents-and-tools/agent-skills/best-practices).
+Guides authoring of reusable agent skills per [Claude skill best practices](https://docs.claude.com/en/docs/agents-and-tools/agent-skills/best-practices). Cursor’s bundled `create-skill` under `skills-cursor/` is reference-only; **this folder is authoritative** for this repository’s skill tree (`skills/` junctioned from `~/.cursor/skills` when using the standard layout).
 
-## Required structure
+## When to read this skill
 
-Every skill needs a directory with `SKILL.md`:
+- New or rewritten skills, sub-skills, or meta-skills under `skills/`
+- Questions about YAML frontmatter, description wording, layout, or token budget
+- Ported workflows from Cursor-only docs into portable, Claude-aligned shape
+
+Deep patterns, anti-patterns, phased workflow, checklists, and optional project-facing trim live in [reference.md](reference.md).
+
+## Discovery (gather before drafting)
+
+Infer from context where possible; otherwise confirm:
+
+1. **Purpose / scope** — one capability per skill folder
+2. **Location** — personal (`~/.cursor/skills/` or synced `skills/`) vs repo-local `.cursor/skills/` for team-only overlays
+3. **Triggers** — when the agent should apply the skill automatically vs only when invoked
+4. **Domain facts** — only what models do not reliably know already
+5. **Output shapes** — templates, headings, or review formats required
+6. **Precedent** — existing skills in this tree to mirror
+
+**Verbatim user copy:** If the user supplies exact wording for the skill body, place it **verbatim** in `SKILL.md` (same words, same order). Do not paraphrase or wrap with extra headings unless they asked.
+
+**Clarification:** Prefer the AskQuestion tool when available; otherwise ask in chat (e.g. personal vs project path, whether to add `scripts/`).
+
+## Directory layout
 
 ```
 skill-name/
-├── SKILL.md              # Required
-├── reference.md          # Optional — loaded when needed
-└── examples.md          # Optional
+├── SKILL.md          # required
+├── reference.md      # optional (detail, patterns)
+├── examples.md       # optional
+└── scripts/          # optional (stable helpers; document run vs read)
 ```
 
-### YAML frontmatter
+**Do not** author new skills under `~/.cursor/skills-cursor/` (Cursor-managed). **Do** keep skills in this repo under `skills/<name>/` or in a project’s `.cursor/skills/<name>/` when the skill is repository-specific.
+
+## YAML frontmatter
 
 ```yaml
 ---
 name: skill-name
-description: What the skill does. Use when [trigger scenarios]. Third person, WHAT + WHEN.
+description: >-
+  What the skill does in third person; include trigger terms and "Use when …".
+  WHAT + WHEN; max 1024 chars.
+disable-model-invocation: true   # default: load when named; omit or false only for auto-invoke skills
 ---
 ```
 
-- **name:** Max 64 chars, lowercase letters, numbers, hyphens only
-- **description:** Max 1024 chars. Third person. Include trigger terms for discovery.
+| Field | Rule |
+|-------|------|
+| `name` | ≤64 chars; lowercase letters, digits, hyphens only |
+| `description` | Non-empty; third person; concrete triggers (not "helps with X" only) |
+
+## Writing descriptions
+
+Third person only. Prefer: *"Analyzes spreadsheets and suggests pivots. Use when working with `.xlsx` or tabular exports."*
+
+Avoid vague one-liners and first/second person ("I", "you can").
+
+Further examples and pitfalls: [reference.md](reference.md#description-snippets-and-failures).
 
 ## Principles
 
-### Single responsibility
-One skill = one capability. Compose for complex workflows.
-
-### One-liner
-Skill description + one-line summary per sub-skill. Optional 1–2 comment lines. No verbose explanations.
-
-### Progressive disclosure
-- Metadata (name, description) — always loaded
-- SKILL.md body — loaded when triggered
-- reference.md, examples.md — loaded as needed
-- Keep SKILL.md under 300 lines — create additional small skills when it would exceed.
+- **Single responsibility** — Compose multiple skills instead of one mega skill.
+- **One-liners** — Each section earns its tokens; subsection titles + tight bullets; defer essays to `reference.md`.
+- **Progressive disclosure** — Keep **`SKILL.md` ≤ ~300 lines**; split oversized content into `reference.md` / `examples.md` (prefer **single-level** links from `SKILL.md`).
+- **Self-improvement** — After errors or strong user feedback, update this meta-skill or the child skill accordingly.
 
 ### Degrees of freedom
 
 | Level | When | Example |
 |-------|------|---------|
-| High | Multiple valid approaches | Code review guidelines |
-| Medium | Preferred pattern, acceptable variation | Templates |
-| Low | Fragile, consistency critical | Exact scripts |
+| High | Several valid approaches | Code review judgement |
+| Medium | Preferred pattern, some slack | Report template |
+| Low | Fragile or compliance-sensitive steps | Scripted migration |
 
-## SKILL.md body template
+## SKILL.md body shape (minimal template)
+
+Use this scaffold when starting a new skill:
 
 ```markdown
 ---
 name: example-skill
-description: Does X. Use when [trigger].
+description: Does X in third person. Use when Y or Z.
 ---
 
-# Example Skill
+# Title
 
 ## When to use
-- Trigger scenario 1
-- Trigger scenario 2
+- …
 
 ## Instructions
-1. Step one
-2. Step two
-3. Step three
+1. …
 
-## Output format
-[Template if needed]
+## Output format (if needed)
+…
 
 ## Additional resources
-- See [reference.md](reference.md) for details
+- [reference.md](reference.md)
 ```
 
-## Anti-patterns
+## Architecture-aligned skills
 
-- Vague names: `helper`, `utils`, `tools`
-- First/second person in description
-- Explaining what the agent already knows
-- SKILL.md over 500 lines without split
-- Windows-style paths (`\`)
+For skills that encode architecture workflows, align with arc42 themes (sections 1–12): goals, constraints, context, solution strategy, building blocks, runtime, deployment, crosscutting concepts, decisions, quality, risks, glossary.
 
-## Arc42 alignment
+## Next steps for the agent
 
-For architecture-related skills, align with arc42 sections (1–12): goals, constraints, context, solution strategy, building blocks, runtime, deployment, crosscutting, decisions, quality, risks, glossary.
-
-## Self-improvement
-
-After using a skill that returns an error, or gets significant user feedback, consider: Did execution or user feedback suggest changes to the meta-skill or the new skill? Capture refinements for iteration.
+1. Resolve discovery items above (or infer safely).
+2. Draft `SKILL.md` respecting size and linking rules.
+3. Add `reference.md` / `examples.md` / `scripts/` only when justified.
+4. Run the checklist in [reference.md](reference.md#pre-merge-checklist).
