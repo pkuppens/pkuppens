@@ -5,7 +5,6 @@ description: >-
   structure and progressive disclosure. Use when creating, writing, or refactoring a
   skill; when the user mentions SKILL.md, skill frontmatter, or skill best practices;
   or when the user invokes slash commands that map here (includes create-skill).
-disable-model-invocation: true
 ---
 
 # Skill creation (canonical)
@@ -55,7 +54,6 @@ name: skill-name
 description: >-
   What the skill does in third person; include trigger terms and "Use when …".
   WHAT + WHEN; max 1024 chars.
-disable-model-invocation: true   # default: load when named; omit or false only for auto-invoke skills
 ---
 ```
 
@@ -63,6 +61,10 @@ disable-model-invocation: true   # default: load when named; omit or false only 
 |-------|------|
 | `name` | ≤64 chars; lowercase letters, digits, hyphens only |
 | `description` | Non-empty; third person; concrete triggers (not "helps with X" only) |
+
+Do not add tool-specific metadata unless the active validator allows it.
+This repository rejects unsupported frontmatter fields such as
+`disable-model-invocation`.
 
 ## Writing descriptions
 
