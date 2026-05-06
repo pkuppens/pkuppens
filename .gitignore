@@ -31,7 +31,10 @@ tmp/
 # causing broken clones. Documented setup lets each developer run symlink commands
 # after clone.
 .claude/
-.cursor/
+# Ignore local .cursor junk (skills symlink, machine config) but track shareable slash commands.
+.cursor/*
+!.cursor/commands/
+!.cursor/commands/**
 
 # To include them instead: use relative symlinks within the repo, e.g. from repo root:
 #   mkdir -p .cursor .claude
