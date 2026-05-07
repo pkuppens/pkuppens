@@ -62,7 +62,7 @@ description: >-
 | `name` | ≤64 chars; lowercase letters, digits, hyphens only |
 | `description` | Non-empty; third person; concrete triggers (not "helps with X" only) |
 
-Only use frontmatter fields accepted by the Agent Skills validator for this repo.
+Keep frontmatter compatible with `skills-ref`; do not add tool-specific invocation fields.
 
 ## Writing descriptions
 

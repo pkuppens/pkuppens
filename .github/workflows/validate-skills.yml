@@ -41,15 +41,20 @@ jobs:
         run: |
           set -euo pipefail
           failed=0
+          failed_dirs=()
           while IFS= read -r -d '' skill_md; do
             dir=$(dirname "$skill_md")
             echo "::group::Validate $dir"
             if ! skills-ref validate "$dir"; then
               failed=1
+              failed_dirs+=("$dir")
+              echo "::error title=Skill validation failed::$dir"
             fi
             echo "::endgroup::"
           done < <(find skills -name 'SKILL.md' -print0)
           if [[ "$failed" -ne 0 ]]; then
             echo "One or more skills failed validation."
+            echo "Failed skill directories:"
+            printf '%s\n' "${failed_dirs[@]}"
             exit 1
           fi
