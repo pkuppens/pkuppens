@@ -71,6 +71,7 @@ Count passed / failed / blocked. Set frontmatter `status` to `passed` or `failed
 
 - **Do not skip steps** unless the user explicitly scopes a partial run
 - **Do not mark passed** without executing and verifying
+- **Record evidence for critical steps** — include the command and a short observed outcome (exit code, status code, or UI state) before marking `[x]`
 - **Document** why an expectation or command was corrected
 - **Fix implementation first** — change the validation only when the spec was wrong
 
@@ -78,3 +79,4 @@ Count passed / failed / blocked. Set frontmatter `status` to `passed` or `failed
 
 - [create-validation](create-validation/SKILL.md)
 - [validation-draft](validation-draft/SKILL.md)
+- [verification-before-completion](../verification-before-completion/SKILL.md)

@@ -19,7 +19,8 @@ Aligns tests with **risk** and **contracts**.
 2. **Name** tests for behaviour, not implementation detail.
 3. **Arrange / act / assert** (or project equivalent).
 4. **Data** — factories or fixtures; no secrets in repo.
-5. **Run** via repo standard (`uv run pytest`, `npm test`, …).
+5. **Bug fixes: failing test first** — before changing production code, add a test that reproduces the bug and fails for the expected reason.
+6. **Run** via repo standard (`uv run pytest`, `npm test`, …).
 
 ## Output format
 
@@ -28,3 +29,4 @@ Aligns tests with **risk** and **contracts**.
 ## Anti-patterns
 
 - Tests that assert only “no exception” for complex flows
+- Writing the fix first and adding tests “after”

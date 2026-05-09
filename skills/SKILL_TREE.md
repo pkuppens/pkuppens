@@ -254,6 +254,16 @@ Analyses and increases test coverage; identifies gaps.
 
 ---
 
+## Process helpers (cross-cutting)
+
+### systematic-debugging
+Investigates root cause before proposing fixes. Use when facing bugs, test failures, CI failures, unexpected behavior, or performance regressions.
+
+### verification-before-completion
+Requires evidence before claiming work is done or fixed. Use before commit/PR, before telling a user “it works”, or when closing a task.
+
+---
+
 ## Level 1: Quality Gate
 
 ### 10. quality-gate

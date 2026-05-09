@@ -48,4 +48,5 @@ Closes #8"
 ## Integration
 
 - Runs after [integration-commit](../integration-commit/SKILL.md).
+- Apply [verification-before-completion](../../verification-before-completion/SKILL.md) before stating the PR is ready.
 - Feeds into [code-review](../../code-review/SKILL.md), then [integration-merge](../integration-merge/SKILL.md).
