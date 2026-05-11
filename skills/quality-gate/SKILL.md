@@ -88,3 +88,4 @@ List errors with file and line reference for any failures.
 
 - Run after [implementation-construction](../implementation/implementation-construction/SKILL.md).
 - Must pass before [integration-commit](../integration/integration-commit/SKILL.md).
+- Use [verification-before-completion](../verification-before-completion/SKILL.md) before claiming work is ready.

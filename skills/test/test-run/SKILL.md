@@ -23,8 +23,14 @@ description: Executes the test suite locally or in CI and interprets failures. U
 
 ## Output format
 
-- Pass/fail summary; if fail: root cause hypothesis + next step
+- Pass/fail summary including the **exact command** that was run.
+- If fail: root cause hypothesis + next step
+- If pass: include pass counts (when available) and exit code
 
 ## Anti-patterns
 
 - “Works on my machine” without matching CI Python/Node version
+
+## Integration
+
+- Use [systematic-debugging](../systematic-debugging/SKILL.md) when a failure is not immediately understood and you need a root cause before proposing a fix.

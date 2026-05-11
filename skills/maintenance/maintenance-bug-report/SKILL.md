@@ -29,3 +29,7 @@ Makes bugs **actionable** for [issue-workflow](../../issue-workflow/SKILL.md).
 ## Anti-patterns
 
 - “Doesn’t work” without version or steps
+
+## Integration
+
+- Use [systematic-debugging](../systematic-debugging/SKILL.md) before writing a bug report when the root cause is unclear.

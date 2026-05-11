@@ -43,4 +43,5 @@ Commit hash and short log line.
 ## Integration
 
 - Runs after [quality-gate](../../quality-gate/SKILL.md).
+- Apply [verification-before-completion](../../verification-before-completion/SKILL.md) before claiming a change is ready to commit or PR.
 - Feeds into [integration-pr](../integration-pr/SKILL.md) (push then PR).
