@@ -396,6 +396,14 @@ Pairs [implementation-construction](implementation/implementation-construction/S
 
 ---
 
+## Crosscutting Principles
+
+### fair-data-principles
+Guides application of FAIR data principles (Findable, Accessible, Interoperable, Reusable) to API and data model design. Use when findability, accessibility, interoperability, or reusability are quality goals.
+// Healthcare, government, enterprise data platforms. FAIR != Open Data.
+
+---
+
 ## Language & Framework Skills
 
 ### find-skills
@@ -440,6 +448,7 @@ Explains git worktrees and Claude Code usage; guides removal and cleanup when a 
 | 14 | maintenance | Bug report, cleanup, debt | 14.1–14.3 |
 | 15 | governance | Progress, post-mortem, audit trail | 15.1–15.3 |
 | — | v-model *(overlay)* | Traceability pairing (optional) | mapping, requirements-acceptance, architecture-integration, design-verification, implementation-unit, retrofit |
+| — | fair-data-principles *(crosscutting)* | FAIR data quality goals | — |
 
 **Total:** 1 meta-skill + 16 lifecycle skills + **V-model overlay** (6 sub-skills), 60+ sub-skills elsewhere. Nesting: up to 4–5 levels where needed (e.g. 5.4.1, 5.4.2).
 
@@ -462,6 +471,7 @@ Explains git worktrees and Claude Code usage; guides removal and cleanup when a 
 | deployment (12.1, 12.2) | ✅ implemented |
 | operations (13.1–13.3) | ✅ implemented |
 | skill-benchmark (8.4) | ✅ implemented |
+| fair-data-principles | ✅ implemented (#81) |
 | find-skills, mojo-syntax, mojo-gpu-fundamentals, mojo-python-interop, new-modular-project, git-worktrees | ✅ implemented |
 | maintenance-cleanup (14.2) | ✅ implemented |
 | plan (orchestrator: branch strategy, implementation-workflow through PR/CI) | ✅ implemented |
