@@ -426,6 +426,34 @@ Explains git worktrees and Claude Code usage; guides removal and cleanup when a 
 
 ---
 
+## Domain Skills
+
+### ai-agent-development
+Guides implementation of AI agents: agent types, context/RAG, guardrails, swappable LLM providers, on-premises deployment, framework selection, and visual development. Use when designing, building, or reviewing AI agent systems in Python or C#.
+
+#### agent-types
+Classifies AI agent patterns: chat completion, tool-using, ReAct, A2A protocol, subagents, and multi-agent orchestration.
+
+#### agent-context
+Guides context management: RAG pipelines, knowledge graphs, embeddings, conversation memory, and context window strategies.
+
+#### agent-guardrails
+Guides guardrails: input/output validation, PII filtering, cost control, safety policies, and audit logging.
+
+#### agent-llm-providers
+Guides swappable LLM provider interfaces: open-source (Ollama, LlamaCPP) and closed-source (OpenAI, Gemini) via abstract base classes and factory patterns.
+
+#### agent-on-premises
+Guides on-premises deployment: local model serving, data sovereignty, air-gapped environments, GPU provisioning, and infrastructure patterns.
+
+#### agent-frameworks
+Compares agent frameworks: LangChain/LangGraph, Semantic Kernel, AutoGen, CrewAI. Guides framework selection based on language, agent pattern, and deployment constraints.
+
+#### agent-visual-dev
+Guides visual/GUI-based agent development with n8n, Flowise, and LangFlow. Covers low-code orchestration and on-premises self-hosting.
+
+---
+
 ## Summary: Skill Tree Overview
 
 | # | Skill | arc42 / Lifecycle | Sub-skills |
@@ -449,12 +477,13 @@ Explains git worktrees and Claude Code usage; guides removal and cleanup when a 
 | 15 | governance | Progress, post-mortem, audit trail | 15.1–15.3 |
 | — | v-model *(overlay)* | Traceability pairing (optional) | mapping, requirements-acceptance, architecture-integration, design-verification, implementation-unit, retrofit |
 | — | fair-data-principles *(crosscutting)* | FAIR data quality goals | — |
+| — | ai-agent-development *(domain)* | AI agent implementation | agent-types, agent-context, agent-guardrails, agent-llm-providers, agent-on-premises, agent-frameworks, agent-visual-dev |
 
-**Total:** 1 meta-skill + 16 lifecycle skills + **V-model overlay** (6 sub-skills), 60+ sub-skills elsewhere. Nesting: up to 4–5 levels where needed (e.g. 5.4.1, 5.4.2).
+**Total:** 1 meta-skill + 16 lifecycle skills + **V-model overlay** (6 sub-skills) + 1 domain skill (7 sub-skills), 60+ sub-skills elsewhere. Nesting: up to 4–5 levels where needed (e.g. 5.4.1, 5.4.2).
 
 ## Implementation Status
 
-*Inventory: **95** `SKILL.md` files under `pkuppens/skills/` (2026-05-01, #57, #59–#65, #67). See [audit-results.md](../docs/skills/audit-results.md) for how to regenerate the list.*
+*Inventory: **106** `SKILL.md` files under `pkuppens/skills/` (2026-05-12, #57, #59–#65, #67, #84). See [audit-results.md](../docs/skills/audit-results.md) for how to regenerate the list.*
 
 | Skill | Status |
 | skill-creation | ✅ implemented |
@@ -487,3 +516,4 @@ Explains git worktrees and Claude Code usage; guides removal and cleanup when a 
 | governance (15.1–15.3) | ✅ implemented (#61) |
 | requirements / design / implementation / validation / test **orchestrator** SKILL.md | ✅ nav + sub-skill links |
 | v-model overlay (#42) | ✅ implemented |
+| ai-agent-development + 7 sub-skills | ✅ implemented (#84) |
