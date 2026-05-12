@@ -1,0 +1,42 @@
+# markdownlint-cli2 configuration
+# https://github.com/DavidAnson/markdownlint-cli2
+
+config:
+  # MD013 - Line length: disabled because skill files and examples often
+  # contain long URLs, code fences, and table rows.
+  MD013: false
+
+  # MD022 - Blanks around headings: disabled because SKILL_TREE.md and
+  # skill files use a compact "### heading\ndescription" pattern.
+  MD022: false
+
+  # MD033 - Inline HTML: allow common HTML elements used in GitHub markdown.
+  MD033:
+    allowed_elements:
+      - br
+      - details
+      - summary
+      - sup
+      - sub
+      - img
+
+  # MD036 - Emphasis as heading: disabled because skill files use **bold**
+  # section labels intentionally (e.g. reference.md checklist sections).
+  MD036: false
+
+  # MD041 - First line in a file should be a top-level heading:
+  # disabled because SKILL.md files start with YAML frontmatter.
+  MD041: false
+
+  # MD024 - Multiple headings with the same content: allow when nested
+  # under different parent headings (common in examples.md).
+  MD024:
+    siblings_only: true
+
+globs:
+  - "**/*.md"
+
+ignores:
+  - "tmp/**"
+  - "node_modules/**"
+  - ".cursor/**"

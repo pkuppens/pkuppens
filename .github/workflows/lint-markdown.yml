@@ -1,0 +1,37 @@
+# Lint all Markdown files with markdownlint-cli2.
+# Runs on PRs and pushes to main that touch .md files.
+# Currently advisory (continue-on-error) due to pre-existing violations.
+# Remove continue-on-error once the backlog is cleared.
+name: Lint Markdown
+
+on:
+  pull_request:
+    paths:
+      - "**/*.md"
+      - ".markdownlint-cli2.yaml"
+      - ".github/workflows/lint-markdown.yml"
+  push:
+    branches: [main]
+    paths:
+      - "**/*.md"
+      - ".markdownlint-cli2.yaml"
+      - ".github/workflows/lint-markdown.yml"
+  workflow_dispatch: {}
+
+permissions:
+  contents: read
+
+concurrency:
+  group: lint-markdown-${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  lint:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v6
+
+      - name: Run markdownlint-cli2
+        uses: DavidAnson/markdownlint-cli2-action@v23
+        continue-on-error: true
