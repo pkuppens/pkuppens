@@ -10,6 +10,17 @@ The context window is shared. Default assumption: the agent already knows genera
 
 Ask per paragraph: *Does the agent need this? Does it justify its token cost?*
 
+## Public agent skills ecosystem (before authoring)
+
+When discovery identifies a **new or heavily rewritten** skill:
+
+1. **Search** — Use `npx skills find <keywords>` and browse [skills.sh](https://www.skills.sh/) for overlapping packages. Step-by-step commands live in [find-skills/SKILL.md](../../find-skills/SKILL.md).
+2. **Record** — Name or link each candidate, fit (good / partial / poor), and whether text would be copied (then confirm license and attribution).
+3. **Decide** — **Reuse** (prefer user- or project-level install per find-skills; symlink this repo’s canonical copy from `skills/` when the content is maintained here), **learn** (borrow structure or checklist style only), or **build** (no suitable public skill).
+4. **Local overrides** — Healthcare, compliance, team conventions, or IDE-specific layout may require content that public skills do not cover. Keep that explicit in the skill or in the PR/issue notes.
+
+This step complements [ideation-reuse-check](../../ideation/ideation-reuse-check/SKILL.md), which targets libraries and services; use both when scope is unclear.
+
 **Good (concise):**
 
 ```markdown
@@ -142,7 +153,7 @@ python scripts/extract_fields.py input.pdf > fields.json
 
 When helping a human author a skill:
 
-1. **Discovery** — purpose, location (personal vs project), triggers, constraints, precedent skills.
+1. **Discovery** — purpose, location (personal vs project), triggers, constraints, precedent skills, [public agent skills](#public-agent-skills-ecosystem-before-authoring) scan when authoring net-new or large rewrites.
 2. **Design** — folder name (\`skill-name\`), description draft, outline, whether \`reference.md\` /\`scripts/\` are needed.
 3. **Implement** — create tree, frontmatter, body, sibling files.
 4. **Verification** — run [Pre-merge checklist](#pre-merge-checklist); spot-check triggers with a teammate or second session.

@@ -17,7 +17,7 @@ Reduces waste by finding **existing** solutions early.
 
 1. **Define the capability** in domain terms (not a tech stack yet).
 2. **Search internally** — repos, packages, shared services, ADRs, Slack/docs indexes.
-3. **Search externally** — mature OSS, cloud managed services (check license and ops cost).
+3. **Search externally** — mature OSS, cloud managed services (check license and ops cost). If the capability is an **agent skill** (prompted workflow for an IDE agent), also scan public skill registries (e.g. [skills.sh](https://www.skills.sh/) and `npx skills find` per [find-skills](../../find-skills/SKILL.md)); for full authoring steps see [skill-creation](../../_meta/skill-creation/SKILL.md).
 4. **Record findings:** name, link, fit (good/partial/poor), adoption cost.
 5. **Recommend:** reuse, wrap, fork, or build; cite trade-offs.
 
