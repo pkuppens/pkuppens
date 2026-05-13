@@ -51,6 +51,26 @@ Create `scripts/sync-skills-to-ide.sh` to copy or symlink `skills/` into `~/.cur
 
 Cursor also loads from `.claude/skills/` and `~/.claude/skills/`.
 
+## External and vendor skills
+
+Symlinks above point at **this** `skills/` tree (the shared lifecycle library). Many teams also install **additional** skills from GitHub or registries with the Skills CLI (`npx skills add …`). Those installs land under the IDE’s skill paths but are **not** committed here.
+
+**Why document them:** onboarding, reproducibility, and agent behaviour all improve when the project states which extra skills are expected (and any follow-up setup, for example extra CLIs or logins).
+
+**Where to record (pick one or combine):**
+
+- `CLAUDE.md` or `AGENTS.md` at the repo root — short bullet list with package URL and skill name
+- `CONTRIBUTING.md` — “Agent / IDE setup” subsection
+- `docs/skills-used.md` (or similar) — table of skill source, install command, owner, and last reviewed date
+
+**Example install** (Azure DevOps–oriented; confirm against current CLI output):
+
+```bash
+npx skills add https://github.com/github/awesome-copilot --skill azure-devops-cli
+```
+
+Authoring guidance for “install first, write in `skills/` only when needed” lives in [`_meta/skill-creation/reference.md`](_meta/skill-creation/reference.md#example-platform-tooling-azure-devops).
+
 ## Directory structure
 
 ```

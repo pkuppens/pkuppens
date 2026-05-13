@@ -31,6 +31,12 @@ The Skills CLI (`npx skills`) is the package manager for the open agent skills e
 
 **Browse skills at:** https://skills.sh/
 
+## Prefer install before duplicating in `pkuppens/skills`
+
+When the need is **vendor- or product-specific** (Azure DevOps, a cloud console, a framework vendor pack), the default answer is usually `npx skills add …` from the ecosystem, **not** a new first-party `SKILL.md` in this repo. Some packs ask for **extra** installs or configuration; treat that as part of the supported path unless you have a unique policy only your tree can express.
+
+Concrete pattern (Azure DevOps): see [skill-creation reference § Example: platform tooling (Azure DevOps)](../_meta/skill-creation/reference.md#example-platform-tooling-azure-devops). Teams should still **list** which external skills a project relies on (see [skills/README.md § External and vendor skills](../README.md#external-and-vendor-skills)).
+
 ## How to Help Users Find Skills
 
 ### Step 1: Understand What They Need

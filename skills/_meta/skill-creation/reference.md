@@ -21,6 +21,22 @@ When discovery identifies a **new or heavily rewritten** skill:
 
 This step complements [ideation-reuse-check](../../ideation/ideation-reuse-check/SKILL.md), which targets libraries and services; use both when scope is unclear.
 
+### Example: platform tooling (Azure DevOps)
+
+Working with **Azure DevOps** (repos, boards, pipelines, `az` CLI patterns inside the agent) usually **does not** need a hand-written `SKILL.md` in this repository. Prefer an ecosystem pack that already encodes those workflows.
+
+1. **Install a published skill** instead of duplicating it under `skills/`, for example:
+
+   ```bash
+   npx skills add https://github.com/github/awesome-copilot --skill azure-devops-cli
+   ```
+
+   Package layout and skill slugs change over time; if this command fails, run `npx skills find "azure devops"` and follow the install line the CLI prints.
+
+2. **Extra installs are normal** — composite packs may pull additional tools, prompts, or dependencies. Accept follow-up installs or setup steps when the upstream README or installer asks for them; that is still cheaper than maintaining a parallel copy in `pkuppens/skills` unless you have a clear delta only your org needs.
+
+3. **Document what the project uses** — skills added with `npx skills` (or other registries) are not visible from this repo’s tree alone. Record them in project docs so humans and agents know what to expect (see [External and vendor skills](../../README.md#external-and-vendor-skills)).
+
 **Good (concise):**
 
 ```markdown
