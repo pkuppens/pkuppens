@@ -35,7 +35,7 @@ Working with **Azure DevOps** (repos, boards, pipelines, `az` CLI patterns insid
 
 2. **Extra installs are normal** — composite packs may pull additional tools, prompts, or dependencies. Accept follow-up installs or setup steps when the upstream README or installer asks for them; that is still cheaper than maintaining a parallel copy in `pkuppens/skills` unless you have a clear delta only your org needs.
 
-3. **Document what the project uses** — skills added with `npx skills` (or other registries) are not visible from this repo’s tree alone. Record them in project docs so humans and agents know what to expect (see [External and vendor skills](../../README.md#external-and-vendor-skills)).
+3. **Document what the project uses** — skills added with `npx skills` (or other registries) are not visible from this repo’s tree alone. Record them in project docs so humans and agents know what to expect (see [External and vendor skills](../../README.md#external-and-vendor-skills)). For how symlinked canonical skills and CLI installs **combine** at project vs global level, see [Canonical plus public skills (side by side)](../../README.md#canonical-plus-public-skills-side-by-side).
 
 **Good (concise):**
 

@@ -71,6 +71,37 @@ npx skills add https://github.com/github/awesome-copilot --skill azure-devops-cl
 
 Authoring guidance for “install first, write in `skills/` only when needed” lives in [`_meta/skill-creation/reference.md`](_meta/skill-creation/reference.md#example-platform-tooling-azure-devops).
 
+## Canonical plus public skills (side by side)
+
+This is the **merge** model: one skill surface for the agent, built from **(A)** this repo’s `skills/` tree (your canonical lifecycle library) and **(B)** extra packages from the open ecosystem (`npx skills add …`). They are not merged in git; they **coexist** under the IDE’s skill discovery paths.
+
+### How it fits together
+
+- The agent loads **all** skill directories the IDE exposes (for example `.cursor/skills/` and `~/.cursor/skills/` for Cursor). Your symlink (or junction) and any CLI-installed folders are **combined** automatically—there is no separate “merge” command.
+- **Order of operations** does not matter for discovery: install public skills before or after creating the symlink; refresh the IDE if it caches paths.
+- Exact subfolder names depend on the Skills CLI version and flags; after setup, list the skill root once so you know which directories are yours vs vendor.
+
+### Project scale (one repository)
+
+- Symlink **this** `skills/` tree into the **project** path (see [Option A](#option-a-symlinks-recommended) under `.cursor/` or `.claude/`).
+- Add **project-scoped** public skills when your CLI supports installing into that project (check `npx skills add --help`). If installs are only practical with `-g`, use global adds and still **document** that this repo expects them ([External and vendor skills](#external-and-vendor-skills)).
+
+### Global scale (your user profile)
+
+- Symlink `pkuppens/skills` under `~/.cursor/skills`, `~/.claude/skills`, and/or `~/.codex/skills` so every clone gets the same baseline without repeating per-repo symlinks.
+- Install cross-repo utilities with `npx skills add <package> -g` (see [find-skills](find-skills/SKILL.md)).
+
+### Project and global at the same time
+
+Both are usually **active together**: global baseline plus a project symlink (if the project adds one). The agent sees the **union** of all folders.
+
+- **Avoid duplicate ownership** of the same workflow: if a public skill already covers a topic, do not maintain a near-copy under `skills/` unless you have a documented delta ([skill-creation reference](_meta/skill-creation/reference.md#public-agent-skills-ecosystem-before-authoring)).
+- **Name collisions:** two skills with the same YAML `name` can confuse discovery. Prefer one copy, or rename a fork and document why.
+
+### Layout tip: one subfolder for this repo, siblings for vendors
+
+If you cannot symlink the **entire** `.cursor/skills` directory (because the CLI must create sibling packages), point **only a child** at this tree—for example `.cursor/skills/pkuppens` → `…/pkuppens/skills`—and let `npx skills add` place **other** directories beside `pkuppens/`. The same pattern matches [Option B](#option-b-sync-script), which treats `pkuppens` as one child among many.
+
 ## Directory structure
 
 ```
