@@ -85,6 +85,26 @@ Use `npx skills add --help` for the latest flags. Installs are **symlinks** by d
 2. Confirm files under the path your agent uses (see [IDE expected locations](#ide-expected-locations); e.g. Cursor loads `.cursor/skills/` and `~/.cursor/skills/`).
 3. Run `skills-ref validate <path-to-skill-dir>` if you want the same check as CI (install [`skills-ref`](https://www.npmjs.com/package/skills-ref) globally or via `npx`).
 
+### Pinning / versions (reproducibility)
+
+Versioning for CLI installs is **Git-based**, not a separate semver file in this repo (that would duplicate Git and drift). The [Skills CLI](https://github.com/vercel-labs/skills) accepts an `@<ref>` suffix on `owner/repo`:
+
+| Install style | Example | When to use |
+|---------------|---------|-------------|
+| Floating (default branch) | `pkuppens/pkuppens` or `https://github.com/pkuppens/pkuppens` | You want latest; accept behaviour changes when `main` moves. |
+| Pinned to commit | `pkuppens/pkuppens@<commit-sha>` | Reproducible CI or team baseline; short SHA is accepted. |
+| Pinned to tag | `pkuppens/pkuppens@<tag>` | After maintainers publish a Git tag; stable name for humans. |
+| Pinned to branch | `pkuppens/pkuppens@my-branch` | Long-lived branch installs. |
+
+```bash
+# List skills at an exact Git ref (replace <git-ref> with tag, branch, or commit SHA)
+npx --yes skills@1.5.6 add pkuppens/pkuppens@<git-ref> --list -y
+```
+
+Record the chosen `owner/repo@ref` in project docs (for example `CLAUDE.md` or `docs/skills-used.md`) so everyone installs the same revision. Use `npx skills update` only for **floating** installs you intentionally want to move forward.
+
+The [Agent Skills](https://agentskills.io/specification) spec allows optional `metadata.version` on a single skill for authors; it does **not** control what the Skills CLI clones—**`@ref` does**.
+
 ## External and vendor skills
 
 Symlinks above point at **this** `skills/` tree (the shared lifecycle library). Many teams also install **additional** skills from GitHub or registries with the Skills CLI (`npx skills add …`). Those installs land under the IDE’s skill paths but are **not** committed here.
