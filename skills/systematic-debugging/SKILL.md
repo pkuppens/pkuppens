@@ -49,6 +49,7 @@ description: Investigates root cause before proposing fixes. Use when facing bug
    - the reproduction now passes
    - the broader suite still passes
 4. Summarize what was wrong and why the fix addresses it (short).
+
 ## Output format (recommended)
 
 ```markdown

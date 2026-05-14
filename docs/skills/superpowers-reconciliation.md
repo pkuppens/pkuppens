@@ -24,6 +24,7 @@ Goal: keep your conventions as the default, but port the best discipline pattern
 ## Conflicts to avoid when porting (your standards win)
 
 - **Toolchain**: Superpowers examples mention `pip` / `poetry`. Your default is **uv-first** and varies per repo. Port patterns, not commands.\n+- **Integration workflow**: Superpowers “finishing a branch” includes local merge options. Your workspace convention is **PR-first** and “never commit directly to main”.\n+- **Hardcoded plan paths**: Superpowers `writing-plans` hardcodes `docs/superpowers/plans/...`. Your repos vary; prefer repo conventions (often `tmp/` for scratch) or make paths configurable.\n+- **Platform/tool naming**: Superpowers content assumes Claude’s skill tooling. In this repo, skills must be usable in Cursor/Claude/Codex, so avoid tool-specific constraints that do not generalize.\n+
+
 ## Resolution implemented in this repo
 
 - Add repo-owned skills:\n+  - `skills/verification-before-completion/SKILL.md`\n+  - `skills/systematic-debugging/SKILL.md`\n+- Tighten existing skills (`test-write`, `test-run`, `quality-gate`, `run-validation`) to encode the ported discipline without depending on Superpowers.\n+

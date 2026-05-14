@@ -1,0 +1,7 @@
+# Local hooks; CI uses .github/workflows/lint-markdown.yml (markdownlint-cli2-action@v23).
+# Pin markdownlint-cli2 to match action v23.x (bundles cli2 v0.22.x per upstream release notes).
+repos:
+  - repo: https://github.com/DavidAnson/markdownlint-cli2
+    rev: v0.22.1
+    hooks:
+      - id: markdownlint-cli2

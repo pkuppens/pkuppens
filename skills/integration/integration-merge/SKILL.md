@@ -21,6 +21,7 @@ Merges the PR into main and performs post-merge cleanup.
 ## Conflict resolution
 
 If merge fails due to conflicts:
+
 1. `git checkout <branch>`, `git pull origin main`
 2. Resolve conflicts in editor
 3. `git add`, `git commit`, `git push`

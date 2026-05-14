@@ -22,7 +22,7 @@ Patterns for securing AI agent input and output, controlling costs, protecting p
 
 Guardrails apply at two points in the agent pipeline:
 
-```
+```text
 User Input → [Input Guardrails] → Agent Core → [Output Guardrails] → User Output
                                        │
                                   [Audit Log]

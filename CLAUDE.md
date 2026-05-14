@@ -13,7 +13,7 @@ There is no build system or test suite. All content is Markdown. Skills under `s
 
 ## Repository Layout
 
-```
+```text
 pkuppens/
 ├── README.md                    # GitHub profile page (public-facing)
 ├── skills/                      # AI coding skills library

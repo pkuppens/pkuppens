@@ -31,10 +31,10 @@ Every acceptance criterion must include specific steps that can be executed to v
 | Tests / lint | Exact command(s) and pass condition |
 
 **Bad** (vague): "API docs updated at `/docs`"  
-**Good**: "Run `uv run uvicorn backend.main:app`, open http://localhost:8000/docs, `/api/upload` is visible; with Try it, upload a sample PDF and succeed in <5s"
+**Good**: "Run `uv run uvicorn backend.main:app`, open <http://localhost:8000/docs>, `/api/upload` is visible; with Try it, upload a sample PDF and succeed in <5s"
 
 **Bad** (vague): "User can upload PDF and get cited answer"  
-**Good**: "From app root, run `uv run uvicorn backend.main:app` and `uv run streamlit run frontend/app.py`. At http://localhost:8501, upload `tmp/sample.pdf`, submit query, cited answer appears within 5s"
+**Good**: "From app root, run `uv run uvicorn backend.main:app` and `uv run streamlit run frontend/app.py`. At <http://localhost:8501>, upload `tmp/sample.pdf`, submit query, cited answer appears within 5s"
 
 **Bad** (vague): "Tests pass with >80% coverage"  
 **Good**: "`cd backend && uv run pytest -v --cov=. --cov-fail-under=80` exits 0; new modules covered"
@@ -59,5 +59,5 @@ Every acceptance criterion must include specific steps that can be executed to v
 
 - "`cd backend && uv run pytest -v --cov=. --cov-fail-under=80` exits 0; new modules covered"
 - "`uv run ruff check . && uv run ruff format --check .` clean"
-- "Run `uv run uvicorn backend.main:app`, open http://localhost:8000/docs, `/api/upload` visible; Try it upload of sample PDF succeeds in <5s"
+- "Run `uv run uvicorn backend.main:app`, open <http://localhost:8000/docs>, `/api/upload` visible; Try it upload of sample PDF succeeds in <5s"
 - "Run backend + frontend, open chat UI, upload PDF, ask question; cited answer with source chunks appears within 5s"

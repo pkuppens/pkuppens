@@ -16,6 +16,7 @@ description: Requires evidence before claiming work is done or fixed. Use before
 **Do not claim success without fresh evidence.**
 
 Evidence means:
+
 - The exact verification command was executed
 - The outcome was observed (exit code, pass/fail counts, or expected UI state)
 
@@ -29,6 +30,7 @@ Before any completion claim:
 3. **Read** the output carefully.
 4. **Report** the evidence (short and concrete).
 5. **Only then** state the conclusion.
+
 ## Output format (recommended)
 
 Use this shape in chat, issues, or PR descriptions:

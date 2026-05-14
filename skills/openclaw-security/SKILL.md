@@ -85,4 +85,4 @@ If audit fails, list findings and remediation steps. Block commit/PR until resol
 
 ## Reference
 
-Must read: https://docs.openclaw.ai/gateway/security
+Must read: <https://docs.openclaw.ai/gateway/security>

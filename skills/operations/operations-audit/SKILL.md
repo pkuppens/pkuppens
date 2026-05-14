@@ -8,6 +8,7 @@ description: Performs compliance, security, and performance audits of a service 
 Structured audit covering security, compliance, performance, and data handling.
 
 **When to use:**
+
 - Before a client or regulatory review
 - Quarterly security and dependency hygiene check
 - Assessing technical debt and risk (feeds `architecture-risks-debt`)
@@ -50,7 +51,7 @@ Structured audit covering security, compliance, performance, and data handling.
 
 **Output format:**
 
-```
+```text
 ## Audit Report — <date>
 ### Critical
 - <finding>: <recommendation> (#NNN)

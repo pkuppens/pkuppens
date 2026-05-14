@@ -20,7 +20,7 @@ Patterns for providing agents with knowledge beyond the LLM's training data. Cov
 
 ## RAG pipeline
 
-```
+```text
 Documents → Ingestion → Chunking → Embedding → Vector Store
                                                      │
 User query → Embedding → Similarity search ──────────┘

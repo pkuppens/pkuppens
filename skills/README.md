@@ -8,7 +8,7 @@ Skills are markdown files (`SKILL.md`) in skill-specific directories. Each skill
 
 Full skill tree: [SKILL_TREE.md](SKILL_TREE.md). How skills compose: [COOPERATION.md](COOPERATION.md). Optional **V-model** traceability overlay: [v-model/SKILL.md](v-model/SKILL.md).
 
-**Format and CI:** Metadata must follow the [Agent Skills specification](https://agentskills.io/specification). Pull requests that touch `skills/` run automated validation (`skills-ref`, pinned in GitHub Actions). Tooling choices and Skilz vs spec are documented in [ADR 001 — Skill validation and tooling](../docs/skills/decisions/001-skill-validation-and-tooling.md).
+**Format and CI:** Metadata must follow the [Agent Skills specification](https://agentskills.io/specification). Pull requests that touch `skills/` run `skills-ref` (pinned) and a non-interactive [Skills CLI](https://github.com/vercel-labs/skills) discovery smoke (`npx skills add … --list`). Tooling choices are documented in [ADR 001 — Skill validation and tooling](../docs/skills/decisions/001-skill-validation-and-tooling.md).
 
 ## IDE Setup
 
@@ -17,6 +17,7 @@ Reference this `skills/` folder from your IDE. Do not duplicate skills. Symlinks
 ### Option A: Symlinks (recommended)
 
 **From a project that uses pkuppens as parent:**
+
 ```bash
 # Project-level (e.g. on_prem_rag, babblr) — create parent dir if missing
 mkdir -p .cursor
@@ -27,6 +28,7 @@ ln -s ../../pkuppens/skills .claude/skills
 ```
 
 **User-level (all projects):**
+
 ```bash
 # Clone pkuppens somewhere; create parent dirs if missing
 mkdir -p ~/.cursor ~/.claude ~/.codex
@@ -50,6 +52,38 @@ Create `scripts/sync-skills-to-ide.sh` to copy or symlink `skills/` into `~/.cur
 | Codex | — | `~/.codex/skills/` |
 
 Cursor also loads from `.claude/skills/` and `~/.claude/skills/`.
+
+## Install this library with the Skills CLI (`npx skills`)
+
+**Goal:** Install skills from **this** repository the same way as packages from [skills.sh](https://www.skills.sh/) and the [Skills CLI](https://github.com/vercel-labs/skills)—no extra file server; the CLI clones from Git and discovers `SKILL.md` under [`skills/`](https://github.com/vercel-labs/skills#readme) (this repo matches that layout).
+
+**Who it is for:** Anyone who prefers the ecosystem installer over manual symlinks ([Option A](#option-a-symlinks-recommended)), or who wants a **subset** of skills (`--skill`) without linking the whole tree.
+
+**Layout contract:** Each skill is `skills/<directory>/SKILL.md`; YAML `name` must match `<directory>` (same rule as [Agent Skills](https://agentskills.io/specification) and `skills-ref` in CI).
+
+**Commands** (pin `skills@…` to match CI in [.github/workflows/validate-skills.yml](.github/workflows/validate-skills.yml); examples use `1.5.6`):
+
+```bash
+# List skills the CLI would install from this repo (non-interactive)
+npx --yes skills@1.5.6 add https://github.com/pkuppens/pkuppens --list -y
+
+# Install one skill by YAML name (project scope; add -g for user-wide)
+npx --yes skills@1.5.6 add pkuppens/pkuppens --skill plan -y
+
+# Target specific agents (non-interactive; repeat -a as needed)
+npx --yes skills@1.5.6 add pkuppens/pkuppens --skill plan -y -a cursor -a claude-code
+
+# Install many by name
+npx --yes skills@1.5.6 add pkuppens/pkuppens --skill plan --skill test -y
+```
+
+Use `npx skills add --help` for the latest flags. Installs are **symlinks** by default; use `--copy` when symlinks are not supported.
+
+**Verify an install:**
+
+1. `npx skills list` (or `npx skills ls`) shows the new skill for the scope you chose (`-g` vs project).
+2. Confirm files under the path your agent uses (see [IDE expected locations](#ide-expected-locations); e.g. Cursor loads `.cursor/skills/` and `~/.cursor/skills/`).
+3. Run `skills-ref validate <path-to-skill-dir>` if you want the same check as CI (install [`skills-ref`](https://www.npmjs.com/package/skills-ref) globally or via `npx`).
 
 ## External and vendor skills
 
@@ -104,7 +138,7 @@ If you cannot symlink the **entire** `.cursor/skills` directory (because the CLI
 
 ## Directory structure
 
-```
+```text
 skills/
 ├── README.md           # This file
 ├── CLAUDE.md           # Agent instructions

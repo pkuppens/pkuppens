@@ -181,7 +181,7 @@ AskQuestion prompts (examples):
 
 ## Complete example layout
 
-```
+```text
 code-review/
 ├── SKILL.md
 ├── STANDARDS.md
@@ -243,7 +243,7 @@ description: Reviews changes for correctness, security, and maintainability per 
 
 For a **repository that only needs a subset** (e.g. public OSS without personal paths):
 
-1. Copy **When to use**, **Instructions**, and **Output format** sections into that repo’s \`.cursor/skills/<skill-name>/SKILL.md\`.
+1. Copy **When to use**, **Instructions**, and **Output format** sections into that repo’s `.cursor/skills/<skill-name>/SKILL.md`.
 2. Remove references to machine-specific junctions (\`~\`) and internal mono-repo paths unless the repo is private.
 3. Keep one link back to upstream docs or this \`skills/\` repo if governance requires a single authority.
 

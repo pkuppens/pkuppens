@@ -8,12 +8,14 @@ description: Releases validated artefacts to staging or production; runs smoke t
 Deploys validated artefacts to target environments and verifies successful rollout.
 
 **When to use:**
+
 - Deploying a new version to staging or production
 - Executing a release checklist after `deployment-build` passes
 - Updating infrastructure (Compose stack, Kubernetes manifests, cloud service)
 - When rollback criteria must be defined before release
 
 **Pre-conditions:**
+
 - `deployment-build` completed and artefact digest recorded
 - `quality-gate` passed (lint, tests, type check)
 - `integration-merge` completed (main branch up to date)
@@ -56,7 +58,7 @@ Deploys validated artefacts to target environments and verifies successful rollo
 
 **Output format:**
 
-```
+```text
 ## Release Summary
 - Version: <tag>
 - Environment: staging | production

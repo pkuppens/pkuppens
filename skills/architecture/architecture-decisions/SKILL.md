@@ -79,6 +79,7 @@ Update `docs/architecture/09-decisions.md`:
 ```
 
 **Rules:**
+
 - ADRs are immutable once accepted — supersede with a new ADR, don't edit
 - Numbering: sequential `001-title.md`; check existing ADRs for next number
 - After creating: update affected component/abstraction docs; add to `00-system-architecture.md` ADR index

@@ -27,6 +27,10 @@ This repository maintains a unified library of Agent Skills under `skills/`. Eac
 3. **Skilz** is documented here as an **optional installer** for consumers, not as the validator for this repository.
 4. **Revisit** this ADR if: `skills-ref` gains a production-ready designation, Skilz ships a first-class validate command we prefer, or we adopt a different official validator from the agentskills project.
 
+## Skills CLI (`npx skills`)
+
+The [Skills CLI](https://github.com/vercel-labs/skills) installs spec-shaped skills from Git into agent directories. It is **not** a schema validator: **CI still uses `skills-ref`** for frontmatter. A pinned `npx skills add <this-repo> --list` smoke test in GitHub Actions only proves the repository layout stays discoverable by the installer documented in [skills/README.md](../../skills/README.md). Listing on [skills.sh](https://www.skills.sh/) remains optional marketing, not a merge gate.
+
 ## Consequences
 
 - Pull requests that change files under `skills/` trigger validation; unrelated edits stay quiet (path filter on the workflow).

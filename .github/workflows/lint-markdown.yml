@@ -1,7 +1,6 @@
 # Lint all Markdown files with markdownlint-cli2.
 # Runs on PRs and pushes to main that touch .md files.
-# Currently advisory (continue-on-error) due to pre-existing violations.
-# Remove continue-on-error once the backlog is cleared.
+# Fails the job on any reported violation (same rules as local pre-commit).
 name: Lint Markdown
 
 on:
@@ -9,12 +8,14 @@ on:
     paths:
       - "**/*.md"
       - ".markdownlint-cli2.yaml"
+      - ".pre-commit-config.yaml"
       - ".github/workflows/lint-markdown.yml"
   push:
     branches: [main]
     paths:
       - "**/*.md"
       - ".markdownlint-cli2.yaml"
+      - ".pre-commit-config.yaml"
       - ".github/workflows/lint-markdown.yml"
   workflow_dispatch: {}
 
@@ -34,4 +35,3 @@ jobs:
 
       - name: Run markdownlint-cli2
         uses: DavidAnson/markdownlint-cli2-action@v23
-        continue-on-error: true

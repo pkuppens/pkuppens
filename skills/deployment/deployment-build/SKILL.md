@@ -8,6 +8,7 @@ description: Builds artefacts (container images, packages, bundles) and validate
 Builds release artefacts and validates build pipeline output before release.
 
 **When to use:**
+
 - Before releasing to staging or production
 - After a feature branch is merged to main
 - When running `docker build`, `uv build`, or a CI build workflow manually
@@ -36,7 +37,7 @@ Builds release artefacts and validates build pipeline output before release.
 
 **Output format:**
 
-```
+```text
 ## Build Summary
 - Artefact: <type> — <name>:<version>
 - Digest/hash: <value>

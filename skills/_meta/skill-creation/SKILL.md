@@ -37,7 +37,7 @@ Infer from context where possible; otherwise confirm:
 
 ## Directory layout
 
-```
+```text
 skill-name/
 ├── SKILL.md          # required
 ├── reference.md      # optional (detail, patterns)

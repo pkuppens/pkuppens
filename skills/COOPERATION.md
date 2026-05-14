@@ -6,7 +6,7 @@ How skills compose: sequential vs parallel flows, triggers, and dependencies.
 
 ### Issue → Implementation → Integration
 
-```
+```text
 issue-workflow → plan → architecture (or architecture-consult) → design-consult
   → implementation-construction → quality-gate → integration-commit → integration-pr → code-review → integration-merge
 ```
@@ -17,7 +17,7 @@ Each step produces output for the next. No parallelism within this chain.
 
 ### TDD flow
 
-```
+```text
 issue-acceptance-criteria → validation-draft → create-validation (optional, full checklist) → test-write → implementation-construction → run-validation
 ```
 
@@ -85,7 +85,7 @@ Also: architecture-runtime (flows), architecture-crosscutting (rules), architect
 
 ## Deployment flow
 
-```
+```text
 quality-gate → integration-commit → integration-pr → code-review → integration-merge
   → deployment-build → deployment-release → operations-monitoring
 ```
@@ -97,14 +97,15 @@ quality-gate → integration-commit → integration-pr → code-review → integ
 ### Rollback path
 
 If `deployment-release` fails or `operations-monitoring` detects regression:
-```
+
+```text
 operations-incident → (rollback via deployment-release) → operations-monitoring (verify)
   → maintenance-bug-report → issue-workflow (create fix issue)
 ```
 
 ## Skill V&V flow
 
-```
+```text
 skill-benchmark: define task → run baseline → run with skill → score → report
 ```
 

@@ -8,6 +8,7 @@ description: Monitors production logs, metrics, and alerts; detects anomalies; s
 Provides structured observability of production systems: logs, metrics, alerts, and health.
 
 **When to use:**
+
 - After a deployment, to verify stability
 - When error rates or latency spike above baseline
 - When setting up observability for a new service or endpoint
@@ -22,15 +23,19 @@ Provides structured observability of production systems: logs, metrics, alerts, 
    - Health endpoint: `GET /health` returning `{"status": "ok", "version": "..."}`
 
 2. **Check health** (always first):
+
    ```bash
    curl -sf https://<host>/health | jq .
    ```
+
    Expected: `{"status": "ok"}` with HTTP 200.
 
 3. **Review recent logs** for errors and warnings:
+
    ```bash
    docker logs --since 15m <container> | grep -E "ERROR|WARN|Exception"
    ```
+
    Flag: repeated error patterns, stack traces, connection timeouts.
 
 4. **Check key metrics**:
@@ -52,7 +57,7 @@ Provides structured observability of production systems: logs, metrics, alerts, 
 
 **Output format:**
 
-```
+```text
 ## Monitoring Report — <date>
 - Health: ✅ OK / ⚠️ degraded / ❌ down
 - Error rate: <value>% (baseline: <value>%)

@@ -25,14 +25,17 @@ Transforms acceptance criteria into an executable validation checklist. Produces
 
 ## Validation step format
 
+Per criterion, use one **markdown** block for the narrative fields, then a separate **bash** block for the command (avoid nested triple backticks).
+
 ```markdown
 ### [Criterion summary]
 **Type:** unit | integration | manual | smoke
-**Command / action:**
+**Command / action:** see the bash block below this section in your doc.
+**Expected result:** [What to observe — exit code, output, UI state]
+```
+
 ```bash
 <exact command>
-```
-**Expected result:** [What to observe — exit code, output, UI state]
 ```
 
 ## BDD scenario format (optional)
@@ -52,11 +55,12 @@ Then  [expected outcome]
 ```markdown
 ### Tests pass with ≥80% coverage
 **Type:** integration
-**Command:**
+**Command / action:** see bash block below.
+**Expected result:** Exit 0; coverage report shows ≥80% for new modules.
+```
+
 ```bash
 cd backend && uv run pytest -v --cov=. --cov-fail-under=80
-```
-**Expected result:** Exit 0; coverage report shows ≥80% for new modules.
 ```
 
 ## Output format

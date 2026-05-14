@@ -46,7 +46,7 @@ Before building an agent, resolve these:
 
 ## Architecture pattern
 
-```
+```text
 User Input
   │
   ▼
