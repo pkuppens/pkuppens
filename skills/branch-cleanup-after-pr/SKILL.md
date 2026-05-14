@@ -12,12 +12,14 @@ Complements [maintenance-cleanup](../maintenance/maintenance-cleanup/SKILL.md) (
 ## Workflow
 
 1. **Checkout main, pull**
+
    ```bash
    git checkout main
    git pull
    ```
 
 2. **Fetch with prune** (removes refs for deleted remote branches)
+
    ```bash
    git fetch --prune
    ```

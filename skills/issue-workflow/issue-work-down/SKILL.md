@@ -33,6 +33,7 @@ Decomposes the issue into actionable work items by linking to existing code, tes
 ## Example
 
 For "Add BM25 retrieval to RAG pipeline":
+
 - Related: #12 (refactor retrievers)
 - Modify: `backend/retrievers/base.py`, `backend/retrievers/bm25.py`
 - Tests: `tests/test_bm25_retriever.py`

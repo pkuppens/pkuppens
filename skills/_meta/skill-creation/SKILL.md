@@ -29,6 +29,7 @@ Infer from context where possible; otherwise confirm:
 4. **Domain facts** — only what models do not reliably know already
 5. **Output shapes** — templates, headings, or review formats required
 6. **Precedent** — existing skills in this tree to mirror
+7. **Public ecosystem (agent skills)** — before drafting, compare intent to published skills (browse [skills.sh](https://www.skills.sh/), run `npx skills find <query>`). Follow [find-skills](../../find-skills/SKILL.md) for commands. Record **reuse** (install or symlink if license and layout allow), **learn** (adapt ideas without copying), or **build** (no good fit). If personal or project rules differ from a public skill, note the delta; do not discard local requirements for the sake of alignment. Vendor stacks (e.g. Azure DevOps) often belong in **reuse-via-install**, not a new repo skill — see [reference.md](reference.md#example-platform-tooling-azure-devops). More detail: [reference.md](reference.md#public-agent-skills-ecosystem-before-authoring).
 
 **Verbatim user copy:** If the user supplies exact wording for the skill body, place it **verbatim** in `SKILL.md` (same words, same order). Do not paraphrase or wrap with extra headings unless they asked.
 
@@ -36,7 +37,7 @@ Infer from context where possible; otherwise confirm:
 
 ## Directory layout
 
-```
+```text
 skill-name/
 ├── SKILL.md          # required
 ├── reference.md      # optional (detail, patterns)
@@ -118,7 +119,7 @@ For skills that encode architecture workflows, align with arc42 themes (sections
 
 ## Next steps for the agent
 
-1. Resolve discovery items above (or infer safely).
+1. Resolve discovery items above (or infer safely), including step 7 when the change is new or a substantial rewrite.
 2. Draft `SKILL.md` respecting size and linking rules.
 3. Add `reference.md` / `examples.md` / `scripts/` only when justified.
 4. Run the checklist in [reference.md](reference.md#pre-merge-checklist).

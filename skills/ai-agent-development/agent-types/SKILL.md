@@ -25,7 +25,7 @@ Stateless request-response wrapper around an LLM. No tools, no memory, no orches
 
 **Use when:** Simple Q&A, text generation, summarisation, translation.
 
-```
+```text
 User prompt → LLM → Response
 ```
 
@@ -39,7 +39,7 @@ Agent with access to external tools (functions, APIs, databases). Follows the Re
 
 **Use when:** The agent needs to query databases, call APIs, perform calculations, or interact with external systems.
 
-```
+```text
 User prompt → LLM → Tool call → Tool result → LLM → Response
                  └──────────────────────────────┘
                         (loop until done)
@@ -63,7 +63,7 @@ A parent agent delegates subtasks to specialised child agents. Each child has it
 
 **Use when:** Tasks are decomposable into independent subtasks with different expertise requirements (e.g. research + code + review).
 
-```
+```text
 User prompt → Orchestrator agent
                  ├─► Research agent → findings
                  ├─► Code agent → implementation

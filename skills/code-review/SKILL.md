@@ -83,4 +83,4 @@ The following came from a real security/compliance hardening PR; they are now pa
 
 ## References
 
-- Agent Skills specification (frontmatter for `SKILL.md`): https://agentskills.io/specification
+- Agent Skills specification (frontmatter for `SKILL.md`): <https://agentskills.io/specification>

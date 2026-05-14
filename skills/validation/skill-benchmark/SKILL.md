@@ -8,6 +8,7 @@ description: Evaluates skill effectiveness by comparing agent output on a task w
 Measures the real-world impact of a skill by comparing agent output with and without skill activation.
 
 **When to use:**
+
 - Validating that a new or revised skill improves output quality
 - Creating evidence for a skill-related pull request or issue
 - Regression-testing a skill after edits
@@ -59,7 +60,7 @@ Measures the real-world impact of a skill by comparing agent output with and wit
 
 **Output format:**
 
-```
+```text
 ## Skill Benchmark — <skill-name>
 - Task: <one-line description>
 - Without skill total: <N>/20
@@ -78,6 +79,7 @@ Measures the real-world impact of a skill by comparing agent output with and wit
 **Committed reports** (examples / evidence): `docs/skills/benchmark/<skill-name>/report.md`. Session transcripts can remain in `tmp/skills/benchmark/<skill-name>/`.
 
 **Anti-patterns:**
+
 - Using the same session for both runs (context contamination)
 - Choosing tasks where the skill is explicitly referenced in the prompt
 - Scoring on style rather than actionability

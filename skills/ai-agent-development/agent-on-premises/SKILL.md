@@ -20,7 +20,7 @@ Patterns for deploying AI agents entirely on-premises — no data leaves the loc
 
 ## Architecture
 
-```
+```text
 On-Premises Network
 ┌──────────────────────────────────────────────────┐
 │                                                  │

@@ -10,6 +10,33 @@ The context window is shared. Default assumption: the agent already knows genera
 
 Ask per paragraph: *Does the agent need this? Does it justify its token cost?*
 
+## Public agent skills ecosystem (before authoring)
+
+When discovery identifies a **new or heavily rewritten** skill:
+
+1. **Search** — Use `npx skills find <keywords>` and browse [skills.sh](https://www.skills.sh/) for overlapping packages. Step-by-step commands live in [find-skills/SKILL.md](../../find-skills/SKILL.md).
+2. **Record** — Name or link each candidate, fit (good / partial / poor), and whether text would be copied (then confirm license and attribution).
+3. **Decide** — **Reuse** (prefer user- or project-level install per find-skills; symlink this repo’s canonical copy from `skills/` when the content is maintained here), **learn** (borrow structure or checklist style only), or **build** (no suitable public skill).
+4. **Local overrides** — Healthcare, compliance, team conventions, or IDE-specific layout may require content that public skills do not cover. Keep that explicit in the skill or in the PR/issue notes.
+
+This step complements [ideation-reuse-check](../../ideation/ideation-reuse-check/SKILL.md), which targets libraries and services; use both when scope is unclear.
+
+### Example: platform tooling (Azure DevOps)
+
+Working with **Azure DevOps** (repos, boards, pipelines, `az` CLI patterns inside the agent) usually **does not** need a hand-written `SKILL.md` in this repository. Prefer an ecosystem pack that already encodes those workflows.
+
+1. **Install a published skill** instead of duplicating it under `skills/`, for example:
+
+   ```bash
+   npx skills add https://github.com/github/awesome-copilot --skill azure-devops-cli
+   ```
+
+   Package layout and skill slugs change over time; if this command fails, run `npx skills find "azure devops"` and follow the install line the CLI prints.
+
+2. **Extra installs are normal** — composite packs may pull additional tools, prompts, or dependencies. Accept follow-up installs or setup steps when the upstream README or installer asks for them; that is still cheaper than maintaining a parallel copy in `pkuppens/skills` unless you have a clear delta only your org needs.
+
+3. **Document what the project uses** — skills added with `npx skills` (or other registries) are not visible from this repo’s tree alone. Record them in project docs so humans and agents know what to expect (see [External and vendor skills](../../README.md#external-and-vendor-skills)). For how symlinked canonical skills and CLI installs **combine** at project vs global level, see [Canonical plus public skills (side by side)](../../README.md#canonical-plus-public-skills-side-by-side).
+
 **Good (concise):**
 
 ```markdown
@@ -142,7 +169,7 @@ python scripts/extract_fields.py input.pdf > fields.json
 
 When helping a human author a skill:
 
-1. **Discovery** — purpose, location (personal vs project), triggers, constraints, precedent skills.
+1. **Discovery** — purpose, location (personal vs project), triggers, constraints, precedent skills, [public agent skills](#public-agent-skills-ecosystem-before-authoring) scan when authoring net-new or large rewrites.
 2. **Design** — folder name (\`skill-name\`), description draft, outline, whether \`reference.md\` /\`scripts/\` are needed.
 3. **Implement** — create tree, frontmatter, body, sibling files.
 4. **Verification** — run [Pre-merge checklist](#pre-merge-checklist); spot-check triggers with a teammate or second session.
@@ -154,7 +181,7 @@ AskQuestion prompts (examples):
 
 ## Complete example layout
 
-```
+```text
 code-review/
 ├── SKILL.md
 ├── STANDARDS.md
@@ -216,7 +243,7 @@ description: Reviews changes for correctness, security, and maintainability per 
 
 For a **repository that only needs a subset** (e.g. public OSS without personal paths):
 
-1. Copy **When to use**, **Instructions**, and **Output format** sections into that repo’s \`.cursor/skills/<skill-name>/SKILL.md\`.
+1. Copy **When to use**, **Instructions**, and **Output format** sections into that repo’s `.cursor/skills/<skill-name>/SKILL.md`.
 2. Remove references to machine-specific junctions (\`~\`) and internal mono-repo paths unless the repo is private.
 3. Keep one link back to upstream docs or this \`skills/\` repo if governance requires a single authority.
 

@@ -34,6 +34,7 @@ Comparison and guidance for AI agent frameworks. Covers Python-first frameworks 
 ### LangChain / LangGraph (Python)
 
 Choose when:
+
 - Python is the primary language
 - You need extensive integrations (100+ vector stores, LLM providers, tools)
 - Building graph-based agent workflows with state management
@@ -58,6 +59,7 @@ app = graph.compile()
 ### Semantic Kernel (C#)
 
 Choose when:
+
 - C# / .NET is the primary language
 - Azure OpenAI is the LLM backend
 - Enterprise requirements (compliance, audit, RBAC)
@@ -82,6 +84,7 @@ var agent = new ChatCompletionAgent
 ### AutoGen (Python / C#)
 
 Choose when:
+
 - Multi-agent conversation is the primary pattern
 - Agents need to debate, review, or collaborate
 - You want built-in conversation management
@@ -89,6 +92,7 @@ Choose when:
 ### CrewAI (Python)
 
 Choose when:
+
 - Role-based agent teams (researcher, writer, reviewer)
 - Task delegation with simple sequential or parallel workflows
 - Rapid prototyping of multi-agent systems
@@ -96,6 +100,7 @@ Choose when:
 ### Custom / no framework
 
 Choose when:
+
 - Simple single-agent with a few tools
 - Maximum control over the agent loop
 - Minimal dependencies are a requirement

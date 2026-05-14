@@ -8,7 +8,7 @@ Deep patterns, anti-patterns, and framework comparison for AI agent implementati
 
 A lightweight classifier routes user input to specialised handlers. Not a full agent — no reasoning loop.
 
-```
+```text
 User input → Router (classifier / keyword) → Handler A | Handler B | Handler C
 ```
 
@@ -20,7 +20,7 @@ User input → Router (classifier / keyword) → Handler A | Handler B | Handler
 
 The agent creates a plan first, then executes each step. Separates planning from execution.
 
-```
+```text
 User input → Planner LLM → [Step 1, Step 2, Step 3]
                                     │
                               Executor (per step) → results
@@ -36,7 +36,7 @@ User input → Planner LLM → [Step 1, Step 2, Step 3]
 
 After generating output, a second LLM call critiques and refines it.
 
-```
+```text
 User input → Generator LLM → draft output → Critic LLM → feedback
                   ▲                                          │
                   └──────────────────────────────────────────┘
@@ -58,7 +58,7 @@ The agent pauses at decision points and requests human approval before continuin
 
 A supervisor agent monitors other agents, intervenes on errors, and ensures quality.
 
-```
+```text
                     Supervisor
                    /     |     \
                Agent A  Agent B  Agent C

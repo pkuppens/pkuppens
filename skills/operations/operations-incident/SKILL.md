@@ -8,6 +8,7 @@ description: Triages, mitigates, and communicates production incidents; produces
 Structured incident response: triage, mitigation, communication, and post-incident record.
 
 **When to use:**
+
 - Service is down or returning errors above threshold
 - Alert fires (health check failure, error rate spike, latency regression)
 - Preparing a post-incident report or timeline
@@ -48,7 +49,7 @@ Structured incident response: triage, mitigation, communication, and post-incide
 
 **Output format:**
 
-```
+```text
 ## Incident Report — <slug>
 - Status: resolved | ongoing
 - Started: <timestamp>

@@ -33,6 +33,11 @@ config:
   MD024:
     siblings_only: true
 
+  # MD060 - Table column style: disabled because markdownlint v0.40+ flags
+  # hundreds of legacy GFM tables (mixed spacing around pipes). CI still fails
+  # on other rules; normalize tables in a focused follow-up if desired.
+  MD060: false
+
 globs:
   - "**/*.md"
 

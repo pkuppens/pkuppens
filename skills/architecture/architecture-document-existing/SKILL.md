@@ -66,6 +66,7 @@ Create or update:
 ```
 
 Open issues format (use in `99-open-issues.md`):
+
 ```markdown
 ## [Issue Title]
 **Context**: What we know

@@ -29,7 +29,15 @@ The Skills CLI (`npx skills`) is the package manager for the open agent skills e
 - `npx skills check` - Check for skill updates
 - `npx skills update` - Update all installed skills
 
-**Browse skills at:** https://skills.sh/
+**Browse skills at:** <https://skills.sh/>
+
+**This repo as a package:** To install skills from `pkuppens/pkuppens` with the same CLI (list, `--skill`, `-g`, agents), see [skills/README.md — Install this library with the Skills CLI](../README.md#install-this-library-with-the-skills-cli-npx-skills).
+
+## Prefer install before duplicating in `pkuppens/skills`
+
+When the need is **vendor- or product-specific** (Azure DevOps, a cloud console, a framework vendor pack), the default answer is usually `npx skills add …` from the ecosystem, **not** a new first-party `SKILL.md` in this repo. Some packs ask for **extra** installs or configuration; treat that as part of the supported path unless you have a unique policy only your tree can express.
+
+Concrete pattern (Azure DevOps): see [skill-creation reference § Example: platform tooling (Azure DevOps)](../_meta/skill-creation/reference.md#example-platform-tooling-azure-devops). Teams should still **list** which external skills a project relies on (see [skills/README.md § External and vendor skills](../README.md#external-and-vendor-skills)). **Merge layout** (canonical symlink + public installs, project vs global): [skills/README.md § Canonical plus public skills (side by side)](../README.md#canonical-plus-public-skills-side-by-side).
 
 ## How to Help Users Find Skills
 
@@ -57,7 +65,7 @@ For example:
 
 The command will return results like:
 
-```
+```text
 Install with npx skills add <owner/repo@skill>
 
 vercel-labs/agent-skills@vercel-react-best-practices
@@ -74,7 +82,7 @@ When you find relevant skills, present them to the user with:
 
 Example response:
 
-```
+```text
 I found a skill that might help! The "vercel-react-best-practices" skill provides
 React and Next.js performance optimization guidelines from Vercel Engineering.
 
@@ -124,7 +132,7 @@ If no relevant skills exist:
 
 Example:
 
-```
+```text
 I searched for skills related to "xyz" but didn't find any matches.
 I can still help you with this task directly! Would you like me to proceed?
 

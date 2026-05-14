@@ -65,6 +65,7 @@ Both must pass before integration-commit. Report in Quality Gate Results.
 ## Repo-specific toolchain
 
 Check the repo's `pyproject.toml` for:
+
 - `[tool.ruff]` — line length, selected rules
 - `[tool.ty]` or `[tool.pyright]` — type checking configuration
 - `.pre-commit-config.yaml` — active hooks

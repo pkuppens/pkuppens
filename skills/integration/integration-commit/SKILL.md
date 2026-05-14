@@ -14,7 +14,7 @@ Produces conventional commits that reference the issue and follow repo conventio
 
 ## Conventional format
 
-```
+```text
 #NNN: type: short description
 
 Optional body. Explain what and why, not how.
