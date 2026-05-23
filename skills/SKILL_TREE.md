@@ -179,6 +179,9 @@ Adds tags, milestones, assignees, planning references.
 #### 5.8 issue-gh-bulk-scratch
 Creates an EPIC and many issues with `gh`; keeps gitignored `tmp/` body files named 1-1 with GitHub issue numbers; self-assigns.
 
+#### 5.9 issue-coding
+Orchestrates TDD coding inner loop: validation-draft → test-write → implementation-construction → test-run → quality-gate; hand off to integration.
+
 ---
 
 ## Level 1: Planning
@@ -464,7 +467,7 @@ Guides visual/GUI-based agent development with n8n, Flowise, and LangFlow. Cover
 | 2 | requirements | Requirements (arc42 §1–3) | 2.1–2.6 |
 | 3 | architecture | arc42 §4–12 | 3.1–3.10 |
 | 4 | design | Detailed design | 4.1–4.4 |
-| 5 | issue-workflow | Issue lifecycle | 5.1–5.8 |
+| 5 | issue-workflow | Issue lifecycle | 5.1–5.9 |
 | 6 | plan | Planning | 6.1–6.3 |
 | 7 | implementation | Construction | 7.1–7.3 |
 | 8 | validation | Validation | 8.1–8.4, 8.1b |
