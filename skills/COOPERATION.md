@@ -72,10 +72,10 @@ The [architecture](architecture/SKILL.md) orchestrator routes by mode:
 | Mode | When | Sub-skills (sequence) |
 |------|------|------------------------|
 | **Initial** | Greenfield project | architecture-solution-strategy → architecture-building-blocks |
-| **Retrofitting** | Undocumented codebase | architecture-document-existing (→ architecture-runtime, architecture-building-blocks for delegation) |
+| **Retrofitting** | Undocumented codebase | architecture-document-existing (→ architecture-runtime, architecture-building-blocks, architecture-deployment, architecture-quality for delegation) |
 | **Evolving** | Change or extend | architecture-decisions → architecture-risks-debt (as needed) |
 
-Also: architecture-runtime (flows), architecture-crosscutting (rules), architecture-glossary (terms).
+Also: architecture-runtime (flows), architecture-deployment (topology, compose/infra), architecture-quality (NFR scenarios), architecture-crosscutting (rules), architecture-glossary (terms).
 
 ### When to trigger architecture
 

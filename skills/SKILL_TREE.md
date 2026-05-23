@@ -486,7 +486,7 @@ Guides visual/GUI-based agent development with n8n, Flowise, and LangFlow. Cover
 
 ## Implementation Status
 
-*Inventory: **108** `SKILL.md` files under `pkuppens/skills/` (2026-05-17, #26: `architecture-deployment`, `architecture-quality`; prior #57, #59–#65, #67, #84). See [audit-results.md](../docs/skills/audit-results.md) for how to regenerate the list.*
+*Inventory: **109** `SKILL.md` files under `pkuppens/skills/` (2026-05-23, #26: `architecture-deployment`, `architecture-quality`; #97: `issue-coding`; prior #57, #59–#65, #67, #84). See [audit-results.md](../docs/skills/audit-results.md) for how to regenerate the list.*
 
 | Skill | Status |
 | skill-creation | ✅ implemented |
