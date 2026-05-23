@@ -23,7 +23,17 @@ Add an **Execution** block so ownership stays with the issue, not only on the bo
 - [ ] (human-required) …
 ```
 
+## External skills
+
+Some workflow steps rely on skills **not in this repo** — install separately via [Skills CLI](https://github.com/vercel-labs/skills) or [skills.sh](https://www.skills.sh/). Install and listing conventions: [skills/README.md § External and vendor skills](../README.md#external-and-vendor-skills).
+
+| Skill | Role in this workflow | Reference |
+|-------|----------------------|-----------|
+| **triage** | Classify issues; post Agent Brief; apply `execution:ai-ok` before AFK coding | <https://www.skills.sh/mattpocock/skills/triage> |
+| **grill-with-docs** | Sharpen vague requirements; resolve terms against `CONTEXT.md`; produce detailed acceptance criteria before coding | <https://www.skills.sh/mattpocock/skills/grill-with-docs> |
+
 ## Relation to skills
 
 - [v-model](../v-model/SKILL.md) and [v-model-retrofit](../v-model/v-model-retrofit/SKILL.md) often produce **human-review** artefacts (tests and docs that encode intent).
 - [issue-workflow](../issue-workflow/SKILL.md) should still define clear acceptance criteria; humans remain accountable for what “done” means in regulated contexts.
+- After external **triage** marks an issue ready for agents (`execution:ai-ok`, Agent Brief comment), [issue-coding](../issue-workflow/issue-coding/SKILL.md) runs the TDD inner loop; [integration](../integration/SKILL.md) follows human merge review.

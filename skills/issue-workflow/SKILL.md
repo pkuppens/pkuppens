@@ -1,6 +1,6 @@
 ---
 name: issue-workflow
-description: Orchestrates issue lifecycle from idea to closed. Use when creating, refining, or validating a GitHub issue; triggers sub-skills (5.1–5.7) as needed. New issues assign the trigger user for explicit ownership and review.
+description: Orchestrates issue lifecycle from idea to closed. Use when creating, refining, or validating a GitHub issue; triggers sub-skills (5.1–5.9) as needed. New issues assign the trigger user for explicit ownership and review.
 ---
 
 # Issue Workflow
@@ -25,6 +25,7 @@ Orchestrates the GitHub issue lifecycle per [GitHub Issue Lifecycle](https://doc
 8. **Metadata** — [issue-metadata](issue-metadata/SKILL.md). Tags, milestones, assignees (always assign the person who triggered the issue—directly or indirectly—so ownership and review are explicit).
 9. **Bulk EPIC + children with `gh` (optional)** — [issue-gh-bulk-scratch](issue-gh-bulk-scratch/SKILL.md). When creating many related issues at once: gitignored `tmp/EPIC-#.md` and `tmp/ISSUE-#.md` named **1-1** with GitHub issue numbers, and `--assignee @me` (or batch `gh issue edit`) so each item shows on the assignee’s list.
 10. **Draft issue** — Combine into issue body with Goal, Tasks, Acceptance Criteria, Out of Scope, Estimate, Metadata.
+11. **Coding (optional)** — After [plan](../plan/SKILL.md) and any human review, chain to [issue-coding](issue-coding/SKILL.md) for the TDD inner loop (tests-first → construction → quality-gate). Typical after external [triage](https://www.skills.sh/mattpocock/skills/triage) marks the issue `ready-for-agent` with `execution:ai-ok`.
 
 ## Instructions
 
@@ -37,6 +38,7 @@ Orchestrates the GitHub issue lifecycle per [GitHub Issue Lifecycle](https://doc
 7. Run metadata; add labels, milestone, and assignees (default: assign the trigger user per issue-metadata).
 8. If bulk-filing an EPIC and many sub-issues with `gh`, use [issue-gh-bulk-scratch](issue-gh-bulk-scratch/SKILL.md) for local 1-1 `tmp` names and self-assign.
 9. Assemble final issue draft for `gh issue create` or paste into GitHub UI.
+10. When implementation is authorized, invoke [issue-coding](issue-coding/SKILL.md) (do not skip validation-draft).
 
 ## Output format
 

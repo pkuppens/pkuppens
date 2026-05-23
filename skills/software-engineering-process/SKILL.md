@@ -18,7 +18,7 @@ Entry orchestrator for the lifecycle in [SKILL_TREE.md](../SKILL_TREE.md). It do
 1. **Shape the problem** — [ideation](../ideation/SKILL.md) (optional), then [issue-workflow](../issue-workflow/SKILL.md) so work is tracked with acceptance criteria.
 2. **Plan** — [plan](../plan/SKILL.md) (branch strategy, tasks, dependencies).
 3. **Design** — [architecture](../architecture/SKILL.md) and [design](../design/SKILL.md) as needed for the change size.
-4. **Build** — [implementation](../implementation/SKILL.md); [quality-gate](../quality-gate/SKILL.md) before commit.
+4. **Build** — [issue-coding](../issue-workflow/issue-coding/SKILL.md) (TDD inner loop) or [implementation](../implementation/SKILL.md) for scoped edits; [quality-gate](../quality-gate/SKILL.md) before commit.
 5. **Integrate** — [integration](../integration/SKILL.md) (commit → PR → review → merge).
 6. **Ship & run** — [deployment](../deployment/SKILL.md) then [operations](../operations/SKILL.md).
 7. **Sustain** — [maintenance](../maintenance/SKILL.md), [governance](../governance/SKILL.md) as needed.

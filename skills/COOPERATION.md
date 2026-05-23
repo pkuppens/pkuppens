@@ -4,22 +4,28 @@ How skills compose: sequential vs parallel flows, triggers, and dependencies.
 
 ## Sequential flows
 
-### Issue → Implementation → Integration
+### Issue → Coding → Integration
 
 ```text
 issue-workflow → plan → architecture (or architecture-consult) → design-consult
-  → implementation-construction → quality-gate → integration-commit → integration-pr → code-review → integration-merge
+  → issue-coding → integration-commit → integration-pr → code-review → integration-merge
 ```
 
 During issue creation or revision, **architecture** (orchestrator or sub-skills) can be triggered before or during purpose-alignment, work-down, or acceptance-criteria so requirements and implementation plans reflect architecture concerns.
 
 Each step produces output for the next. No parallelism within this chain.
 
+**Human-in-the-loop pause:** After `issue-workflow` and `plan`, a maintainer may review the issue before coding. Invoke [issue-coding](issue-workflow/issue-coding/SKILL.md) only after that review, or when the issue has `execution:ai-ok` and an explicit go-ahead (typical after external [triage](https://www.skills.sh/mattpocock/skills/triage) → Agent Brief; see [_meta/human-ai-execution.md](_meta/human-ai-execution.md#external-skills)).
+
 ### TDD flow
 
 ```text
-issue-acceptance-criteria → validation-draft → create-validation (optional, full checklist) → test-write → implementation-construction → run-validation
+issue-acceptance-criteria → issue-coding (orchestrator)
+  → validation-draft → test-write → implementation-construction → test-run → quality-gate
+  → create-validation / run-validation (optional, full checklist)
 ```
+
+Prefer **issue-coding** as the single entry for the inner loop; sub-skills above are delegated steps, not optional reordering.
 
 Validation and tests are drafted before implementation. [create-validation](validation/create-validation/SKILL.md) and [run-validation](validation/run-validation/SKILL.md) add executable markdown checklists for issue-driven workflows.
 
@@ -121,7 +127,8 @@ Store **committed** reports under `docs/skills/benchmark/<skill-name>/report.md`
 | New feature idea (architectural) | architecture orchestrator (Initial/Retrofitting/Evolving) |
 | Issue creation or revision | issue-workflow; may invoke architecture before/during purpose-alignment, work-down, acceptance-criteria |
 | Before adding code | architecture-consult, design-consult |
-| After design | implementation-construction |
+| After plan / external triage ready-for-agent | issue-coding (TDD inner loop) |
+| After design | implementation-construction (via issue-coding when issue-driven) |
 | Before commit | quality-gate |
 | Before commit (OpenClaw) | quality-gate + openclaw-security (security audit) |
 | After quality-gate | integration-commit |
