@@ -486,12 +486,12 @@ Guides visual/GUI-based agent development with n8n, Flowise, and LangFlow. Cover
 
 ## Implementation Status
 
-*Inventory: **106** `SKILL.md` files under `pkuppens/skills/` (2026-05-12, #57, #59–#65, #67, #84). See [audit-results.md](../docs/skills/audit-results.md) for how to regenerate the list.*
+*Inventory: **109** `SKILL.md` files under `pkuppens/skills/` (2026-05-23, #26: `architecture-deployment`, `architecture-quality`; #97: `issue-coding`; prior #57, #59–#65, #67, #84). See [audit-results.md](../docs/skills/audit-results.md) for how to regenerate the list.*
 
 | Skill | Status |
 | skill-creation | ✅ implemented |
 | issue-workflow (5.x) | ✅ implemented |
-| architecture (3.x) | ✅ implemented (#28: sir-read-a-lot arch skills merged) |
+| architecture (3.x) | ✅ implemented (#28; #26: `architecture-deployment` 3.5, `architecture-quality` 3.8) |
 | design (4.1) | ✅ implemented |
 | implementation (7.1) | ✅ implemented |
 | validation (8.1) | ✅ implemented |

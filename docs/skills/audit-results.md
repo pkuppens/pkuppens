@@ -9,13 +9,13 @@
 
 ## Executive summary
 
-Audit of 82+ skill files across workspace locations (historical). Canonical set: `pkuppens/skills/` — **94** `SKILL.md` files as of 2026-04-10 (#59–#65). Regenerate the list with the commands below; overlaps and mapping for *other repos* remain valid at a high level. `babblr` has no skills. `~/.claude/skills` not audited (likely symlinked to pkuppens or user-specific).
+Audit of 82+ skill files across workspace locations (historical). Canonical set: `pkuppens/skills/` — **109** `SKILL.md` files as of 2026-05-23 (#26: `architecture-deployment`, `architecture-quality`; #97: `issue-coding`). Regenerate the list with the commands below; overlaps and mapping for *other repos* remain valid at a high level. `babblr` has no skills. `~/.claude/skills` not audited (likely symlinked to pkuppens or user-specific).
 
 ---
 
 ## 1. Inventory by location
 
-### 1.1 pkuppens/skills/ (canonical) — **94** `SKILL.md` files
+### 1.1 pkuppens/skills/ (canonical) — **109** `SKILL.md` files
 
 The static table below is **not** duplicated here (it went stale quickly). Use one of:
 

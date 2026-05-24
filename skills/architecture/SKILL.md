@@ -71,7 +71,9 @@ Output follows the sub-skill(s) invoked. Orchestrator output summarizes mode and
 | Sub-skill | When |
 |-----------|------|
 | [architecture-runtime](architecture-runtime/SKILL.md) | Document technical execution paths, sequences |
+| [architecture-deployment](architecture-deployment/SKILL.md) | Document deployment topology (arc42 §7) |
 | [architecture-crosscutting](architecture-crosscutting/SKILL.md) | Define dependency rules, layer boundaries, architecture tests |
+| [architecture-quality](architecture-quality/SKILL.md) | Quality tree and scenarios (arc42 §10) |
 | [architecture-glossary](architecture-glossary/SKILL.md) | Maintain ubiquitous language, resolve terminology |
 
 These can be invoked from architecture-document-existing during retrofitting, or directly when needed.
