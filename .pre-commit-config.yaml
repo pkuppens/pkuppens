@@ -5,3 +5,11 @@ repos:
     rev: v0.22.1
     hooks:
       - id: markdownlint-cli2
+  - repo: local
+    hooks:
+      - id: validate-skill-frontmatter
+        name: Validate SKILL.md frontmatter
+        entry: bash scripts/validate-skill-frontmatter.sh skills/
+        language: system
+        files: ^skills/.*SKILL\.md$
+        pass_filenames: false
