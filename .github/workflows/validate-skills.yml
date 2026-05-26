@@ -1,16 +1,18 @@
-# Validate SKILL.md frontmatter against agentskills.io (skills-ref).
-# See docs/skills/decisions/001-skill-validation-and-tooling.md
+# Validate SKILL.md frontmatter against agentskills.io specification.
+# Self-owned script + skills-ref reference checker (see ADR 001).
 name: Validate skills
 
 on:
   pull_request:
     paths:
       - "skills/**"
+      - "scripts/validate-skill-frontmatter.sh"
       - ".github/workflows/validate-skills.yml"
   push:
     branches: [main]
     paths:
       - "skills/**"
+      - "scripts/validate-skill-frontmatter.sh"
       - ".github/workflows/validate-skills.yml"
   workflow_dispatch: {}
 
@@ -27,6 +29,10 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v6
+
+      - name: Validate frontmatter (self-owned)
+        shell: bash
+        run: bash scripts/validate-skill-frontmatter.sh skills/
 
       - name: Set up Node.js
         uses: actions/setup-node@v5
