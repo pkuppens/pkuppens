@@ -12,6 +12,13 @@ From ASML metrology and Philips Healthcare to CART-Tech and Nemo Healthcare—20
 
 This repo hosts a unified skills library for Cursor, Claude, and Codex: arc42-aligned workflows from ideation to deployment. Includes agent rules, skills, and workflow definitions. See [skills/SKILL_TREE.md](skills/SKILL_TREE.md) for the full index.
 
+## Software Development Discipline
+
+This repo follows a platform-agnostic development workflow documented in [docs/workflow/README.md](docs/workflow/README.md). Platform-specific details reference it as the canonical source of truth:
+
+- [GitHub](docs/workflow/github.md)
+- [Azure DevOps](docs/workflow/azure-devops.md)
+
 ## Current Projects
 
 ### 🔒 On-Premise RAG System
