@@ -45,3 +45,4 @@ ignores:
   - "tmp/**"
   - "node_modules/**"
   - ".cursor/**"
+  - "**/.venv/**"
