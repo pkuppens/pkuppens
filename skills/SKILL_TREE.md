@@ -457,6 +457,20 @@ Guides visual/GUI-based agent development with n8n, Flowise, and LangFlow. Cover
 
 ---
 
+### azure-devops
+Orchestrates Azure DevOps work items, repos, and pipelines via `az` CLI. Use when the project uses Azure Boards, Azure Repos, or Azure Pipelines instead of GitHub Issues/Actions.
+
+#### azure-devops-work-items
+Creates, queries, updates, and links Azure Boards work items.
+
+#### azure-devops-repos
+Pull requests, reviewers, merge completion, and branch policies in Azure Repos.
+
+#### azure-devops-pipelines
+Azure Pipelines YAML, build validation on PR, staged deploy with environments.
+
+---
+
 ## Summary: Skill Tree Overview
 
 | # | Skill | arc42 / Lifecycle | Sub-skills |
@@ -481,6 +495,7 @@ Guides visual/GUI-based agent development with n8n, Flowise, and LangFlow. Cover
 | — | v-model *(overlay)* | Traceability pairing (optional) | mapping, requirements-acceptance, architecture-integration, design-verification, implementation-unit, retrofit |
 | — | fair-data-principles *(crosscutting)* | FAIR data quality goals | — |
 | — | ai-agent-development *(domain)* | AI agent implementation | agent-types, agent-context, agent-guardrails, agent-llm-providers, agent-on-premises, agent-frameworks, agent-visual-dev |
+| — | azure-devops *(platform)* | Azure DevOps workflow | azure-devops-work-items, azure-devops-repos, azure-devops-pipelines |
 
 **Total:** 1 meta-skill + 16 lifecycle skills + **V-model overlay** (6 sub-skills) + 1 domain skill (7 sub-skills), 60+ sub-skills elsewhere. Nesting: up to 4–5 levels where needed (e.g. 5.4.1, 5.4.2).
 
@@ -520,3 +535,4 @@ Guides visual/GUI-based agent development with n8n, Flowise, and LangFlow. Cover
 | requirements / design / implementation / validation / test **orchestrator** SKILL.md | ✅ nav + sub-skill links |
 | v-model overlay (#42) | ✅ implemented |
 | ai-agent-development + 7 sub-skills | ✅ implemented (#84) |
+| azure-devops + 3 sub-skills | ✅ implemented (#79) |
