@@ -64,7 +64,15 @@ At this stage, command bodies are intentionally placeholders and will raise a "N
 
 ## Configuration
 
-Environment variables are parsed by `src/skill_benchmark/config.py`.
+Settings load from **environment variables** and from a **`.env` file** in `tools/skill-benchmark/` (gitignored). Copy `.env.example` to `.env` for local Ollama runs.
+
+```bash
+cd tools/skill-benchmark
+cp .env.example .env
+# edit .env — model names, base URL, API key
+```
+
+See `src/skill_benchmark/README.md` for the end-to-end benchmark workflow and example task.
 
 ### Core LLM settings
 

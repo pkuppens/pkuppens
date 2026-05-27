@@ -11,13 +11,20 @@ from pydantic_settings import BaseSettings, SettingsConfigDict
 
 
 class BenchmarkConfig(BaseSettings):
-    """Load benchmark configuration from environment variables.
+    """Load benchmark configuration from environment variables and `.env`.
+
+    Precedence (highest first): explicit constructor args, process environment,
+    then `.env` in the current working directory (typically `tools/skill-benchmark/`).
 
     Fields are designed to support OpenAI and OpenAI-compatible providers
     (for example local Ollama servers using the same API surface).
     """
 
-    model_config = SettingsConfigDict(extra="ignore", env_file=None)
+    model_config = SettingsConfigDict(
+        extra="ignore",
+        env_file=".env",
+        env_file_encoding="utf-8",
+    )
 
     api_key: str = Field(default="", validation_alias="OPENAI_API_KEY")
 

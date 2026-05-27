@@ -1,14 +1,33 @@
 # Software Development Discipline (Platform-Agnostic)
 
-This document is the single, platform-independent source of truth for how this repository is developed and reviewed. It is intentionally written without naming any specific Git hosting provider or CI product.
+This document is the single, platform-independent source of truth for how this repository is developed and reviewed. Procedures here avoid binding to one vendor’s commands or config layout.
 
-Platform-specific guides (e.g., command names, exact CI configuration locations) should reference this doc as the canonical workflow.
+Platform-specific guides (command names, exact CI file locations) live beside this doc:
+
+- [GitHub mapping](github.md)
+- [Azure DevOps mapping](azure-devops.md) (when available)
+
+## Scope (non-exhaustive examples)
+
+This doc applies regardless of tooling. Common mappings:
+
+| Concern | Examples (not limited to these) |
+|---------|----------------------------------|
+| Git hosting | GitHub, Azure DevOps Repos, GitLab |
+| CI/CD products | GitHub Actions, Azure Pipelines, GitLab CI |
+| Work tracking | GitHub Issues, Azure Boards, Jira |
+
+Details for a chosen stack belong in the platform guide, not here.
 
 ---
 
 ## 1) Issue discipline
 
 Every unit of work starts as an issue that is specific enough for an implementer (human or agent) to execute without extra back-and-forth.
+
+When requirements are still vague, run a structured refinement session before coding. The external [grill-with-docs](https://www.skills.sh/mattpocock/skills/grill-with-docs) skill (or equivalent workshop) helps sharpen acceptance criteria and terminology against project docs. That step is human-in-the-loop and happens **before** implementation.
+
+Refined issue text is also a good **skill-benchmark** candidate: compare baseline output vs output with issue-workflow (or grill-with-docs) skills loaded.
 
 ### Title format
 
@@ -42,9 +61,17 @@ An issue should have an explicit owner (assignee). If multiple stakeholders are 
 
 ## 2) Branching
 
-### One branch per issue
+### Branch per unit of work (with flexibility)
 
-Create a feature branch for each issue. This keeps review scope tight and prevents cross-talk between unrelated changes.
+Default: one branch per issue so review scope stays tight.
+
+Allowed variations:
+
+- **Epic branch** (`epic/NNN-description`) for coordinated work across several child issues; merge only when the epic’s acceptance criteria are met.
+- **Feature branch for a parent issue** when child issues land in the same PR sequence; still link every commit to the relevant `#NNN`.
+- **Sub-issues** keep their own issue numbers; branch name should reflect the issue you are implementing now, not only the parent epic.
+
+Pick the smallest branch scope that still matches how reviewers will validate the change.
 
 ### Branch prefixes
 
@@ -55,7 +82,7 @@ Use consistent prefixes:
 - `chore/NNN-description`
 - `epic/NNN-description`
 
-Where `NNN` matches the issue number that spawned the branch.
+Where `NNN` is the issue number for the branch’s primary tracking item (feature, task, or epic).
 
 ### No direct commits to default branch
 
@@ -149,7 +176,8 @@ The CI/CD pipeline should provide confidence in both correctness and deployabili
 
 ### Required pipeline behavior
 
-- PR validation runs checks before merge
+- **Validation checks run on (or immediately after) PR creation** so reviewers see lint/test results alongside the diff. Examples: lint, format, unit tests, type check, security scan, markdown lint.
+- **Not every pipeline step is a validation check.** Building container images, publishing packages, or deploying to staging/production may run later (often after merge). Do not block PR review on deploy-only jobs unless the change requires them.
 - Merge triggers a staged deployment path (staging before production)
 - Rollback is possible if a deploy fails or a regression is detected
 - Smoke tests run after deployment to confirm basic health
