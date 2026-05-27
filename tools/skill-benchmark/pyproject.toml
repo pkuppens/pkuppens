@@ -20,6 +20,9 @@ dependencies = [
 [tool.setuptools]
 package-dir = {"" = "src"}
 
+[project.scripts]
+skill-benchmark = "skill_benchmark.cli:cli"
+
 [tool.setuptools.packages.find]
 where = ["src"]
 

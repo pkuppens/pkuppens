@@ -24,6 +24,7 @@ class BenchmarkConfig(BaseSettings):
         extra="ignore",
         env_file=".env",
         env_file_encoding="utf-8",
+        populate_by_name=True,
     )
 
     api_key: str = Field(default="", validation_alias="OPENAI_API_KEY")
