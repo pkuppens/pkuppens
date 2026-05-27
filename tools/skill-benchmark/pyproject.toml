@@ -1,0 +1,33 @@
+[build-system]
+requires = ["setuptools", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "skill-benchmark"
+version = "0.1.0"
+description = "Tools to benchmark AI skills (baseline vs with-skill) and generate evidence reports."
+readme = "README.md"
+requires-python = ">=3.12"
+dependencies = [
+  "openai",
+  "pydantic-settings",
+  "click",
+  "pytest",
+  "pytest-asyncio",
+  "ruff",
+]
+
+[tool.setuptools]
+package-dir = {"" = "src"}
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+asyncio_mode = "auto"
+
+[tool.ruff]
+line-length = 100
+target-version = "py312"
+
