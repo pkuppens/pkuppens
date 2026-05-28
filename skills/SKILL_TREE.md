@@ -497,7 +497,8 @@ Azure Pipelines YAML, build validation on PR, staged deploy with environments.
 | — | ai-agent-development *(domain)* | AI agent implementation | agent-types, agent-context, agent-guardrails, agent-llm-providers, agent-on-premises, agent-frameworks, agent-visual-dev |
 | — | azure-devops *(platform)* | Azure DevOps workflow | azure-devops-work-items, azure-devops-repos, azure-devops-pipelines |
 
-**Total:** 1 meta-skill + 16 lifecycle skills + **V-model overlay** (6 sub-skills) + 1 domain skill (7 sub-skills), 60+ sub-skills elsewhere. Nesting: up to 4–5 levels where needed (e.g. 5.4.1, 5.4.2).
+// Total top-level rows in the table above: *(meta)* (1) + lifecycle 0–15 (16) + *(overlay)* + *(crosscutting)* + *(domain)* + *(platform)*. Parentheses count direct sub-skills where listed; “60+ sub-skills elsewhere” includes nested lifecycle sub-skills (e.g. 5.4.1).
+**Total:** 1 meta-skill + 16 lifecycle skills + **V-model overlay** (6 sub-skills) + 1 crosscutting skill + 1 domain skill (7 sub-skills) + 1 platform skill (3 sub-skills), 60+ sub-skills elsewhere. Nesting: up to 4–5 levels where needed (e.g. 5.4.1, 5.4.2).
 
 ## Implementation Status
 
