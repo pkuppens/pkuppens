@@ -5,7 +5,7 @@ This document is the single, platform-independent source of truth for how this r
 Platform-specific guides (command names, exact CI file locations) live beside this doc:
 
 - [GitHub mapping](github.md)
-- [Azure DevOps mapping](azure-devops.md) (when available)
+- [Azure DevOps mapping](azure-devops.md)
 
 ## Scope (non-exhaustive examples)
 
