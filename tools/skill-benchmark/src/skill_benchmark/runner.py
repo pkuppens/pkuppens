@@ -1,4 +1,11 @@
-"""End-to-end benchmark orchestration."""
+"""Orchestrate a full baseline vs with-skill benchmark run.
+
+Loads task and skill content, invokes generator and scorer agents, writes
+artefacts under ``tmp/`` and a markdown report under ``docs/skills/benchmark/``,
+and returns a :class:`~skill_benchmark.models.BenchmarkComparison`.
+
+Deliverable: one end-to-end benchmark execution from CLI ``run`` or tests.
+"""
 
 from __future__ import annotations
 

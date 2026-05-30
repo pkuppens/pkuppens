@@ -1,4 +1,11 @@
-"""Load benchmark tasks and skill content from the repository."""
+"""Load benchmark tasks and skill markdown from the repository.
+
+``TaskLoader`` reads versioned prompts from ``docs/skills/benchmark/tasks/``.
+``SkillLoader`` reads ``SKILL.md`` from ``skills/<name>/``.
+
+Deliverable: parsed :class:`~skill_benchmark.models.TaskPrompt` and
+:class:`~skill_benchmark.models.SkillContent` objects for agents and the runner.
+"""
 
 from __future__ import annotations
 

@@ -1,4 +1,10 @@
-"""Data models for skill benchmark runs."""
+"""Data models shared across loaders, agents, runner, and report.
+
+Includes task and skill inputs, generation and scoring results, and the
+aggregate :class:`BenchmarkComparison` used for report generation.
+
+Deliverable: typed dataclasses passed between benchmark pipeline stages.
+"""
 
 from dataclasses import dataclass
 

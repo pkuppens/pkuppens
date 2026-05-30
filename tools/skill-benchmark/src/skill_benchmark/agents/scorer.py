@@ -1,4 +1,13 @@
-"""Scorer agent for evaluating benchmark outputs."""
+"""Score one generated output against the benchmark rubric.
+
+The scorer evaluates a single output in isolation (no side-by-side comparison)
+on four dimensions: coverage, specificity, correctness, and completeness.
+It returns a structured :class:`~skill_benchmark.models.ScoringResult` parsed
+from model JSON, with one retry when the response is invalid.
+
+Deliverable: repeatable 1–5 dimension scores and rationales for baseline and
+with-skill runs. Used by :class:`~skill_benchmark.runner.BenchmarkRunner`.
+"""
 
 from __future__ import annotations
 

@@ -1,4 +1,10 @@
-"""Resolve repository paths for benchmark loaders and output writers."""
+"""Resolve repository root for benchmark loaders and output paths.
+
+Walks up from the current directory until ``skills/SKILL_TREE.md`` is found
+so tasks, skills, and reports resolve correctly regardless of cwd.
+
+Deliverable: stable :func:`find_repo_root` for CLI and runner path resolution.
+"""
 
 from pathlib import Path
 
