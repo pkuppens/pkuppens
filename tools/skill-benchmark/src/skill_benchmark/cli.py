@@ -1,4 +1,10 @@
-"""CLI for the skill benchmark harness."""
+"""Command-line interface for the skill benchmark harness.
+
+Commands: ``list-tasks``, ``list-skills``, and ``run`` (with ``--dry-run``,
+``--base-url``, ``--model``, ``--scorer-model`` overrides).
+
+Deliverable: operator entry point installed as the ``skill-benchmark`` console script.
+"""
 
 from __future__ import annotations
 

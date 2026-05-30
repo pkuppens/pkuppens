@@ -1,4 +1,13 @@
-"""Generator agent for baseline and with-skill benchmark runs."""
+"""Generate benchmark outputs with and without skill context.
+
+The generator runs the same task prompt twice: once as a baseline (prompt only)
+and once with the skill markdown injected into the system message. Each call
+returns a :class:`~skill_benchmark.models.GenerationResult` with markdown
+output and token usage for the report.
+
+Deliverable: two comparable outputs per task so the scorer can measure skill
+impact. Used by :class:`~skill_benchmark.runner.BenchmarkRunner`.
+"""
 
 from __future__ import annotations
 

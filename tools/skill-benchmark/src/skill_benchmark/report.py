@@ -1,4 +1,11 @@
-"""Markdown report generation for benchmark comparisons."""
+"""Render and persist markdown benchmark comparison reports.
+
+Turns a :class:`~skill_benchmark.models.BenchmarkComparison` into a human-readable
+report with dimension scores, deltas, and a verdict. Saves to
+``docs/skills/benchmark/<skill-name>/report.md``.
+
+Deliverable: committed evidence for skill PRs and regression checks.
+"""
 
 from __future__ import annotations
 
