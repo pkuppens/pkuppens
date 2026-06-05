@@ -26,6 +26,7 @@ ci-hf-base and ci-whisper are **siblings** (both FROM ci-base-3.12). Text tokeni
 - **Image size**: ci-hf-base ~2GB; ci-whisper ~1.5GB
 - **Rebuild cadence**: Monthly (schedule) or manual (workflow_dispatch)
 - **ghcr.io access**: Requires `packages: write` for the build workflow. Validate with a manual run of Build CI Base Images.
+- **HF_TOKEN secret**: Add a Hugging Face read token as repo secret `HF_TOKEN` before building ci-hf-base (avoids anonymous rate limits).
 - **github.io**: Considered separately for deployments; document if/when used.
 
 ## Version Matrix
