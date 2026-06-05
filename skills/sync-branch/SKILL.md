@@ -1,129 +1,82 @@
 ---
 name: sync-branch
-description: Syncs the remote default branch locally (checkout, fetch --prune, pull) and returns to the previous branch when it still exists locally and on origin. Use when the user asks to sync branch, sync main, update default branch, fetch and pull origin, or run /sync-branch.
+description: Syncs remote default branch locally (checkout, fetch --prune, pull) and returns to the previous branch when it still exists. Reports stashes and worktrees not yet handled. Use when the user asks to sync main, update default branch, fetch/pull origin, or run /sync-branch.
 ---
 
 # Sync Branch
 
-Refresh the repository default branch without leaving the user on it when their feature branch still exists.
+Update default branch (`main`) without leaving the user stranded. Read-only on default branch — no commits.
 
-## When to use
+**Not for:** branch deletion ([branch-cleanup-after-pr](../branch-cleanup-after-pr/SKILL.md)), PRs, rebase.
 
-- User wants latest `main` / default branch without staying on it
-- Before starting work, to update base branch while on a feature branch
-- After remote branch cleanup (`fetch --prune` removes stale refs)
-
-Not for: deleting merged branches (use `branch-cleanup-after-pr`), opening PRs, or rebasing a feature branch onto main.
-
-## Preconditions
-
-- Working tree should be clean. If `git status --porcelain` is non-empty, stop and ask whether to stash, commit, or abort.
-- Do not run on `main` if the user forbids direct work there; this skill only **reads** default branch — it does not commit.
-
-## Workflow
-
-Copy and track progress:
+## Checklist
 
 ```text
-Sync branch:
-- [ ] Save current branch name
-- [ ] Resolve default branch name
-- [ ] Checkout default branch
-- [ ] Fetch origin --prune
-- [ ] Pull latest default branch
-- [ ] Return to saved branch (if both local and origin exist)
+- [ ] Pre-flight: working tree, stashes, worktrees
+- [ ] Save current branch
+- [ ] Checkout default → fetch --prune → pull
+- [ ] Return to saved branch (if local + origin exist)
+- [ ] Post: report leftover stashes/worktrees
 ```
 
-### Step 1: Save current branch
+## Pre-flight
+
+**Dirty tree** — `git status --porcelain` non-empty → stop; ask stash / commit / abort. Do not auto-stash.
+
+**Stashes** — `git stash list`. If any exist:
+
+- Report each (`stash@{n}` + branch message).
+- Do **not** drop, pop, or apply unless the user asked.
+- If a stash targets the saved branch, note: `git stash pop` after return (only when user wants it).
+
+**Worktrees** — `git worktree list`. If more than one entry:
+
+- Report path + branch per worktree.
+- Do **not** remove unless the user asked.
+- Checkout/delete failures → [git-worktrees](../git-worktrees/SKILL.md).
+
+## Sync steps
 
 ```bash
 OLD_BRANCH=$(git branch --show-current)
-```
 
-If not on any branch (detached HEAD), set `OLD_BRANCH` from `git rev-parse --short HEAD` and skip the return step at the end.
-
-### Step 2: Resolve default branch
-
-Prefer remote HEAD, then common fallbacks:
-
-```bash
 DEFAULT=$(git symbolic-ref --short refs/remotes/origin/HEAD 2>/dev/null | sed 's|^origin/||')
-if [ -z "$DEFAULT" ]; then
-  if git show-ref --verify --quiet refs/heads/main; then DEFAULT=main
-  elif git show-ref --verify --quiet refs/heads/master; then DEFAULT=master
-  else
-    DEFAULT=$(git remote show origin | sed -n 's/.*HEAD branch: //p')
-  fi
-fi
-```
+[ -z "$DEFAULT" ] && DEFAULT=main
 
-On Windows PowerShell, use `git symbolic-ref refs/remotes/origin/HEAD` and strip `refs/remotes/origin/` from the result, or `gh repo view --json defaultBranchRef -q .defaultBranchRef.name` when `gh` is available.
-
-### Step 3: Checkout default branch
-
-```bash
 git checkout "$DEFAULT"
-```
-
-### Step 4: Fetch with prune
-
-```bash
 git fetch origin --prune
-```
+git pull --ff-only origin "$DEFAULT" 2>/dev/null || git pull origin "$DEFAULT"
 
-### Step 5: Pull latest
-
-```bash
-git pull origin "$DEFAULT"
-```
-
-Use `git pull --ff-only` when the repo policy requires fast-forward only.
-
-### Step 6: Return to previous branch
-
-Only if **both** exist after fetch:
-
-- Local: `refs/heads/$OLD_BRANCH`
-- Remote: `refs/remotes/origin/$OLD_BRANCH`
-
-```bash
 if [ -n "$OLD_BRANCH" ] && [ "$OLD_BRANCH" != "$DEFAULT" ]; then
   if git show-ref --verify --quiet "refs/heads/$OLD_BRANCH" \
      && git show-ref --verify --quiet "refs/remotes/origin/$OLD_BRANCH"; then
     git checkout "$OLD_BRANCH"
+  elif git show-ref --verify --quiet "refs/heads/$OLD_BRANCH"; then
+    echo "Staying on $DEFAULT: $OLD_BRANCH has no origin ref."
+  elif git show-ref --verify --quiet "refs/remotes/origin/$OLD_BRANCH"; then
+    echo "Staying on $DEFAULT: recreate with git checkout -b $OLD_BRANCH origin/$OLD_BRANCH"
   fi
 fi
 ```
 
-If local exists but remote was deleted, stay on `$DEFAULT` and tell the user their branch no longer exists on origin.
+Detached HEAD: skip return; report HEAD short SHA.
 
-If local was deleted but remote exists, stay on `$DEFAULT` and suggest `git checkout -b "$OLD_BRANCH" "origin/$OLD_BRANCH"`.
+**PowerShell:** same flow; chain with `;` not `&&`. Default branch: `gh repo view --json defaultBranchRef -q .defaultBranchRef.name` if symbolic-ref fails.
 
-## PowerShell (one-shot)
+## Post-sync
 
-```powershell
-$old = git branch --show-current
-$default = (git symbolic-ref refs/remotes/origin/HEAD 2>$null) -replace '^refs/remotes/origin/', ''
-if (-not $default) { $default = 'main' }
-git checkout $default
-git fetch origin --prune
-git pull origin $default
-if ($old -and $old -ne $default) {
-  git show-ref --verify --quiet "refs/heads/$old" 2>$null; $local = $LASTEXITCODE -eq 0
-  git show-ref --verify --quiet "refs/remotes/origin/$old" 2>$null; $remote = $LASTEXITCODE -eq 0
-  if ($local -and $remote) { git checkout $old }
-}
-```
+Re-list `git stash list` and `git worktree list` if anything was reported in pre-flight and not yet addressed. Summarize:
 
-Chain with `;` not `&&` on older PowerShell.
+- current branch
+- stashes still present (count + branches)
+- extra worktrees (count + paths)
 
 ## Safety
 
-- Never force-push, reset hard, or delete branches in this workflow
-- Never change `git config`
-- If checkout or pull fails, report the error and do not guess; leave the user on whichever branch checkout last succeeded
+- No force-push, hard reset, branch delete, or `git config` changes
+- On checkout/pull failure: report error; stay on last successful branch
 
-## Related skills
+## Related
 
-- [branch-cleanup-after-pr](../branch-cleanup-after-pr/SKILL.md) — delete merged or gone branches after PR merge
-- [git-worktrees](../git-worktrees/SKILL.md) — when branch is locked by a worktree
+- [branch-cleanup-after-pr](../branch-cleanup-after-pr/SKILL.md) — delete merged/gone branches
+- [git-worktrees](../git-worktrees/SKILL.md) — worktree removal when branch locked
