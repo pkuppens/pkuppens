@@ -2,12 +2,13 @@
 # Images: ci-base-3.12, ci-hf-base-3.12, ci-whisper-3.12
 # All assets in ci-base-images/ directory.
 # Prerequisite: ghcr.io access (GITHUB_TOKEN has packages: write).
+# Prerequisite: HF_TOKEN secret for ci-hf-base model download (read token).
 name: Build CI Base Images
 
 on:
   schedule:
-    # First Saturday night of each month at 00:00 UTC
-    - cron: "0 0 1-7 * 6"
+    # Every Saturday 00:00 UTC; should-run gate keeps first Saturday of month only.
+    - cron: "0 0 * * 6"
   push:
     branches: [main]
     paths:
@@ -24,7 +25,25 @@ permissions:
   packages: write
 
 jobs:
+  should-run:
+    runs-on: ubuntu-latest
+    outputs:
+      proceed: ${{ steps.check.outputs.proceed }}
+    steps:
+      - name: Check schedule gate
+        id: check
+        run: |
+          if [ "${{ github.event_name }}" != "schedule" ]; then
+            echo "proceed=true" >> "$GITHUB_OUTPUT"
+          elif [ "$(date -u +%d)" -le 7 ]; then
+            echo "proceed=true" >> "$GITHUB_OUTPUT"
+          else
+            echo "proceed=false" >> "$GITHUB_OUTPUT"
+          fi
+
   build-and-push:
+    needs: should-run
+    if: needs.should-run.outputs.proceed == 'true'
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
@@ -61,6 +80,8 @@ jobs:
           tags: ghcr.io/pkuppens/pkuppens/ci-hf-base-3.12:latest
           cache-from: type=gha
           cache-to: type=gha,mode=max
+          secrets: |
+            hf_token=${{ secrets.HF_TOKEN }}
 
       - name: Build and push ci-whisper-3.12
         uses: docker/build-push-action@v6
