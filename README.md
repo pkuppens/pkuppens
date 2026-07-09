@@ -1,29 +1,24 @@
 ## Hi there, I'm Pieter Kuppens
 
-Experienced software, data, and AI professional. One professional, end-to-end capability—architecture, development, testing, deployment, process, and AI automation.
+🇳🇱 [Lees dit in het Nederlands — LEESMIJ.md](LEESMIJ.md)
 
-From ASML metrology and Philips Healthcare to CART-Tech and Nemo Healthcare—20+ years across high-tech, healthcare, and finance. [Read the full value proposition.](docs/profile/value_proposition_demo_plan.md)
+Experienced software, data, and AI professional. One professional, end-to-end—architecture, development, testing, deployment, process, and AI automation.
+
+**Why / what / how** — I make AI solutions production-ready in regulated environments, where data must not leave the organization. From architecture and Python engineering to testing, CI/CD, and on-prem/Kubernetes deployment: one professional for the full chain. 20+ years across high-tech (ASML), healthcare (Philips Healthcare, Nemo Healthcare, CART-Tech), and finance (ABN AMRO).
+
+**Signature skills** — AI systems: deep learning · NLP · agents · on-prem RAG & LLM systems · MLOps & data pipelines · Python backend engineering (FastAPI) · data processing · air-gapped / on-prem deployment (Docker, Kubernetes) · test & quality discipline.
+
+[Read the full value proposition →](docs/profile/value_proposition_demo_plan.md)
 
 ## Availability
 
-**Open to freelance and employed opportunities**—near Den Bosch, remote, or hybrid. Preference for Healthcare, Finance, Energy, High-Tech.
+Availability on request—near Den Bosch, remote, or hybrid. Sector focus: Healthcare, Finance, Energy, High-Tech. Contract type negotiable.
 
-## AI Coding Skills Library
+## Signature Projects
 
-This repo hosts a unified skills library for Cursor, Claude, and Codex: arc42-aligned workflows from ideation to deployment. Includes agent rules, skills, and workflow definitions. See [skills/SKILL_TREE.md](skills/SKILL_TREE.md) for the full index.
+### 🔒 [On-Premise RAG System](https://github.com/pkuppens/on_prem_rag)
 
-## Software Development Discipline
-
-This repo follows a platform-agnostic development workflow documented in [docs/workflow/README.md](docs/workflow/README.md). Platform-specific details reference it as the canonical source of truth:
-
-- [GitHub](docs/workflow/github.md)
-- [Azure DevOps](docs/workflow/azure-devops.md)
-
-## Current Projects
-
-### 🔒 On-Premise RAG System
-
-On-premise RAG for semantic search on your documents. Vector embeddings, semantic search, and LLM capabilities—all data stays on-premises. Built for healthcare, finance, and legal where data sovereignty matters.
+On-premise RAG for semantic search on your documents. Vector embeddings, semantic search, and LLM capabilities—all data stays on-premises (on-prem, air-gapped, GDPR-friendly). Built for healthcare, finance, and legal where data sovereignty matters.
 
 ![Python](https://img.shields.io/badge/Python-3776AB?style=flat&logo=python&logoColor=white) ![FastAPI](https://img.shields.io/badge/FastAPI-009688?style=flat&logo=fastapi&logoColor=white) ![LangChain](https://img.shields.io/badge/🦜_LangChain-121212?style=flat) ![PostgreSQL](https://img.shields.io/badge/PostgreSQL-4169E1?style=flat&logo=postgresql&logoColor=white)
 
@@ -43,6 +38,19 @@ Natural conversation over gamification. Adaptive AI tutor with real-time grammar
 
 ![Babblr Conversation Screen](docs/screenshots/conversation-screen.svg)
 
+---
+
+### 🧩 AI Coding Skills Library
+
+A unified skills library for Cursor, Claude, and Codex—arc42-aligned workflows from ideation to deployment. 16 top-level skills and 60+ battle-tested sub-skills, validated in CI. Browse the [SKILL_TREE.md](skills/SKILL_TREE.md) index.
+
+## Software Development Discipline
+
+This repo follows a platform-agnostic development workflow documented in [docs/workflow/README.md](docs/workflow/README.md). Platform-specific details reference it as the canonical source of truth:
+
+- [GitHub](docs/workflow/github.md)
+- [Azure DevOps](docs/workflow/azure-devops.md)
+
 ## Earlier Career
 
 Software development at ASML (EUV metrology, source positioning), Philips Healthcare (3D ablation visualization), ABN AMRO (mortgage, security), and Mapscape (GIS/navigation). Recent AI work: Deep Learning for cardiac tissue segmentation at CART-Tech (pacemaker lead placement); migration to AWS for model scalability. JIRA/Confluence workflows for medical device (Nemo Healthcare). AI anomaly detection for financial transactions. Medication decision rules and hospital data integration (Isatis, Nemo).
@@ -61,7 +69,7 @@ Software development at ASML (EUV metrology, source positioning), Philips Health
 ## Interests
 
 - AI and data: Deep Learning, LLMs, ML, agentic systems
-- (Backend) software engineering in Python on related tasks (AI is 80% software/data engineering anyway)
+- (Backend) software engineering—primarily Python, also C#/.NET, C++, and SQL (AI is 80% software/data engineering anyway)
 - Healthcare, finance, energy, high-tech
 - Technical collaboration and continuous improvement
 
