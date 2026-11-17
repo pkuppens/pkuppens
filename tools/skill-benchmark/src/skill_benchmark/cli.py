@@ -1,6 +1,6 @@
 """Command-line interface for the skill benchmark harness.
 
-Commands: ``list-tasks``, ``list-skills``, and ``run`` (with ``--dry-run``,
+Commands: ``list-tasks``, ``list-skills``, ``find-skill``, ``load-skill``, and ``run`` (with ``--dry-run``,
 ``--base-url``, ``--model``, ``--scorer-model`` overrides).
 
 Deliverable: operator entry point installed as the ``skill-benchmark`` console script.
@@ -9,10 +9,13 @@ Deliverable: operator entry point installed as the ``skill-benchmark`` console s
 from __future__ import annotations
 
 import asyncio
+import json
+from pathlib import Path
 
 import click
 
 from .config import BenchmarkConfig
+from .discovery import SkillIndex
 from .loader import SkillLoader, TaskLoader
 from .paths import find_repo_root
 from .runner import BenchmarkRunner
@@ -57,6 +60,43 @@ def list_skills() -> None:
     repo_root = find_repo_root()
     for name in SkillLoader(repo_root).list_skills():
         click.echo(name)
+
+
+@cli.command("find-skill")
+@click.argument("query")
+@click.option("--limit", type=click.IntRange(1, 20), default=5, show_default=True)
+@click.option(
+    "--skills-dir",
+    type=click.Path(exists=True, file_okay=False, path_type=Path),
+    default=None,
+    help="Skills root or IDE symlink. Defaults to this repository's skills/.",
+)
+def find_skill(query: str, limit: int, skills_dir: Path | None) -> None:
+    """Search skill metadata without loading skill bodies into agent context."""
+
+    try:
+        matches = SkillIndex(skills_dir).find_skill(query, limit)
+    except (OSError, ValueError) as exc:
+        raise click.ClickException(str(exc)) from exc
+    click.echo(json.dumps(matches, ensure_ascii=False, indent=2))
+
+
+@cli.command("load-skill")
+@click.argument("name")
+@click.option(
+    "--skills-dir",
+    type=click.Path(exists=True, file_okay=False, path_type=Path),
+    default=None,
+    help="Skills root or IDE symlink. Defaults to this repository's skills/.",
+)
+def load_skill(name: str, skills_dir: Path | None) -> None:
+    """Load exact SKILL.md content by name, @reference, or explicit path."""
+
+    try:
+        content = SkillIndex(skills_dir).load_skill(name)
+    except (OSError, ValueError) as exc:
+        raise click.ClickException(str(exc)) from exc
+    click.echo(content, nl=False)
 
 
 @cli.command("run")
