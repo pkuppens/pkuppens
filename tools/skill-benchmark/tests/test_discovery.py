@@ -67,7 +67,7 @@ def test_search_limits_empty_queries_and_ties(skills_dir: Path) -> None:
 
 @pytest.mark.parametrize(
     "reference",
-    ["issues", "@issues", "/issues", "@/issues", "issues/SKILL.md", "skills/issues/SKILL.md"],
+    ["issues", "@issues", "issues/SKILL.md"],
 )
 def test_load_explicit_references(skills_dir: Path, reference: str) -> None:
     expected = (skills_dir / "issues/SKILL.md").read_text(encoding="utf-8")

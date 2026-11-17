@@ -21,7 +21,7 @@ No embeddings or API calls are required.
 
 Point `--skills-dir` (or `SkillIndex`) at this tree or any of the IDE symlinks
 below, including a parent with a `pkuppens` child symlink. Explicit names,
-`@name`, `/name`, and skill file paths also work. Existing manual/IDE activation
+`@name` and skill file paths also work. Existing manual/IDE activation
 is unchanged. Use on-demand discovery for production sessions; retain full
 skill injection for controlled benchmark comparisons.
 

@@ -149,31 +149,23 @@ class SkillIndex:
         ]
 
     def load_skill(self, name: str) -> str:
-        """Return unchanged SKILL.md text by name, @name, /name, or indexed path.
+        """Return unchanged SKILL.md text by name, @name, or path.
 
-        Relative paths are accepted from the skills root or current directory.
-        Ambiguous names require a path. Only indexed files may be loaded.
+        A path is absolute or relative to the skills root. Ambiguous names
+        require a path. Only indexed files may be loaded.
         """
 
         reference = name.strip().removeprefix("@")
         if not reference or ".." in Path(reference).parts:
             raise ValueError(f"Invalid skill reference: {name}")
-        short = reference.removeprefix("/").removesuffix("/SKILL.md").rstrip("/")
-        candidates = set()
-        for base in (Path.cwd(), self.root):
-            path = base / Path(reference).expanduser()
-            candidates.add(path.resolve())
-            candidates.add((path / "SKILL.md").resolve())
+        short = reference.removesuffix("/SKILL.md").rstrip("/")
+        path = self.root / reference
+        candidates = {path.resolve(), (path / "SKILL.md").resolve()}
         path_matches = [skill for skill in self._skills if skill.path in candidates]
         matches = (
             path_matches
             if "/" in reference and path_matches
-            else [
-                skill
-                for skill in self._skills
-                if short in (skill.name, skill.relative_path)
-                or (reference.startswith("skills/") and short[7:] == skill.relative_path)
-            ]
+            else [skill for skill in self._skills if short in (skill.name, skill.relative_path)]
         )
         if not matches:
             raise FileNotFoundError(f"Skill not found in index: {name}")

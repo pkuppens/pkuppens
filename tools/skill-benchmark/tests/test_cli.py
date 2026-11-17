@@ -61,7 +61,7 @@ def test_cli_discovery_with_symlink_outside_repo(tmp_path: Path, monkeypatch) ->
     result = CliRunner().invoke(cli, ["find-skill", "github issues", "--skills-dir", str(link)])
     assert result.exit_code == 0, result.output
     assert json.loads(result.output)
-    result = CliRunner().invoke(cli, ["load-skill", "/issue-workflow", "--skills-dir", str(link)])
+    result = CliRunner().invoke(cli, ["load-skill", "@issue-workflow", "--skills-dir", str(link)])
     assert result.exit_code == 0, result.output
     assert result.output == (root / "skills/issue-workflow/SKILL.md").read_text(encoding="utf-8")
 

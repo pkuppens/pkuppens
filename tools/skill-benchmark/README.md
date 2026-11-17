@@ -92,8 +92,8 @@ Malformed frontmatter reports an error with the file path instead of silently
 hiding skills. Construct a new index after adding skills or editing metadata
 (the CLI does this per invocation); loading reads the current file content.
 
-`load-skill` / `load_skill` accepts YAML names, `@name`, `/name`, `@/name`, relative
-skill paths, and absolute directory or `SKILL.md` paths. Duplicate names require
+`load-skill` / `load_skill` accepts a YAML name, `@name`, or a path (absolute, or
+relative to the skills root) to a skill directory or `SKILL.md`. Duplicate names require
 an explicit path (prefer the search result's path). Only indexed skill files
 can be loaded; traversal and arbitrary file reads are rejected. The result is
 the unchanged UTF-8 `SKILL.md` text, including frontmatter, just as the benchmark's
