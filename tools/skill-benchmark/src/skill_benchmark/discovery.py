@@ -158,6 +158,7 @@ class SkillIndex:
         reference = name.strip().removeprefix("@")
         if not reference or ".." in Path(reference).parts:
             raise ValueError(f"Invalid skill reference: {name}")
+        reference = reference.replace("\\", "/")
         short = reference.removesuffix("/SKILL.md").rstrip("/")
         path = self.root / reference
         candidates = {path.resolve(), (path / "SKILL.md").resolve()}

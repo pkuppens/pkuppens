@@ -1,3 +1,4 @@
+import re
 from pathlib import Path
 
 import pytest
@@ -5,6 +6,14 @@ import pytest
 from skill_benchmark.discovery import SkillIndex
 from skill_benchmark.loader import SkillLoader
 from skill_benchmark.paths import find_repo_root
+
+
+def symlink_dir(link: Path, target: Path) -> None:
+    """Create a directory symlink, skipping when the OS needs extra privileges (Windows)."""
+    try:
+        link.symlink_to(target, target_is_directory=True)
+    except OSError as exc:
+        pytest.skip(f"cannot create symlinks here: {exc}")
 
 
 @pytest.fixture
@@ -106,14 +115,14 @@ def test_symlinked_roots_and_children(skills_dir: Path, tmp_path: Path, ide: str
     ide_dir = tmp_path / ide
     ide_dir.mkdir()
     link = ide_dir / "skills"
-    link.symlink_to(skills_dir, target_is_directory=True)
+    symlink_dir(link, skills_dir)
     assert SkillIndex(link).load_skill("@triage") == SkillIndex(skills_dir).load_skill("triage")
     link.unlink()
     link.mkdir()
-    (link / "library").symlink_to(skills_dir, target_is_directory=True)
+    symlink_dir(link / "library", skills_dir)
     # Follow trusted child links, but terminate on cycles and deduplicate aliases.
-    (skills_dir / "loop").symlink_to(skills_dir, target_is_directory=True)
-    (link / "alias").symlink_to(skills_dir, target_is_directory=True)
+    symlink_dir(skills_dir / "loop", skills_dir)
+    symlink_dir(link / "alias", skills_dir)
     index = SkillIndex(link)
     assert len(index.find_skill("github")) == 1
     assert index.load_skill(str(link / "library/issues")) == index.load_skill("@issues")
@@ -138,7 +147,7 @@ def test_multiline_yaml_and_missing_tree(skills_dir: Path) -> None:
 def test_invalid_metadata_reports_file(skills_dir: Path, text: str) -> None:
     path = skills_dir / "deploy/SKILL.md"
     path.write_text(text)
-    with pytest.raises(ValueError, match=str(path)):
+    with pytest.raises(ValueError, match=re.escape(str(path))):
         SkillIndex(skills_dir)
 
 

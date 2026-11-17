@@ -1,6 +1,7 @@
 import json
 from pathlib import Path
 
+import pytest
 from click.testing import CliRunner
 
 from skill_benchmark.cli import cli
@@ -56,7 +57,10 @@ def test_cli_load_skill_exact_content() -> None:
 def test_cli_discovery_with_symlink_outside_repo(tmp_path: Path, monkeypatch) -> None:
     root = find_repo_root()
     link = tmp_path / "linked-skills"
-    link.symlink_to(root / "skills", target_is_directory=True)
+    try:
+        link.symlink_to(root / "skills", target_is_directory=True)
+    except OSError as exc:
+        pytest.skip(f"cannot create symlinks here: {exc}")
     monkeypatch.chdir(tmp_path)
     result = CliRunner().invoke(cli, ["find-skill", "github issues", "--skills-dir", str(link)])
     assert result.exit_code == 0, result.output
