@@ -15,6 +15,7 @@ dependencies = [
   "pytest",
   "pytest-asyncio",
   "ruff",
+  "pyyaml>=6.0.3",
 ]
 
 [tool.setuptools]

@@ -10,6 +10,21 @@ Full skill tree: [SKILL_TREE.md](SKILL_TREE.md). How skills compose: [COOPERATIO
 
 **Format and CI:** Metadata must follow the [Agent Skills specification](https://agentskills.io/specification). Pull requests that touch `skills/` run `skills-ref` (pinned) and a non-interactive [Skills CLI](https://github.com/vercel-labs/skills) discovery smoke (`npx skills add … --list`). Tooling choices are documented in [ADR 001 — Skill validation and tooling](../docs/skills/decisions/001-skill-validation-and-tooling.md).
 
+### Search and load without the full tree in context
+
+The local [skill discovery tools](../tools/skill-benchmark/README.md#on-demand-skill-discovery-agent-sessions)
+provide `find_skill(query)` and `load_skill(name)` Python methods plus
+`skill-benchmark find-skill` / `load-skill` CLI commands. Search returns at most
+five metadata matches by default using BM25 over names, descriptions, headings,
+and tree summaries; load only the relevant skill after inspecting the results.
+No embeddings or API calls are required.
+
+Point `--skills-dir` (or `SkillIndex`) at this tree or any of the IDE symlinks
+below, including a parent with a `pkuppens` child symlink. Explicit names,
+`@name`, `/name`, and skill file paths also work. Existing manual/IDE activation
+is unchanged. Use on-demand discovery for production sessions; retain full
+skill injection for controlled benchmark comparisons.
+
 ## IDE Setup
 
 Reference this `skills/` folder from your IDE. Do not duplicate skills. Symlinks below work for **Cursor**, **Claude**, and **Codex**.
